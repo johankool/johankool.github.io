@@ -1,0 +1,42 @@
+---
+layout: default
+---
+
+<div>
+<article>
+  <header class="product">
+    <img src="/images/{{ page.icon }}" alt="{{ page.title }} Icon" />
+    <h1>{{ page.title }}</h1>
+    <p class="tagline">{{ page.tagline }}</p>
+    <a class="button" href="support/">Get Support</a> <a class="button" href="http://itunes.apple.com/WebObjects/MZStore.woa/wa/viewSoftware?id={{ page.app-id }}">View in App Store</a>
+  </header>
+  {{ content }}
+  {% unless page.footer == false %}
+    <footer>
+      {% if page.date or page.author %}<p class="meta">
+        {% if page.author %}{% include post/author.html %}{% endif %}
+        {% include post/date.html %}{% if updated %}{{ updated }}{% else %}{{ time }}{% endif %}
+        {% if page.categories %}{% include post/categories.html %}{% endif %}
+      </p>{% endif %}
+      {% unless page.sharing == false %}
+        {% include post/sharing.html %}
+      {% endunless %}
+    </footer>
+  {% endunless %}
+</article>
+{% if site.disqus_short_name and page.comments == true %}
+  <section>
+    <h1>Comments</h1>
+    <div id="disqus_thread">{% include post/disqus_thread.html %}</div>
+  </section>
+{% endif %}
+</div>
+{% unless page.sidebar == false %}
+<aside role=sidebar>
+  {% if site.page_asides.size %}
+    {% include_array page_asides %}
+  {% else %}
+    {% include_array default_asides %}
+  {% endif %}
+</aside>
+{% endunless %}
