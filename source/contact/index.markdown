@@ -8,7 +8,7 @@ footer: true
 
 If you have any kind of question or want to be in contact with Koolistov, please use this form.
 
-<form action="/sendcontact" method="post">
+<form action="http://octopress.koolistov.appspot.com/sendcontact" method="post">
         
 <label for="id_name">Your name: </label><br />
 <input name="name" id="id_name" type="text" required autofocus placeholder="Enter your name (required)"><br />
