@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: NSURL | Koolistov]]></title>
+  <link href="http://www.koolistov.net/blog/categories/nsurl/atom.xml" rel="self"/>
+  <link href="http://www.koolistov.net/"/>
+  <updated>2012-01-10T00:28:26+08:00</updated>
+  <id>http://www.koolistov.net/</id>
+  <author>
+    <name><![CDATA[Johan Kool]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Right Path to URL Parameters]]></title>
+    <link href="http://www.koolistov.net/blog/2011/10/02/right-path-to-url-parameters/"/>
+    <updated>2011-10-02T00:40:00+08:00</updated>
+    <id>http://www.koolistov.net/blog/2011/10/02/right-path-to-url-parameters</id>
+    <content type="html"><![CDATA[<p>It is very common to have to construct URLs in iOS apps. Unfortunately there is no such things as <code>NSMutableURL</code>, so we need to come up with our own solution. Most developers seem to take a very pragmatic approach to this. Basically, you take a base URL, append a path and/or parameters to it, and go about your business. Almost, if not all, code I have seen do this make assumptions about the base URL: for example, no query or fragment present in the URL. Sometimes even relying on the other parts of the app always providing text that is safe to use in an URL. It can be quite a safe assumption that this is safe within your app, but I wanted a solution that is safe to use no matter what the base URL looked like, or what text was provided for the parameters.</p>
+
+<!--more-->
+
+
+<h3>URL Building Blocks</h3>
+
+<p>Let's have a quick look at how a URL is constructed. The various parts of an URL are:</p>
+
+<pre><code>scheme://username:password@domain:port/path?query#fragment
+</code></pre>
+
+<p>The pragmatic approach works well if the base URL does not contain a path, query and fragment. The presence of a path is usually not a problem, it gets trickier when a query is already present, and most solutions definitely fail when a fragment is present.</p>
+
+<p>The code provided below takes the presence of path, query and/or fragment into account. Don't just take my word for it, you can run the provided unit test to ensure it does it right.</p>
+
+<h3>Path</h3>
+
+<p>To replace a path complete, use <code>- (NSURL *)URLByReplacingPathWithPath:(NSString *)path</code>. Alternatively, use <code>- (NSURL *)URLByAppendingPathWithRelativePath:(NSString *)path</code> if you want to append a relative path. This also allows to you walk up the path using for example <code>../foo</code>. The path will get simplified if possible.</p>
+
+<h3>Parameter</h3>
+
+<p>The most effective way to add parameters is to use <code>- (NSURL *)URLByAppendingParameters:(NSDictionary *)parameters</code>. The dictionary is expected to contain <code>NSString</code>s as keys. The corresponding values may be either <code>NSString</code>s or should respond to the method <code>- (NSString *)stringValue</code>, otherwise the value will default to  <code>- (NSString *)description</code>. Both keys and values will get URL escaped.</p>
+
+<p>It is valid in an URL to have a parameter name appear multiple times, unlike it is for keys in <code>NSDictionary</code>. You can work around this by calling the method <code>- (NSURL *)URLByAppendingParameterName:(NSString *)parameter value:(id)value</code> multiple times with the same parameter name.</p>
+
+<h3>Code</h3>
+
+<p>The code is available as a <a href="https://gist.github.com/1256354">gist on GitHub</a>. The license for the code is a simple BSD license. You don't need to attribute me or Koolistov in your app (although appreciated if you do), but you need to leave the copyright notice intact on the source files.</p>
+
+<p><div><script src='https://gist.github.com/1256354.js?file='></script>
+<noscript><pre><code>//
+//  NSURL+PathParameters.h
+//
+//  Created by Johan Kool on 27/9/2011.
+//  Copyright 2011 Koolistov Pte. Ltd. All rights reserved.
+//
+//  Redistribution and use in source and binary forms, with or without modification, are 
+//  permitted provided that the following conditions are met:
+//
+//  * Redistributions of source code must retain the above copyright notice, this list of 
+//    conditions and the following disclaimer.
+//  * Neither the name of KOOLISTOV PTE. LTD. nor the names of its contributors may be used to 
+//    endorse or promote products derived from this software without specific prior written 
+//    permission.
+//
+//  THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS &quot;AS IS&quot; AND ANY 
+//  EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF 
+//  MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL 
+//  THE COPYRIGHT OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, 
+//  SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT 
+//  OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) 
+//  HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, 
+//  OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS 
+//  SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+//
+
+
+#import &lt;Foundation/Foundation.h&gt;
+
+@interface NSURL (PathParameters)
+
+- (NSURL *)URLByReplacingPathWithPath:(NSString *)path;
+- (NSURL *)URLByAppendingPathWithRelativePath:(NSString *)path;
+- (NSURL *)URLByAppendingParameters:(NSDictionary *)parameters;
+- (NSURL *)URLByAppendingParameterName:(NSString *)parameter value:(id)value;
+
+@end
+</code></pre></noscript></div>
+</p>
+]]></content>
+  </entry>
+  
+</feed>
