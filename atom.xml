@@ -2,10 +2,10 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 
   <title><![CDATA[Koolistov]]></title>
-  <link href="http://johankool.github.com/atom.xml" rel="self"/>
-  <link href="http://johankool.github.com/"/>
-  <updated>2012-01-10T00:37:21+08:00</updated>
-  <id>http://johankool.github.com/</id>
+  <link href="http://www.koolistov.net/atom.xml" rel="self"/>
+  <link href="http://www.koolistov.net/"/>
+  <updated>2012-01-10T00:50:32+08:00</updated>
+  <id>http://www.koolistov.net/</id>
   <author>
     <name><![CDATA[Johan Kool]]></name>
     
@@ -15,9 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA[Breaking the Silence]]></title>
-    <link href="http://johankool.github.com/blog/2011/12/19/breaking-the-silence/"/>
+    <link href="http://www.koolistov.net/blog/2011/12/19/breaking-the-silence/"/>
     <updated>2011-12-19T13:59:00+08:00</updated>
-    <id>http://johankool.github.com/blog/2011/12/19/breaking-the-silence</id>
+    <id>http://www.koolistov.net/blog/2011/12/19/breaking-the-silence</id>
     <content type="html"><![CDATA[<p>No false illusions, there is no one besides me who noticed the silence on this blog during the last couple of weeks. It was everything but silent behind the curtains however. Mostly rattling of my keyboard…</p>
 
 <p>I have been working hard on one major iPad project together with the awesome people at <a href="http://www.egeniq.com/">Egeniq</a>. My contribution was a significant part of the iPad app coding, but there are way more people involved for design and backend development, and not just at Egeniq either. Last Friday I had the honor of doing the last code review for build 1.0 of the app, and by virtue of approving the merge on GitHub, setting in motion the final build. <a href="https://twitter.com/ijansch/status/147726912578531328">Whoot</a>!</p>
@@ -59,10 +59,10 @@
   
   <entry>
     <title type="html"><![CDATA[Steve Jobs]]></title>
-    <link href="http://johankool.github.com/blog/2011/10/06/steve-jobs/"/>
+    <link href="http://www.koolistov.net/blog/2011/10/06/steve-jobs/"/>
     <updated>2011-10-06T23:59:00+08:00</updated>
-    <id>http://johankool.github.com/blog/2011/10/06/steve-jobs</id>
-    <content type="html"><![CDATA[<p><img class="right" src="http://johankool.github.com/images/stevejobs.png" width="353" height="322" title="Steve Jobs" ></p>
+    <id>http://www.koolistov.net/blog/2011/10/06/steve-jobs</id>
+    <content type="html"><![CDATA[<p><img class="right" src="http://www.koolistov.net/images/stevejobs.png" width="353" height="322" title="Steve Jobs" ></p>
 
 <p>It is a sad sad day today. We all knew it was coming. We all knew it was coming sooner than we were praying for. Steve Jobs&#8217; passing away is still a painful stab in the heart. He was crazy enough to think he could change the world, and damn it, did he ever!</p>
 
@@ -84,9 +84,9 @@
   
   <entry>
     <title type="html"><![CDATA[Right Path to URL Parameters]]></title>
-    <link href="http://johankool.github.com/blog/2011/10/02/right-path-to-url-parameters/"/>
+    <link href="http://www.koolistov.net/blog/2011/10/02/right-path-to-url-parameters/"/>
     <updated>2011-10-02T00:40:00+08:00</updated>
-    <id>http://johankool.github.com/blog/2011/10/02/right-path-to-url-parameters</id>
+    <id>http://www.koolistov.net/blog/2011/10/02/right-path-to-url-parameters</id>
     <content type="html"><![CDATA[<p>It is very common to have to construct URLs in iOS apps. Unfortunately there is no such things as <code>NSMutableURL</code>, so we need to come up with our own solution. Most developers seem to take a very pragmatic approach to this. Basically, you take a base URL, append a path and/or parameters to it, and go about your business. Almost, if not all, code I have seen do this make assumptions about the base URL: for example, no query or fragment present in the URL. Sometimes even relying on the other parts of the app always providing text that is safe to use in an URL. It can be quite a safe assumption that this is safe within your app, but I wanted a solution that is safe to use no matter what the base URL looked like, or what text was provided for the parameters.</p>
 
 <!--more-->
@@ -164,9 +164,9 @@
   
   <entry>
     <title type="html"><![CDATA[Antiquated Icons and Junk Drawers]]></title>
-    <link href="http://johankool.github.com/blog/2011/09/24/antiquated-icons-and-junk-drawers/"/>
+    <link href="http://www.koolistov.net/blog/2011/09/24/antiquated-icons-and-junk-drawers/"/>
     <updated>2011-09-24T21:16:00+08:00</updated>
-    <id>http://johankool.github.com/blog/2011/09/24/antiquated-icons-and-junk-drawers</id>
+    <id>http://www.koolistov.net/blog/2011/09/24/antiquated-icons-and-junk-drawers</id>
     <content type="html"><![CDATA[<p>One of the perks of having a newborn in the house, besides dirty diapers and frequent feedings, is that you only get up-to-date on some news later than normal. During the last weeks I had been hearing about Windows 8 and the new Metro style apps Microsoft introduced, but it wasn&#8217;t until this morning that I found some time to look at one of the introduction videos.</p>
 
 <p>Actually, I have to congratulate Microsoft on this one. Like mine (yes, not a subjective opinion, but who cares) theirs is a pretty baby too! A fresh and unique approach is something we don&#8217;t often see coming out of Redmond. The tiles, the side-by-side mode, sharing between apps are all great features to have. Also smaller things like being able to swipe between pages whilst dragging is a fun new gesture.</p>
@@ -202,9 +202,9 @@ Using an icon is now considered &#8220;antiquated&#8221; by Microsoft. Funny lan
   
   <entry>
     <title type="html"><![CDATA[A Fresh New Website]]></title>
-    <link href="http://johankool.github.com/blog/2011/09/17/a-fresh-new-website/"/>
+    <link href="http://www.koolistov.net/blog/2011/09/17/a-fresh-new-website/"/>
     <updated>2011-09-17T13:00:00+08:00</updated>
-    <id>http://johankool.github.com/blog/2011/09/17/a-fresh-new-website</id>
+    <id>http://www.koolistov.net/blog/2011/09/17/a-fresh-new-website</id>
     <content type="html"><![CDATA[<p>A fresh new website for Koolistov is finally here. As Koolistov recently incorporated in Singapore as a private limited company, an update to its website was more than overdue. The old started to show its age, and although I applied a somewhat fresher CSS style to it, it still didn&#8217;t feel quite right.</p>
 
 <p>The legendary <a href="http://mattgemmell.com/2011/09/12/blogging-with-octopress/">Matt Gemmell</a> had been feeling the need to freshen up his personal blog recently too, and this is how I got to learn about <a href="http://octopress.org/">Octopress</a>. Octopress is framework based on <a href="https://github.com/mojombo/jekyll">Jekyll</a> created by <a href="http://twitter.com/imathis">Brandon Mathis</a>. It provides you with a great looking, HTML5 based blog. You run it locally on your own computer where it creates a static website which can be hosted anywhere. Despite being static, it actually offers quite a nice number of features by wisely letting established third parties take care of those, such as comments and searching. It&#8217;s quite configurable, and by creating static html you are not getting locked in to one hosting provider. Great stuff!</p>
