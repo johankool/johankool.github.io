@@ -1,0 +1,5 @@
+User-agent: *
+Disallow: /contact/error/
+Disallow: /contact/confirm/
+Disallow: /contact/invalid/
+Allow: /
