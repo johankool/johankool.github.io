@@ -2,10 +2,10 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 
   <title><![CDATA[Category: website | Koolistov]]></title>
-  <link href="http://www.koolistov.net/blog/categories/website/atom.xml" rel="self"/>
-  <link href="http://www.koolistov.net/"/>
-  <updated>2012-01-10T01:18:18+08:00</updated>
-  <id>http://www.koolistov.net/</id>
+  <link href="http://koolistov.net/blog/categories/website/atom.xml" rel="self"/>
+  <link href="http://koolistov.net/"/>
+  <updated>2012-01-10T10:28:55+08:00</updated>
+  <id>http://koolistov.net/</id>
   <author>
     <name><![CDATA[Johan Kool]]></name>
     
@@ -15,9 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA[A Fresh New Website]]></title>
-    <link href="http://www.koolistov.net/blog/2011/09/17/a-fresh-new-website/"/>
+    <link href="http://koolistov.net/blog/2011/09/17/a-fresh-new-website/"/>
     <updated>2011-09-17T13:00:00+08:00</updated>
-    <id>http://www.koolistov.net/blog/2011/09/17/a-fresh-new-website</id>
+    <id>http://koolistov.net/blog/2011/09/17/a-fresh-new-website</id>
     <content type="html"><![CDATA[<p>A fresh new website for Koolistov is finally here. As Koolistov recently incorporated in Singapore as a private limited company, an update to its website was more than overdue. The old started to show its age, and although I applied a somewhat fresher CSS style to it, it still didn't feel quite right.</p>
 
 <p>The legendary <a href="http://mattgemmell.com/2011/09/12/blogging-with-octopress/">Matt Gemmell</a> had been feeling the need to freshen up his personal blog recently too, and this is how I got to learn about <a href="http://octopress.org/">Octopress</a>. Octopress is framework based on <a href="https://github.com/mojombo/jekyll">Jekyll</a> created by <a href="http://twitter.com/imathis">Brandon Mathis</a>. It provides you with a great looking, HTML5 based blog. You run it locally on your own computer where it creates a static website which can be hosted anywhere. Despite being static, it actually offers quite a nice number of features by wisely letting established third parties take care of those, such as comments and searching. It's quite configurable, and by creating static html you are not getting locked in to one hosting provider. Great stuff!</p>

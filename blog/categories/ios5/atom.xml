@@ -2,10 +2,10 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 
   <title><![CDATA[Category: ios5 | Koolistov]]></title>
-  <link href="http://www.koolistov.net/blog/categories/ios5/atom.xml" rel="self"/>
-  <link href="http://www.koolistov.net/"/>
-  <updated>2012-01-10T01:18:18+08:00</updated>
-  <id>http://www.koolistov.net/</id>
+  <link href="http://koolistov.net/blog/categories/ios5/atom.xml" rel="self"/>
+  <link href="http://koolistov.net/"/>
+  <updated>2012-01-10T10:28:55+08:00</updated>
+  <id>http://koolistov.net/</id>
   <author>
     <name><![CDATA[Johan Kool]]></name>
     
@@ -15,9 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA[Antiquated Icons and Junk Drawers]]></title>
-    <link href="http://www.koolistov.net/blog/2011/09/24/antiquated-icons-and-junk-drawers/"/>
+    <link href="http://koolistov.net/blog/2011/09/24/antiquated-icons-and-junk-drawers/"/>
     <updated>2011-09-24T21:16:00+08:00</updated>
-    <id>http://www.koolistov.net/blog/2011/09/24/antiquated-icons-and-junk-drawers</id>
+    <id>http://koolistov.net/blog/2011/09/24/antiquated-icons-and-junk-drawers</id>
     <content type="html"><![CDATA[<p>One of the perks of having a newborn in the house, besides dirty diapers and frequent feedings, is that you only get up-to-date on some news later than normal. During the last weeks I had been hearing about Windows 8 and the new Metro style apps Microsoft introduced, but it wasn't until this morning that I found some time to look at one of the introduction videos.</p>
 
 <p>Actually, I have to congratulate Microsoft on this one. Like mine (yes, not a subjective opinion, but who cares) theirs is a pretty baby too! A fresh and unique approach is something we don't often see coming out of Redmond. The tiles, the side-by-side mode, sharing between apps are all great features to have. Also smaller things like being able to swipe between pages whilst dragging is a fun new gesture.</p>

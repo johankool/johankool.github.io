@@ -2,10 +2,10 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 
   <title><![CDATA[Category: NSURL | Koolistov]]></title>
-  <link href="http://www.koolistov.net/blog/categories/nsurl/atom.xml" rel="self"/>
-  <link href="http://www.koolistov.net/"/>
-  <updated>2012-01-10T01:18:18+08:00</updated>
-  <id>http://www.koolistov.net/</id>
+  <link href="http://koolistov.net/blog/categories/nsurl/atom.xml" rel="self"/>
+  <link href="http://koolistov.net/"/>
+  <updated>2012-01-10T10:28:55+08:00</updated>
+  <id>http://koolistov.net/</id>
   <author>
     <name><![CDATA[Johan Kool]]></name>
     
@@ -15,9 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA[Right Path to URL Parameters]]></title>
-    <link href="http://www.koolistov.net/blog/2011/10/02/right-path-to-url-parameters/"/>
+    <link href="http://koolistov.net/blog/2011/10/02/right-path-to-url-parameters/"/>
     <updated>2011-10-02T00:40:00+08:00</updated>
-    <id>http://www.koolistov.net/blog/2011/10/02/right-path-to-url-parameters</id>
+    <id>http://koolistov.net/blog/2011/10/02/right-path-to-url-parameters</id>
     <content type="html"><![CDATA[<p>It is very common to have to construct URLs in iOS apps. Unfortunately there is no such things as <code>NSMutableURL</code>, so we need to come up with our own solution. Most developers seem to take a very pragmatic approach to this. Basically, you take a base URL, append a path and/or parameters to it, and go about your business. Almost, if not all, code I have seen do this make assumptions about the base URL: for example, no query or fragment present in the URL. Sometimes even relying on the other parts of the app always providing text that is safe to use in an URL. It can be quite a safe assumption that this is safe within your app, but I wanted a solution that is safe to use no matter what the base URL looked like, or what text was provided for the parameters.</p>
 
 <!--more-->
