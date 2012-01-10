@@ -1,0 +1,32 @@
+body {
+	background-color: #ffffff;
+}
+
+.block {
+	padding: 0px;
+	margin: 8px 8px 20px;
+
+	background-color: #f1f1f1;
+	/*width: 70%;
+	height: 50%;*/
+	/*margin: 60px auto 20px;
+	padding: 20px;*/
+	border: 1px solid #d5d5d5;
+	-webkit-border-radius: 10px;
+}
+
+.tip {
+	font-weight: bold;
+}
+
+h3 {
+	font: 13px Helvetica, Arial, Geneva, sans-serif;
+	margin: 0px;
+	padding: 8px 8px 4px;
+}
+
+p {
+	font: 13px Helvetica, Arial, Geneva, sans-serif;
+	padding: 4px 8px 8px;
+	margin: 0px;
+}
