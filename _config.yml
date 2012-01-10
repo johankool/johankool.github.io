@@ -2,12 +2,12 @@
 #      Main Configs       #
 # ----------------------- #
 
-url: http://www.koolistov.net
+url: http://koolistov.net
 title: Koolistov
 subtitle: -- where apps are made
 author: Johan Kool
 simple_search: http://google.com/search
-description:
+description: "Koolistov provides development and consultation services for iOS and Mac OS X. Seller of iPhone apps: BabyPhone and Walkie Talkie."
 
 # Default date format is "ordinal" (resulting in "July 22nd 2007")
 # You can customize the format as defined in
@@ -26,7 +26,7 @@ email:
 # ----------------------- #
 
 # If publishing to a subdirectory as in http://site.com/project set 'root: /project'
-root: /.
+root: /
 permalink: /blog/:year/:month/:day/:title/
 source: source
 destination: public
