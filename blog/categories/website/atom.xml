@@ -4,7 +4,7 @@
   <title><![CDATA[Category: website | Koolistov]]></title>
   <link href="http://koolistov.net/blog/categories/website/atom.xml" rel="self"/>
   <link href="http://koolistov.net/"/>
-  <updated>2012-01-10T15:46:34+08:00</updated>
+  <updated>2012-01-19T11:00:46+08:00</updated>
   <id>http://koolistov.net/</id>
   <author>
     <name><![CDATA[Johan Kool]]></name>
@@ -12,6 +12,23 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Walk of Shame, Naked]]></title>
+    <link href="http://koolistov.net/blog/2012/01/10/walk-of-shame-naked/"/>
+    <updated>2012-01-10T21:20:00+08:00</updated>
+    <id>http://koolistov.net/blog/2012/01/10/walk-of-shame-naked</id>
+    <content type="html"><![CDATA[<p>Lately there has been some controversy regarding GoDaddy, and their support for SOPA. December 29th was set as a protest day to show our discontent with GoDaddy by moving away our domains on that day.</p>
+
+<p>It felt a little too risky to do this while I was traveling, so I only got around to it last week. Anyway, I am glad that I finally got around to moving away my 3 domains, as I had been wanting to do this ever since I heard about GoDaddy's CEO's elephant hunting hobby. (Seriously, what's wrong with this guy?!)</p>
+
+<p>I am ashamed it took me this long to walk way from GoDaddy, so I do this as my public walk of shame.</p>
+
+<h3>Naked domain</h3>
+
+<p>Another thing I finally got around to was to have this website's URL drop the 'www'. From now one is it just the naked domain: 'koolistov.net'. This website is now hosted via GitHub and no longer via Google App Engine. The combination GitHub and Octopress is certainly a more pleasant one.</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[A Fresh New Website]]></title>

@@ -4,7 +4,7 @@
   <title><![CDATA[Koolistov]]></title>
   <link href="http://koolistov.net/atom.xml" rel="self"/>
   <link href="http://koolistov.net/"/>
-  <updated>2012-01-10T15:46:34+08:00</updated>
+  <updated>2012-01-19T11:00:46+08:00</updated>
   <id>http://koolistov.net/</id>
   <author>
     <name><![CDATA[Johan Kool]]></name>
@@ -12,6 +12,90 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[RTLNieuws 365 is a Go!]]></title>
+    <link href="http://koolistov.net/blog/2012/01/19/rtlnieuws-365-is-a-go/"/>
+    <updated>2012-01-19T10:21:00+08:00</updated>
+    <id>http://koolistov.net/blog/2012/01/19/rtlnieuws-365-is-a-go</id>
+    <content type="html"><![CDATA[<p>Excited that the iPad app I, together with the great people from <a href="http://www.egeniq.com/">Egeniq</a> and others, have been working on for the last couple of months is out now! And we call it <a href="http://itunes.apple.com/nl/app/rtlnieuws-365/id486518266?mt=8">RTLNieuws 365</a>.</p>
+
+<p><span class='pullquote-right' data-pullquote='‘the first real digital newspaper of the Netherlands’'>
+RTL Nieuws is a well known Dutch news television bulletin by the Netherlands&#8217; largest commercial broadcaster. By introducing this app they are embracing the new possibilities opened by the iPad. They are touting this app as ‘the first real digital newspaper of the Netherlands’.
+</span></p>
+
+<!-- more -->
+
+
+<p><img class="left" src="http://koolistov.net/images/rtlnieuws365_screenshot.jpg" width="480" height="360" title="'RTLNieuws 365 screenshot'" ></p>
+
+<p>The app has a wide range of news content, from general to entertainment and sports, and has a strong focus on photography. (It actually uses a slightly adjusted version of <a href="https://github.com/Koolistov/Image-Cache">KVImageCache</a> under the hood.)</p>
+
+<p>It looks like the app is off to a good start, and is climbing fast in the App Store charts. Most <a href="https://twitter.com/#!/search/rtlnieuws365">reactions on Twitter</a> are very positive too.</p>
+
+<p>I am very proud to have been part of the team that created this!</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Walk of Shame, Naked]]></title>
+    <link href="http://koolistov.net/blog/2012/01/10/walk-of-shame-naked/"/>
+    <updated>2012-01-10T21:20:00+08:00</updated>
+    <id>http://koolistov.net/blog/2012/01/10/walk-of-shame-naked</id>
+    <content type="html"><![CDATA[<p>Lately there has been some controversy regarding GoDaddy, and their support for SOPA. December 29th was set as a protest day to show our discontent with GoDaddy by moving away our domains on that day.</p>
+
+<p>It felt a little too risky to do this while I was traveling, so I only got around to it last week. Anyway, I am glad that I finally got around to moving away my 3 domains, as I had been wanting to do this ever since I heard about GoDaddy&#8217;s CEO&#8217;s elephant hunting hobby. (Seriously, what&#8217;s wrong with this guy?!)</p>
+
+<p>I am ashamed it took me this long to walk way from GoDaddy, so I do this as my public walk of shame.</p>
+
+<h3>Naked domain</h3>
+
+<p>Another thing I finally got around to was to have this website&#8217;s URL drop the &#8216;www&#8217;. From now one is it just the naked domain: &#8216;koolistov.net&#8217;. This website is now hosted via GitHub and no longer via Google App Engine. The combination GitHub and Octopress is certainly a more pleasant one.</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Two Developer Tool Tips]]></title>
+    <link href="http://koolistov.net/blog/2012/01/10/two-developer-tool-tips/"/>
+    <updated>2012-01-10T20:54:00+08:00</updated>
+    <id>http://koolistov.net/blog/2012/01/10/two-developer-tool-tips</id>
+    <content type="html"><![CDATA[<p>Two quick tips for fixing some troubles with developer tools. I ran into both today, though they are likely unrelated. I couldn&#8217;t find much about it online, so here goes.</p>
+
+<!--more-->
+
+
+<h2>FileMerge won&#8217;t open for third party app</h2>
+
+<p>When trying to view differences using GitBox, nothing would happen. This symptom started after I had installed a beta version of Xcode. Once I realized that GitBox opens FileMerge via the command line utlity <code>opendiff</code> the fix was easy: selecting the proper Xcode installation.</p>
+
+<p>This is done as such:</p>
+
+<pre><code>xcode-select -switch /path/to/developer-folder
+</code></pre>
+
+<h2>Symbolicating crash logs failed</h2>
+
+<p>When trying to symbolicate some crash logs I got this error:</p>
+
+<pre><code>Error: Can't run /usr/share/xcode-select/xcrun (no such file).
+</code></pre>
+
+<p>This was somewhat puzzling, because also on my other Mac, where symbolicating crash logs did work, there was no such file.</p>
+
+<p>The command line utility <code>xcrun</code> is by the way what is used by a number of scripts to find out which Developer folder to use.</p>
+
+<p>Luckily the fix turned out to be quite straightforward: reinstall <code>xcrun</code>. Simply reinstalling Xcode does the trick, or you can take the shortcut I took, and go into the Install Xcode bundle to find <code>xcrun.pkg</code> in <code>/Contents/Resources/Packages/</code>.</p>
+
+<p>Once that installer package was installed, <code>xcrun</code> ran happily again.</p>
+
+<p>To symbolicate crash logs you run this command:</p>
+
+<pre><code>/Developer/Platforms/iPhoneOS.platform/Developer/Library/PrivateFrameworks/DTDeviceKit.framework/Versions/A/Resources/symbolicatecrash /path/to/crash-log
+</code></pre>
+
+<p>(Yes, you probably should use some way to shorten that.)</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Breaking the Silence]]></title>

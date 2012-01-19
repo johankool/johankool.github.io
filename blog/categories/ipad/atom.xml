@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: iPad | Koolistov]]></title>
+  <link href="http://koolistov.net/blog/categories/ipad/atom.xml" rel="self"/>
+  <link href="http://koolistov.net/"/>
+  <updated>2012-01-19T11:00:46+08:00</updated>
+  <id>http://koolistov.net/</id>
+  <author>
+    <name><![CDATA[Johan Kool]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[RTLNieuws 365 is a Go!]]></title>
+    <link href="http://koolistov.net/blog/2012/01/19/rtlnieuws-365-is-a-go/"/>
+    <updated>2012-01-19T10:21:00+08:00</updated>
+    <id>http://koolistov.net/blog/2012/01/19/rtlnieuws-365-is-a-go</id>
+    <content type="html"><![CDATA[<p>Excited that the iPad app I, together with the great people from <a href="http://www.egeniq.com/">Egeniq</a> and others, have been working on for the last couple of months is out now! And we call it <a href="http://itunes.apple.com/nl/app/rtlnieuws-365/id486518266?mt=8">RTLNieuws 365</a>.</p>
+
+<p><span class='pullquote-right' data-pullquote='‘the first real digital newspaper of the Netherlands’'>
+RTL Nieuws is a well known Dutch news television bulletin by the Netherlands' largest commercial broadcaster. By introducing this app they are embracing the new possibilities opened by the iPad. They are touting this app as ‘the first real digital newspaper of the Netherlands’.
+</span></p>
+
+<!-- more -->
+
+
+<p><img class="left" src="/images/rtlnieuws365_screenshot.jpg" width="480" height="360" title="'RTLNieuws 365 screenshot'" ></p>
+
+<p>The app has a wide range of news content, from general to entertainment and sports, and has a strong focus on photography. (It actually uses a slightly adjusted version of <a href="https://github.com/Koolistov/Image-Cache">KVImageCache</a> under the hood.)</p>
+
+<p>It looks like the app is off to a good start, and is climbing fast in the App Store charts. Most <a href="https://twitter.com/#!/search/rtlnieuws365">reactions on Twitter</a> are very positive too.</p>
+
+<p>I am very proud to have been part of the team that created this!</p>
+]]></content>
+  </entry>
+  
+</feed>
