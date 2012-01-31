@@ -20,3 +20,5 @@ The app has a wide range of news content, from general to entertainment and spor
 It looks like the app is off to a good start, and is climbing fast in the App Store charts. Most [reactions on Twitter](https://twitter.com/#!/search/rtlnieuws365) are very positive too. 
 
 I am very proud to have been part of the team that created this!
+
+**Update (29/1/2012):** It certainly was a good start! The app reached the number 1 spot for free iPad apps in the Dutch App Store on the same day it was released, and has remained at number 1 since (ten days so far).
