@@ -4,7 +4,7 @@
   <title><![CDATA[Category: iPad | Koolistov]]></title>
   <link href="http://koolistov.net/blog/categories/ipad/atom.xml" rel="self"/>
   <link href="http://koolistov.net/"/>
-  <updated>2012-01-29T22:57:48+08:00</updated>
+  <updated>2012-02-02T00:06:45+08:00</updated>
   <id>http://koolistov.net/</id>
   <author>
     <name><![CDATA[Johan Kool]]></name>
@@ -12,6 +12,24 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Big Promotion]]></title>
+    <link href="http://koolistov.net/blog/2012/02/01/big-promotion/"/>
+    <updated>2012-02-01T23:46:00+08:00</updated>
+    <id>http://koolistov.net/blog/2012/02/01/big-promotion</id>
+    <content type="html"><![CDATA[<p>For those travelers who stop by Amsterdam's Schiphol Airport, there is a big billboard promoting the <a href="http://itunes.apple.com/nl/app/rtlnieuws-365/id486518266?mt=8">RTLNieuws 365 app</a> which I talked about <a href="/blog/2012/01/19/rtlnieuws-365-is-a-go/">in my previous post</a>.</p>
+
+<p>I have to say that it is quite satisfying to see ones work promoted on a 7 by 8 meters large display. Though not quite as satisfying as it topping the free iPad apps list in the Dutch App Store for a full fortnight already!</p>
+
+<!-- more -->
+
+
+<p><img class="left" src="/images/rtlnieuws365_schiphol_1.png" width="512" height="340" title="'RTLNieuws 365 app billboard at Schiphol Airport'" ></p>
+
+<p><img class="left" src="/images/rtlnieuws365_schiphol_2.png" width="512" height="340" title="'RTLNieuws 365 app billboard at Schiphol Airport'" ></p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[RTLNieuws 365 is a Go!]]></title>
