@@ -5,11 +5,11 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>Walk of Shame, Naked - Koolistov</title>
+  <title>Dismissing Modal View Controller Advice - Koolistov</title>
   <meta name="author" content="Johan Kool">
 
   
-  <meta name="description" content="Lately there has been some controversy regarding GoDaddy, and their support for SOPA. December 29th was set as a protest day to show our discontent &hellip;">
+  <meta name="description" content="Earlier today Mugunth Kumar blogged about some advice about dismissing modal view controllers to further explain his tweets from Saturday: &#8220;The &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -18,7 +18,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
-  <link rel="canonical" href="http://koolistov.net/blog/2012/01/10/walk-of-shame-naked">
+  <link rel="canonical" href="http://koolistov.net/blog/2012/02/26/dismissing-modal-view-controller-advice">
   <link href="/favicon.png" rel="icon">
   <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
   <script src="/javascripts/modernizr-2.0.js"></script>
@@ -87,7 +87,7 @@
   
   <header>
     
-      <h1 class="entry-title">Walk of Shame, Naked</h1>
+      <h1 class="entry-title">Dismissing Modal View Controller Advice</h1>
     
     
       <p class="meta">
@@ -103,22 +103,37 @@
   
 
 
-<time datetime="2012-01-10T21:20:00+08:00" pubdate data-updated="true">Jan 10<span>th</span>, 2012</time>
+<time datetime="2012-02-26T21:00:00+08:00" pubdate data-updated="true">Feb 26<span>th</span>, 2012</time>
         
       </p>
     
   </header>
 
 
-<div class="entry-content"><p>Lately there has been some controversy regarding GoDaddy, and their support for SOPA. December 29th was set as a protest day to show our discontent with GoDaddy by moving away our domains on that day.</p>
+<div class="entry-content"><p>Earlier today <a href="http://twitter.com/mugunthkumar/">Mugunth Kumar</a> blogged about <a href="http://blog.mugunthkumar.com/articles/ownership-of-presented-view-controllers-with-and-without-arc/">some advice about dismissing modal view controllers</a> to further explain his tweets from Saturday:</p>
 
-<p>It felt a little too risky to do this while I was traveling, so I only got around to it last week. Anyway, I am glad that I finally got around to moving away my 3 domains, as I had been wanting to do this ever since I heard about GoDaddy&#8217;s CEO&#8217;s elephant hunting hobby. (Seriously, what&#8217;s wrong with this guy?!)</p>
+<blockquote><p>&#8220;The controller that presents a modal controller should dismiss it. Don&#8217;t do [self dismissModalViewControllerAnimated:NO] in the child.&#8221;</p></blockquote>
 
-<p>I am ashamed it took me this long to walk way from GoDaddy, so I do this as my public walk of shame.</p>
 
-<h3>Naked domain</h3>
+<p>and:</p>
 
-<p>Another thing I finally got around to was to have this website&#8217;s URL drop the &#8216;www&#8217;. From now one is it just the naked domain: &#8216;koolistov.net&#8217;. This website is now hosted via GitHub and no longer via Google App Engine. The combination GitHub and Octopress is certainly a more pleasant one.</p>
+<blockquote><p>&#8220;Calling [self dismissModalViewControllerAnimated:NO] on child is like committing seppuku. A child shouldn&#8217;t kill itself.&#8221;</p></blockquote>
+
+
+<p>He does have a good point saying the presenting view controller should also be the one deciding when the modal view controller should disappear. However, it is not too far fetched to say that the modal view controller itself can determine best when its time has come.</p>
+
+<!--more-->
+
+
+<p>I am uncertain wether we can deduct from Apple&#8217;s sample code and/or API which approach they recommend. Even if all sample code lets the presenting view controller decide (I haven&#8217;t checked this), the API clearly allows the modal view controller to dismiss itself.</p>
+
+<p>My biggest objection though arises as he next attempts to explain that under ARC it is not possible to have proper memory management simultaneously with letting the modal view controller dismiss itself. This is just false.</p>
+
+<p>In his non-ARC examples in both cases he retains the modal view controller before presenting it. This may be useful on occasion, but there is no need for it. The modal view controller is namely already retained when the <code>-[presentModalViewController:animated:]</code> method gets called. It is perfectly valid to pass an autoreleased view controller to that method. That would also avoid the ugly memory management that he uses in his second method. (There is BTW also a memory leak when he assigns the modal view controller to its property.) On <code>[-dismissModalViewControllerAnimated:]</code> the modal view controller gets released again.</p>
+
+<p>There is nothing in this that changes under ARC vs. non-ARC. In both cases this works fine, wether you let the presenting or the modal view controller dismiss doesn&#8217;t matter. So this only leaves the &#8216;purity&#8217; of which way is cleaner. That is a debatable issue.</p>
+
+<p>So, I&#8217;d conclude, feel free to do it in the way that makes sense to you. Keep an eye on your memory management, also with ARC, but either way can work.</p>
 </div>
 
 
@@ -141,12 +156,12 @@
   
 
 
-<time datetime="2012-01-10T21:20:00+08:00" pubdate data-updated="true">Jan 10<span>th</span>, 2012</time>
+<time datetime="2012-02-26T21:00:00+08:00" pubdate data-updated="true">Feb 26<span>th</span>, 2012</time>
       
 
 <span class="categories">
   
-    <a class='category' href='/blog/categories/website/'>website</a>
+    <a class='category' href='/blog/categories/cocoa/'>Cocoa</a>, <a class='category' href='/blog/categories/objective-c/'>Objective-C</a>
   
 </span>
 
@@ -162,10 +177,8 @@
     
     <p class="meta">
       
-        <a class="basic-alignment left" href="/blog/2012/01/10/two-developer-tool-tips/" title="Previous Post: Two Developer Tool Tips">&laquo; Two Developer Tool Tips</a>
+        <a class="basic-alignment left" href="/blog/2012/02/04/why-ios-apps-crash/" title="Previous Post: Why iOS Apps Crash">&laquo; Why iOS Apps Crash</a>
       
-      
-        <a class="basic-alignment right" href="/blog/2012/01/19/rtlnieuws-365-is-a-go/" title="next Post: RTLNieuws 365 is a Go!">RTLNieuws 365 is a Go! &raquo;</a>
       
     </p>
   </footer>
@@ -279,8 +292,8 @@
       
         
         // var disqus_developer = 1;
-        var disqus_identifier = 'http://koolistov.net/blog/2012/01/10/walk-of-shame-naked/';
-        var disqus_url = 'http://koolistov.net/blog/2012/01/10/walk-of-shame-naked/';
+        var disqus_identifier = 'http://koolistov.net/blog/2012/02/26/dismissing-modal-view-controller-advice/';
+        var disqus_url = 'http://koolistov.net/blog/2012/02/26/dismissing-modal-view-controller-advice/';
         var disqus_script = 'embed.js';
       
     (function () {

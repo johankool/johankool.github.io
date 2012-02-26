@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
 
-  <title><![CDATA[Category: programming | Koolistov]]></title>
-  <link href="http://koolistov.net/blog/categories/programming/atom.xml" rel="self"/>
+  <title><![CDATA[Category: iPhone | Koolistov]]></title>
+  <link href="http://koolistov.net/blog/categories/iphone/atom.xml" rel="self"/>
   <link href="http://koolistov.net/"/>
   <updated>2012-02-26T21:33:01+08:00</updated>
   <id>http://koolistov.net/</id>
@@ -86,49 +86,6 @@ Because Objective-C is a weakly typed system, it is possible to call methods on 
 <p>The number of crashes reported for an app does not necessarily directly reflect the number of bugs in its source code, nor does it necessarily reflect the overall quality of the source code. The number of crashes of apps on a particular OS version is even less indicative of the quality of the OS version. There are two many other factors at play, but mostly, app crashes are 99 out of 100 times a bug in the app's code as opposed to the OS code.</p>
 
 <p>The App Store is a frustrating obstacle for a quick response to deliver fixes, but one that iOS developers just have to learn to live with.</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Two Developer Tool Tips]]></title>
-    <link href="http://koolistov.net/blog/2012/01/10/two-developer-tool-tips/"/>
-    <updated>2012-01-10T20:54:00+08:00</updated>
-    <id>http://koolistov.net/blog/2012/01/10/two-developer-tool-tips</id>
-    <content type="html"><![CDATA[<p>Two quick tips for fixing some troubles with developer tools. I ran into both today, though they are likely unrelated. I couldn't find much about it online, so here goes.</p>
-
-<!--more-->
-
-
-<h2>FileMerge won't open for third party app</h2>
-
-<p>When trying to view differences using GitBox, nothing would happen. This symptom started after I had installed a beta version of Xcode. Once I realized that GitBox opens FileMerge via the command line utlity <code>opendiff</code> the fix was easy: selecting the proper Xcode installation.</p>
-
-<p>This is done as such:</p>
-
-<pre><code>xcode-select -switch /path/to/developer-folder
-</code></pre>
-
-<h2>Symbolicating crash logs failed</h2>
-
-<p>When trying to symbolicate some crash logs I got this error:</p>
-
-<pre><code>Error: Can't run /usr/share/xcode-select/xcrun (no such file).
-</code></pre>
-
-<p>This was somewhat puzzling, because also on my other Mac, where symbolicating crash logs did work, there was no such file.</p>
-
-<p>The command line utility <code>xcrun</code> is by the way what is used by a number of scripts to find out which Developer folder to use.</p>
-
-<p>Luckily the fix turned out to be quite straightforward: reinstall <code>xcrun</code>. Simply reinstalling Xcode does the trick, or you can take the shortcut I took, and go into the Install Xcode bundle to find <code>xcrun.pkg</code> in <code>/Contents/Resources/Packages/</code>.</p>
-
-<p>Once that installer package was installed, <code>xcrun</code> ran happily again.</p>
-
-<p>To symbolicate crash logs you run this command:</p>
-
-<pre><code>/Developer/Platforms/iPhoneOS.platform/Developer/Library/PrivateFrameworks/DTDeviceKit.framework/Versions/A/Resources/symbolicatecrash /path/to/crash-log
-</code></pre>
-
-<p>(Yes, you probably should use some way to shorten that.)</p>
 ]]></content>
   </entry>
   

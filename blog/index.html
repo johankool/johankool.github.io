@@ -9,7 +9,7 @@
   <meta name="author" content="Johan Kool">
 
   
-  <meta name="description" content="For those travelers who stop by Amsterdam&#8217;s Schiphol Airport, there is a big billboard promoting the RTLNieuws 365 app which I talked about in &hellip;">
+  <meta name="description" content="Earlier today Mugunth Kumar blogged about some advice about dismissing modal view controllers to further explain his tweets from Saturday: &#8220;The &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -84,6 +84,100 @@
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2012/02/26/dismissing-modal-view-controller-advice/">Dismissing Modal View Controller Advice</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2012-02-26T21:00:00+08:00" pubdate data-updated="true">Feb 26<span>th</span>, 2012</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>Earlier today <a href="http://twitter.com/mugunthkumar/">Mugunth Kumar</a> blogged about <a href="http://blog.mugunthkumar.com/articles/ownership-of-presented-view-controllers-with-and-without-arc/">some advice about dismissing modal view controllers</a> to further explain his tweets from Saturday:</p>
+
+<blockquote><p>&#8220;The controller that presents a modal controller should dismiss it. Don&#8217;t do [self dismissModalViewControllerAnimated:NO] in the child.&#8221;</p></blockquote>
+
+
+<p>and:</p>
+
+<blockquote><p>&#8220;Calling [self dismissModalViewControllerAnimated:NO] on child is like committing seppuku. A child shouldn&#8217;t kill itself.&#8221;</p></blockquote>
+
+
+<p>He does have a good point saying the presenting view controller should also be the one deciding when the modal view controller should disappear. However, it is not too far fetched to say that the modal view controller itself can determine best when its time has come.</p>
+
+</div>
+  
+  
+    <footer>
+      <a rel="full-article" href="/blog/2012/02/26/dismissing-modal-view-controller-advice/">Read on &rarr;</a>
+    </footer>
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2012/02/04/why-ios-apps-crash/">Why iOS Apps Crash</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2012-02-04T17:21:00+08:00" pubdate data-updated="true">Feb 4<span>th</span>, 2012</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>Today <a href="http://www.forbes.com/sites/tomiogeron/2012/02/02/does-ios-crash-more-than-android-a-data-dive/">a Forbes article</a> by Tomio Geron did the rounds that compared the number of crashes in various versions of iOS with those happening in various versions of Android based on data from <a href="http://www.crittercism.com/">Crittercism</a>. That crashes are bad is undeniably true. However, not all crashes are the same.</p>
+
+<p>The implied link between OS version and the occurrence of crashes surprised me. I am not quite so sure if such a link in fact exists. I&#8217;d also argue that a higher crash rate says little about the quality of the OS version, or even of the app.</p>
+
+</div>
+  
+  
+    <footer>
+      <a rel="full-article" href="/blog/2012/02/04/why-ios-apps-crash/">Read on &rarr;</a>
+    </footer>
+  
+
+
+    </article>
   
   
     <article>
@@ -437,50 +531,9 @@ RTL Nieuws is a well known Dutch news television bulletin by the Netherlands&#82
 
     </article>
   
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2011/09/17/a-fresh-new-website/">A Fresh New Website</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2011-09-17T13:00:00+08:00" pubdate data-updated="true">Sep 17<span>th</span>, 2011</time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>A fresh new website for Koolistov is finally here. As Koolistov recently incorporated in Singapore as a private limited company, an update to its website was more than overdue. The old started to show its age, and although I applied a somewhat fresher CSS style to it, it still didn&#8217;t feel quite right.</p>
-
-<p>The legendary <a href="http://mattgemmell.com/2011/09/12/blogging-with-octopress/">Matt Gemmell</a> had been feeling the need to freshen up his personal blog recently too, and this is how I got to learn about <a href="http://octopress.org/">Octopress</a>. Octopress is framework based on <a href="https://github.com/mojombo/jekyll">Jekyll</a> created by <a href="http://twitter.com/imathis">Brandon Mathis</a>. It provides you with a great looking, HTML5 based blog. You run it locally on your own computer where it creates a static website which can be hosted anywhere. Despite being static, it actually offers quite a nice number of features by wisely letting established third parties take care of those, such as comments and searching. It&#8217;s quite configurable, and by creating static html you are not getting locked in to one hosting provider. Great stuff!</p>
-
-</div>
-  
-  
-    <footer>
-      <a rel="full-article" href="/blog/2011/09/17/a-fresh-new-website/">Read on &rarr;</a>
-    </footer>
-  
-
-
-    </article>
-  
   <div class="pagination">
+    
+      <a class="prev" href="/blog/page/2/">&larr; Older</a>
     
     <a href="/blog/archives/">Blog Archives</a>
     
@@ -493,6 +546,14 @@ RTL Nieuws is a well known Dutch news television bulletin by the Netherlands&#82
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/2012/02/26/dismissing-modal-view-controller-advice/">Dismissing Modal View Controller Advice</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2012/02/04/why-ios-apps-crash/">Why iOS Apps Crash</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2012/02/01/big-promotion/">Big Promotion</a>
       </li>
     
@@ -502,14 +563,6 @@ RTL Nieuws is a well known Dutch news television bulletin by the Netherlands&#82
     
       <li class="post">
         <a href="/blog/2012/01/10/walk-of-shame-naked/">Walk of Shame, Naked</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2012/01/10/two-developer-tool-tips/">Two Developer Tool Tips</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2011/12/19/breaking-the-silence/">Breaking the Silence</a>
       </li>
     
   </ul>

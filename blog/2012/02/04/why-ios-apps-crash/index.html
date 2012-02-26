@@ -1,0 +1,374 @@
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>Why iOS Apps Crash - Koolistov</title>
+  <meta name="author" content="Johan Kool">
+
+  
+  <meta name="description" content="Today a Forbes article by Tomio Geron did the rounds that compared the number of crashes in various versions of iOS with those happening in various &hellip;">
+  
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://koolistov.net/blog/2012/02/04/why-ios-apps-crash">
+  <link href="/favicon.png" rel="icon">
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <script src="/javascripts/modernizr-2.0.js"></script>
+  <script src="/javascripts/ender.js"></script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  <link href="/atom.xml" rel="alternate" title="Koolistov" type="application/atom+xml">
+  <link href="/apple-touch-icon.png" rel="apple-touch-icon" />
+<!--Fonts from Google's Web font directory at http://google.com/webfonts -->
+<link href='http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic' rel='stylesheet' type='text/css'>
+<link href='http://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic' rel='stylesheet' type='text/css'>
+<link href='http://fonts.googleapis.com/css?family=Cabin+Sketch:700' rel='stylesheet' type='text/css'>
+<link href='http://fonts.googleapis.com/css?family=Coming+Soon' rel='stylesheet' type='text/css'>
+<!-- Google Webmasters tool -->
+<meta name="google-site-verification" content="aQXE9vCD3QjNp7xGnUKCTLwPJBJ1cdr6bPVO2pOro6I" />
+<meta name="google-site-verification" content="aN8hIjVAB2gp1sImatDmi7gZkHBTSUAH9Hd6whpackk" />
+<meta name="google-site-verification" content="Fdgqd5dr_QcBpDw7KhTvPaqhwnVfSyGiQcSB4uYyod8" />
+
+  
+  <script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-285308-4']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+  </script>
+
+
+</head>
+
+<body   >
+  <header role="banner"><hgroup>
+  <h1><a href="/">Koolistov</a></h1>
+  
+    <h2>-- where apps are made</h2>
+  
+</hgroup>
+
+</header>
+  <nav role="navigation"><ul class="subscription" data-subscription="rss">
+  <li><a href="/atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
+  
+</ul>
+<form action="http://google.com/search" method="get">
+  <fieldset role="search">
+    <input type="hidden" name="q" value="site:koolistov.net" />
+    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
+  </fieldset>
+</form>
+<ul role=main-navigation>
+  <li><a href="/products/">Products</a></li>
+  <li><a href="/services/">Services</a></li>
+  <li><a href="/blog/">Blog</a></li>
+  <li><a href="/contact/">Contact</a></li>
+  <!-- <li><a href="/blog/archives/">Archives</a></li> -->
+</ul>
+
+</nav>
+  <div id="main">
+    <div id="content">
+      <div>
+<article class="hentry" role="article">
+  
+  <header>
+    
+      <h1 class="entry-title">Why iOS Apps Crash</h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2012-02-04T17:21:00+08:00" pubdate data-updated="true">Feb 4<span>th</span>, 2012</time>
+        
+      </p>
+    
+  </header>
+
+
+<div class="entry-content"><p>Today <a href="http://www.forbes.com/sites/tomiogeron/2012/02/02/does-ios-crash-more-than-android-a-data-dive/">a Forbes article</a> by Tomio Geron did the rounds that compared the number of crashes in various versions of iOS with those happening in various versions of Android based on data from <a href="http://www.crittercism.com/">Crittercism</a>. That crashes are bad is undeniably true. However, not all crashes are the same.</p>
+
+<p>The implied link between OS version and the occurrence of crashes surprised me. I am not quite so sure if such a link in fact exists. I&#8217;d also argue that a higher crash rate says little about the quality of the OS version, or even of the app.</p>
+
+<!--more-->
+
+
+<p>But we first lets go over the type of crashes that can occur. I am an iOS developer with very little to no knowledge about Android, so the discussion will focus on iOS crashes.</p>
+
+<h3>Memory Kill</h3>
+
+<p>On iOS the system is quite unforgiving to apps using too much memory or CPU resources. The app does receive warnings if memory usage gets too high, but it the app fails to properly respond timely by freeing up memory is will unceremoniously get the boot. As a developer I don&#8217;t call this a crash, but poor memory management. It is nevertheless a serious issue and developers should make sure to stress test their apps.</p>
+
+<h3>Crashes</h3>
+
+<p>If the app does not get the boot but actually does crash, it is often caused by one of two reasons: bad memory management or calling a method unknown to the callee. There are other reasons for crashes to happen, but I expect the majority of crashes to be either one of these two.</p>
+
+<h4>Memory Management</h4>
+
+<p>For an experienced Cocoa developer the memory management approach of Cocoa has little secrets anymore, but it is unsurprising that the large number of developers new to Cocoa and Objective-C (of which there are many, judging by the rise of Objective-C in <a href="http://www.tiobe.com/index.php/content/paperinfo/tpci/index.html">the latest Tiobe index</a>) have difficulties with it. One mistake is enough to cause a crash. Unfamiliarity with the coding conventions on memory management easily gets newcomers to make such mistakes.</p>
+
+<p>With iOS 5 Apple introduced Automatic Reference Counting (ARC) which helps them, as well as the experienced developers, greatly. However, as this is a very new technology not all developers have picked it up yet.</p>
+
+<p>The old way is not directly bad however, as it does give much finer control over memory usage than is possible with garbage collection. The latter being what is used in many modern languages (including in Java on Android) to manage memory automatically. This does however come with overhead which is very undesirable on a mobile platform. So here Apple chose to require more skills from the developer in order to give the user a better experience.</p>
+
+<p>The beauty of ARC is that it gets the benefit of garbage collection, but does not come with the extra overhead. ARC automatically inserts the proper memory management at compile time. With ARC the manual memory management skills of a developer are no longer quite so essential. So as developers pick up on ARC, memory related crashes should go down.</p>
+
+<h4>Unknown Selector</h4>
+
+<p><span class='pullquote-right' data-pullquote='with great power comes great responsibility'>
+Because Objective-C is a weakly typed system, it is possible to call methods on an instance that the instance does not expect. This can be avoided with strongly typed system, but at the cost of foregoing the sophisticated solutions that are possible with a weakly typed system. Basically, with great power comes great responsibility. As a Cocoa developer you need to be willing to take this responsibility.
+</span></p>
+
+<h4>Reproducibility</h4>
+
+<p>Another way to look at crashes is to see how easily they can be reproduced. Some can be easily reproduced: trying to use feature will crash the app. Others can only be reproduced in specific circumstances: trying to use a feature using a particular setting will crash the app. And then there are some crashes that only sporadically cause trouble: using a feature on Mondays at midnight causes trouble.</p>
+
+<p>So where one bug can easily cause a plentitude of crashes, a bunch of others may only cause a handful of crashes. This is the main reason why concluding that the code in an app, or an OS version, is of poor quality based on the number of crashes is wrong. At most you can argue that the crash should have been caught during testing, so that the crashes reflect poorly on the overall quality of the app.</p>
+
+<p>Back to the article, Tomio Geron, its author, further says:</p>
+
+<blockquote><p>&#8220;Anecdotally, I know that certain apps I use on my iPhone crash and they crash often.&#8221;</p></blockquote>
+
+
+<p>That an app keeps crashing if you keep on trying to use it in the same way can hardly be called surprising. Surely the developers of those apps have some work to do here, but it&#8217;s hard to make sensible conclusions from this.</p>
+
+<p>As for the number of crashes occurring in a particular OS version it basically says nothing about the quality of the OS version. The vast majority of crashes are caused by bugs in the app code, not by bugs in the system. It is more likely that crashes in a new OS version such as iOS 5 are caused by apps that have not yet been updated by their developers. If an app needed changes it was however often due to false assumptions being made in the code while it was developed for iOS 4. If apps are designed according to Apple&#8217;s documentation for Cocoa it is unlikely to encounter issues on a new iOS version.</p>
+
+<p>Developers have little excuse anyway, as test versions of new iOS versions are made available to them for testing.</p>
+
+<h3>Hardware</h3>
+
+<p>The Forbes article quotes Crittercism CEO Andrew Levy as saying that crashes can be caused by hardware issues (GPS or camera), or the availability of a network connection. If that is the case, it is mostly, if not completely, due to poor developer skills. It is the duty of the developer to anticipate all expected situations. Expected situations include the unavailability of the users location, a camera or a network connection. It also shows that the app has not been tested rigorously enough. There certainly is API in iOS to deal with all of these situations and developers don&#8217;t really have an excuse not to do so.</p>
+
+<h3>Third Party Code</h3>
+
+<p>The point raised in the article about third-party services is certainly valid. It is vitally important to realize the risk of using a third-party library in your app. It only takes one shoddy library to turn your app into a crash prone piece of crap. Evaluation and testing of third-party code is for this reason very important. If you are developing for a client, you need to be able to communicate to them that willy-nilly adding of outside code can be a risky affair. Anyway, the desire to include multiple analytics packages into one app has always puzzled me. But then, my ideal app doesn&#8217;t include any.</p>
+
+<p>In this way the data collected by Crittercism is also skewed. It is based on crashes reported by apps that include its library. So these are apps by developers who are likelier to not be squeamish about third-party code.</p>
+
+<h3>App Store</h3>
+
+<p>The App Store is indeed a hindrance in providing quick bug fixes to users. There is nothing so frustrating as having a fix ready and then having to wait a couple of days before it can get to your users. On the other side, there is real value in having a vetted store to keep the crud out. It is difficult to say what the right balance is here. It would be great if Apple would let updates go through right away for developers with a proven track record. But that would open another can of worms, because what constitutes a proven track record? It would also put newcomers at a severe competitive disadvantage.</p>
+
+<h3>Conclusion</h3>
+
+<p>The number of crashes reported for an app does not necessarily directly reflect the number of bugs in its source code, nor does it necessarily reflect the overall quality of the source code. The number of crashes of apps on a particular OS version is even less indicative of the quality of the OS version. There are two many other factors at play, but mostly, app crashes are 99 out of 100 times a bug in the app&#8217;s code as opposed to the OS code.</p>
+
+<p>The App Store is a frustrating obstacle for a quick response to deliver fixes, but one that iOS developers just have to learn to live with.</p>
+</div>
+
+
+  <footer>
+    <p class="meta">
+      
+  
+
+<span class="byline author vcard">Posted by <span class="fn">Johan Kool</span></span>
+
+      
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2012-02-04T17:21:00+08:00" pubdate data-updated="true">Feb 4<span>th</span>, 2012</time>
+      
+
+<span class="categories">
+  
+    <a class='category' href='/blog/categories/ios/'>iOS</a>, <a class='category' href='/blog/categories/ipad/'>iPad</a>, <a class='category' href='/blog/categories/iphone/'>iPhone</a>, <a class='category' href='/blog/categories/programming/'>programming</a>
+  
+</span>
+
+
+    </p>
+    
+      <div class="sharing">
+  
+  
+  
+</div>
+
+    
+    <p class="meta">
+      
+        <a class="basic-alignment left" href="/blog/2012/02/01/big-promotion/" title="Previous Post: Big Promotion">&laquo; Big Promotion</a>
+      
+      
+        <a class="basic-alignment right" href="/blog/2012/02/26/dismissing-modal-view-controller-advice/" title="next Post: Dismissing Modal View Controller Advice">Dismissing Modal View Controller Advice &raquo;</a>
+      
+    </p>
+  </footer>
+</article>
+
+  <section>
+    <h1>Comments</h1>
+    <div id="disqus_thread" aria-live="polite"><noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+  </section>
+
+</div>
+
+<aside class="sidebar">
+  
+    <section>
+  <h1>Recent Posts</h1>
+  <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/2012/02/26/dismissing-modal-view-controller-advice/">Dismissing Modal View Controller Advice</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2012/02/04/why-ios-apps-crash/">Why iOS Apps Crash</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2012/02/01/big-promotion/">Big Promotion</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2012/01/19/rtlnieuws-365-is-a-go/">RTLNieuws 365 is a Go!</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2012/01/10/walk-of-shame-naked/">Walk of Shame, Naked</a>
+      </li>
+    
+  </ul>
+</section>
+
+<section>
+  <h1>Github Repos</h1>
+  <ul id="gh_repos">
+    <li class="loading">Status updating...</li>
+  </ul>
+  
+  <a href="https://github.com/Koolistov">@Koolistov</a> on Github
+  
+  <script type="text/javascript">
+    $.domReady(function(){
+        if (!window.jXHR){
+            var jxhr = document.createElement('script');
+            jxhr.type = 'text/javascript';
+            jxhr.src = '/javascripts/libs/jXHR.js';
+            var s = document.getElementsByTagName('script')[0];
+            s.parentNode.insertBefore(jxhr, s);
+        }
+
+        github.showRepos({
+            user: 'Koolistov',
+            count: 5,
+            skip_forks: true,
+            target: '#gh_repos'
+        });
+    });
+  </script>
+  <script src="/javascripts/github.js" type="text/javascript"> </script>
+</section>
+
+<section>
+  <h1>Stack Overflow</h1>
+  <br />
+  <a href="http://stackoverflow.com/users/60488/johan-kool"><img src="http://stackoverflow.com/users/flair/60488.png?theme=clean" width="208" height="58" alt="profile for Johan Kool at Stack Overflow, Q&amp;A for professional and enthusiast programmers" title="profile for Johan Kool at Stack Overflow, Q&amp;A for professional and enthusiast programmers"></a>
+</section>
+
+<section>
+  <h1>Latest Tweets</h1>
+  <ul id="tweets">
+    <li class="loading">Status updating...</li>
+  </ul>
+  <script type="text/javascript">
+    $.domReady(function(){
+      getTwitterFeed("johankool", 5, false);
+    });
+  </script>
+  <script src="/javascripts/twitter.js" type="text/javascript"> </script>
+  
+    <a href="http://twitter.com/johankool" class="twitter-follow-button" data-width="208px" data-show-count="false">Follow @johankool</a>
+  
+</section>
+
+
+  
+</aside>
+
+
+    </div>
+  </div>
+  <footer role="contentinfo"><p>
+  Copyright &copy; 2012 - Koolistov Pte. Ltd. - <a href="/generalconditions/">Terms &amp; Conditions</a> -
+  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
+</p>
+
+</footer>
+  
+
+<script type="text/javascript">
+      var disqus_shortname = 'koolistov';
+      
+        
+        // var disqus_developer = 1;
+        var disqus_identifier = 'http://koolistov.net/blog/2012/02/04/why-ios-apps-crash/';
+        var disqus_url = 'http://koolistov.net/blog/2012/02/04/why-ios-apps-crash/';
+        var disqus_script = 'embed.js';
+      
+    (function () {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = 'http://' + disqus_shortname + '.disqus.com/' + disqus_script;
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    }());
+</script>
+
+
+
+
+
+
+
+  <script type="text/javascript">
+    (function(){
+      var twitterWidgets = document.createElement('script');
+      twitterWidgets.type = 'text/javascript';
+      twitterWidgets.async = true;
+      twitterWidgets.src = 'http://platform.twitter.com/widgets.js';
+      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
+    })();
+  </script>
+
+
+
+
+
+</body>
+</html>
