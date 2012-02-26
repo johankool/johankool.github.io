@@ -9,7 +9,7 @@
   <meta name="author" content="Johan Kool">
 
   
-  <meta name="description" content="This snippet of golden Xcode knowledge was tweeted by colleague Thijs Damen last Friday: &#8220;Selecting multiple files under &#8216;Build Phases&# &hellip;">
+  <meta name="description" content="And the last one for today, from bit longer ago, is a category on NSData to get its content as a hex representation. Optionally with spaces and/or &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -84,6 +84,91 @@
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2012/02/26/hex-representation-of-nsdata/">Hex Representation of NSData</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2012-02-26T23:55:00+08:00" pubdate data-updated="true">Feb 26<span>th</span>, 2012</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>And the last one for today, from bit longer ago, is a category on <code>NSData</code> to get its content as a hex representation. Optionally with spaces and/or capitals. This one is not mine, I only cleaned it up a little, but was <a href="http://stackoverflow.com/a/7520723/60488/">an answer by AliSoftware on Stackoverflow</a>.</p>
+
+</div>
+  
+  
+    <footer>
+      <a rel="full-article" href="/blog/2012/02/26/hex-representation-of-nsdata/">Read on &rarr;</a>
+    </footer>
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2012/02/26/nil-null-empty-macros/">Nil, Null, Empty Macros</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2012-02-26T23:48:00+08:00" pubdate data-updated="true">Feb 26<span>th</span>, 2012</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>Just a quick note to point out a gist I&#8217;ve made available a couple of days ago with three handy macros to deal with <code>nil</code>, <code>NSNull</code>, and empty strings (<code>@""</code>).</p>
+
+<p>The first two are very handy when dealing with JSON dictionaries. The last one if you need to replace strings and want to avoid having <code>(null)</code> all over the place.</p>
+
+<div><script src='https://gist.github.com/1874995.js?file='></script>
+<noscript><pre><code>#define NILIFNULL(foo) ((foo == [NSNull null]) ? nil : foo)
+#define NULLIFNIL(foo) ((foo == nil) ? [NSNull null] : (NSNull *)foo)
+#define EMPTYIFNIL(foo) ((foo == nil) ? @&quot;&quot; : (NSString *)foo)</code></pre></noscript></div>
+
+</div>
+  
+  
+
+
+    </article>
   
   
     <article>
@@ -441,99 +526,6 @@ RTL Nieuws is a well known Dutch news television bulletin by the Netherlands&#82
 
     </article>
   
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2011/10/06/steve-jobs/">Steve Jobs</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2011-10-06T23:59:00+08:00" pubdate data-updated="true">Oct 6<span>th</span>, 2011</time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p><img class="right" src="/images/stevejobs.png" width="353" height="322" title="Steve Jobs" ></p>
-
-<p>It is a sad sad day today. We all knew it was coming. We all knew it was coming sooner than we were praying for. Steve Jobs&#8217; passing away is still a painful stab in the heart. He was crazy enough to think he could change the world, and damn it, did he ever!</p>
-
-<p>It must have been somewhere around 1991 that I for the first time got to play with a Macintosh. What got me right away was the passion that so obviously had been put into building it, into making it a joy to use, easy to use. It was not about typing &#8216;magic&#8217; commands at a blinking cursor, it was about getting things done, and having a good time doing so too!</p>
-
-<p>Today I am typing this on an iMac with possibilities I could not dream of in 1991. Yet it dwarfs the potential of the iPhone and iPad on my desk. Today is the future. And he is the one who made it all possible!</p>
-
-<p>It is a dream come true for me that today I earn my living developing for Mac and iOS. And it is all made possible by the drive of Steve for the very best. He did not do it all by himself, not even close, but he did manage to motivate and push many, many talented people to reach beyond what they could imagine achievable.</p>
-
-<p>I have not met him or worked with him. I have only seen his work from the sideline. But yet, it feels like he was my motivator too. To tell me good is not good enough, to always aim higher. I like to think some of his passion rubbed off on me.</p>
-
-<p>It is a sad sad day today. Coping with the mourning is though. Humor is one of the few mechanism we have to deal with it, so I&#8217;ll end this with a lighter note:</p>
-
-<blockquote><p>Blessed are those who die after Steve Jobs for them awaits the perfect heaven. He is rethinking the whole concept with God at this moment.</p></blockquote>
-
-<p>Thank you Steve! You are missed.</p>
-</div>
-  
-  
-
-
-    </article>
-  
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2011/10/02/right-path-to-url-parameters/">Right Path to URL Parameters</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2011-10-02T00:40:00+08:00" pubdate data-updated="true">Oct 2<span>nd</span>, 2011</time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>It is very common to have to construct URLs in iOS apps. Unfortunately there is no such things as <code>NSMutableURL</code>, so we need to come up with our own solution. Most developers seem to take a very pragmatic approach to this. Basically, you take a base URL, append a path and/or parameters to it, and go about your business. Almost, if not all, code I have seen do this make assumptions about the base URL: for example, no query or fragment present in the URL. Sometimes even relying on the other parts of the app always providing text that is safe to use in an URL. It can be quite a safe assumption that this is safe within your app, but I wanted a solution that is safe to use no matter what the base URL looked like, or what text was provided for the parameters.</p>
-
-</div>
-  
-  
-    <footer>
-      <a rel="full-article" href="/blog/2011/10/02/right-path-to-url-parameters/">Read on &rarr;</a>
-    </footer>
-  
-
-
-    </article>
-  
   <div class="pagination">
     
       <a class="prev" href="/blog/page/2/">&larr; Older</a>
@@ -549,6 +541,14 @@ RTL Nieuws is a well known Dutch news television bulletin by the Netherlands&#82
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/blog/2012/02/26/hex-representation-of-nsdata/">Hex Representation of NSData</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2012/02/26/nil-null-empty-macros/">Nil, Null, Empty Macros</a>
+      </li>
+    
+      <li class="post">
         <a href="/blog/2012/02/26/setting-compiler-flags-on-multiple-files/">Setting Compiler Flags on Multiple Files</a>
       </li>
     
@@ -558,14 +558,6 @@ RTL Nieuws is a well known Dutch news television bulletin by the Netherlands&#82
     
       <li class="post">
         <a href="/blog/2012/02/04/why-ios-apps-crash/">Why iOS Apps Crash</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2012/02/01/big-promotion/">Big Promotion</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2012/01/19/rtlnieuws-365-is-a-go/">RTLNieuws 365 is a Go!</a>
       </li>
     
   </ul>

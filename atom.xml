@@ -4,7 +4,7 @@
   <title><![CDATA[Koolistov]]></title>
   <link href="http://koolistov.net/atom.xml" rel="self"/>
   <link href="http://koolistov.net/"/>
-  <updated>2012-02-26T23:23:49+08:00</updated>
+  <updated>2012-02-27T00:04:21+08:00</updated>
   <id>http://koolistov.net/</id>
   <author>
     <name><![CDATA[Johan Kool]]></name>
@@ -12,6 +12,55 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Hex Representation of NSData]]></title>
+    <link href="http://koolistov.net/blog/2012/02/26/hex-representation-of-nsdata/"/>
+    <updated>2012-02-26T23:55:00+08:00</updated>
+    <id>http://koolistov.net/blog/2012/02/26/hex-representation-of-nsdata</id>
+    <content type="html"><![CDATA[<p>And the last one for today, from bit longer ago, is a category on <code>NSData</code> to get its content as a hex representation. Optionally with spaces and/or capitals. This one is not mine, I only cleaned it up a little, but was <a href="http://stackoverflow.com/a/7520723/60488/">an answer by AliSoftware on Stackoverflow</a>.</p>
+
+<!-- more -->
+
+
+
+
+<div><script src='https://gist.github.com/1443455.js?file='></script>
+<noscript><pre><code>//
+//  NSData+Hex.h
+//
+//  Based on code by AliSoftware
+//  http://stackoverflow.com/a/7520723/60488
+//
+
+#import &lt;Foundation/Foundation.h&gt;
+
+@interface NSData (Hex)
+
+- (NSString *)hexRepresentationWithSpaces:(BOOL)spaces capitals:(BOOL)capitals;
+
+@end
+</code></pre></noscript></div>
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Nil, Null, Empty Macros]]></title>
+    <link href="http://koolistov.net/blog/2012/02/26/nil-null-empty-macros/"/>
+    <updated>2012-02-26T23:48:00+08:00</updated>
+    <id>http://koolistov.net/blog/2012/02/26/nil-null-empty-macros</id>
+    <content type="html"><![CDATA[<p>Just a quick note to point out a gist I&#8217;ve made available a couple of days ago with three handy macros to deal with <code>nil</code>, <code>NSNull</code>, and empty strings (<code>@""</code>).</p>
+
+<p>The first two are very handy when dealing with JSON dictionaries. The last one if you need to replace strings and want to avoid having <code>(null)</code> all over the place.</p>
+
+<div><script src='https://gist.github.com/1874995.js?file='></script>
+<noscript><pre><code>#define NILIFNULL(foo) ((foo == [NSNull null]) ? nil : foo)
+#define NULLIFNIL(foo) ((foo == nil) ? [NSNull null] : (NSNull *)foo)
+#define EMPTYIFNIL(foo) ((foo == nil) ? @&quot;&quot; : (NSString *)foo)</code></pre></noscript></div>
+
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Setting Compiler Flags on Multiple Files]]></title>

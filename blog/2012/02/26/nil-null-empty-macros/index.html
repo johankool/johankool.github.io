@@ -5,11 +5,11 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>Category: Cocoa - Koolistov</title>
+  <title>Nil, Null, Empty Macros - Koolistov</title>
   <meta name="author" content="Johan Kool">
 
   
-  <meta name="description" content="Category: Cocoa">
+  <meta name="description" content="Just a quick note to point out a gist I&#8217;ve made available a couple of days ago with three handy macros to deal with nil, NSNull, and empty &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -18,7 +18,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
-  <link rel="canonical" href="http://koolistov.netblog/categories/cocoa">
+  <link rel="canonical" href="http://koolistov.net/blog/2012/02/26/nil-null-empty-macros">
   <link href="/favicon.png" rel="icon">
   <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
   <script src="/javascripts/modernizr-2.0.js"></script>
@@ -83,95 +83,99 @@
   <div id="main">
     <div id="content">
       <div>
-<article role="article">
+<article class="hentry" role="article">
   
   <header>
-    <h1 class="entry-title">Category: Cocoa</h1>
+    
+      <h1 class="entry-title">Nil, Null, Empty Macros</h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2012-02-26T23:48:00+08:00" pubdate data-updated="true">Feb 26<span>th</span>, 2012</time>
+        
+      </p>
     
   </header>
-  
-  <div id="blog-archives" class="category">
 
 
+<div class="entry-content"><p>Just a quick note to point out a gist I&#8217;ve made available a couple of days ago with three handy macros to deal with <code>nil</code>, <code>NSNull</code>, and empty strings (<code>@""</code>).</p>
 
-  
-  <h2>2012</h2>
+<p>The first two are very handy when dealing with JSON dictionaries. The last one if you need to replace strings and want to avoid having <code>(null)</code> all over the place.</p>
 
-<article>
-  
-<h1><a href="/blog/2012/02/26/hex-representation-of-nsdata/">Hex Representation of NSData</a></h1>
-<time datetime="2012-02-26T23:55:00+08:00" pubdate><span class='month'>Feb</span> <span class='day'>26</span> <span class='year'>2012</span></time>
-
-<footer>
-  <span class="categories">posted in <a class='category' href='/blog/categories/cocoa/'>Cocoa</a>, <a class='category' href='/blog/categories/nsdata/'>NSData</a>, <a class='category' href='/blog/categories/nsstring/'>NSString</a>, <a class='category' href='/blog/categories/objective-c/'>Objective-C</a></span>
-</footer>
-
-
-</article>
-
-
-
-<article>
-  
-<h1><a href="/blog/2012/02/26/nil-null-empty-macros/">Nil, Null, Empty Macros</a></h1>
-<time datetime="2012-02-26T23:48:00+08:00" pubdate><span class='month'>Feb</span> <span class='day'>26</span> <span class='year'>2012</span></time>
-
-<footer>
-  <span class="categories">posted in <a class='category' href='/blog/categories/cocoa/'>Cocoa</a>, <a class='category' href='/blog/categories/nsnull/'>NSNull</a>, <a class='category' href='/blog/categories/nsstring/'>NSString</a>, <a class='category' href='/blog/categories/objective-c/'>Objective-C</a></span>
-</footer>
-
-
-</article>
-
-
-
-<article>
-  
-<h1><a href="/blog/2012/02/26/setting-compiler-flags-on-multiple-files/">Setting Compiler Flags on Multiple Files</a></h1>
-<time datetime="2012-02-26T21:37:00+08:00" pubdate><span class='month'>Feb</span> <span class='day'>26</span> <span class='year'>2012</span></time>
-
-<footer>
-  <span class="categories">posted in <a class='category' href='/blog/categories/cocoa/'>Cocoa</a>, <a class='category' href='/blog/categories/objective-c/'>Objective-C</a>, <a class='category' href='/blog/categories/xcode/'>Xcode</a></span>
-</footer>
-
-
-</article>
-
-
-
-<article>
-  
-<h1><a href="/blog/2012/02/26/dismissing-modal-view-controller-advice/">Dismissing Modal View Controller Advice</a></h1>
-<time datetime="2012-02-26T21:00:00+08:00" pubdate><span class='month'>Feb</span> <span class='day'>26</span> <span class='year'>2012</span></time>
-
-<footer>
-  <span class="categories">posted in <a class='category' href='/blog/categories/cocoa/'>Cocoa</a>, <a class='category' href='/blog/categories/objective-c/'>Objective-C</a></span>
-</footer>
-
-
-</article>
-
-
-
-  
-  <h2>2011</h2>
-
-<article>
-  
-<h1><a href="/blog/2011/10/02/right-path-to-url-parameters/">Right Path to URL Parameters</a></h1>
-<time datetime="2011-10-02T00:40:00+08:00" pubdate><span class='month'>Oct</span> <span class='day'>02</span> <span class='year'>2011</span></time>
-
-<footer>
-  <span class="categories">posted in <a class='category' href='/blog/categories/cocoa/'>Cocoa</a>, <a class='category' href='/blog/categories/nsurl/'>NSURL</a>, <a class='category' href='/blog/categories/objective-c/'>Objective-C</a></span>
-</footer>
-
-
-</article>
+<div><script src='https://gist.github.com/1874995.js?file='></script>
+<noscript><pre><code>#define NILIFNULL(foo) ((foo == [NSNull null]) ? nil : foo)
+#define NULLIFNIL(foo) ((foo == nil) ? [NSNull null] : (NSNull *)foo)
+#define EMPTYIFNIL(foo) ((foo == nil) ? @&quot;&quot; : (NSString *)foo)</code></pre></noscript></div>
 
 </div>
 
+
+  <footer>
+    <p class="meta">
+      
   
+
+<span class="byline author vcard">Posted by <span class="fn">Johan Kool</span></span>
+
+      
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2012-02-26T23:48:00+08:00" pubdate data-updated="true">Feb 26<span>th</span>, 2012</time>
+      
+
+<span class="categories">
+  
+    <a class='category' href='/blog/categories/cocoa/'>Cocoa</a>, <a class='category' href='/blog/categories/nsnull/'>NSNull</a>, <a class='category' href='/blog/categories/nsstring/'>NSString</a>, <a class='category' href='/blog/categories/objective-c/'>Objective-C</a>
+  
+</span>
+
+
+    </p>
+    
+      <div class="sharing">
+  
+  
+  
+</div>
+
+    
+    <p class="meta">
+      
+        <a class="basic-alignment left" href="/blog/2012/02/26/setting-compiler-flags-on-multiple-files/" title="Previous Post: Setting Compiler Flags on Multiple Files">&laquo; Setting Compiler Flags on Multiple Files</a>
+      
+      
+        <a class="basic-alignment right" href="/blog/2012/02/26/hex-representation-of-nsdata/" title="next Post: Hex Representation of NSData">Hex Representation of NSData &raquo;</a>
+      
+    </p>
+  </footer>
 </article>
+
+  <section>
+    <h1>Comments</h1>
+    <div id="disqus_thread" aria-live="polite"><noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+  </section>
 
 </div>
 
@@ -274,7 +278,10 @@
       var disqus_shortname = 'koolistov';
       
         
-        var disqus_script = 'count.js';
+        // var disqus_developer = 1;
+        var disqus_identifier = 'http://koolistov.net/blog/2012/02/26/nil-null-empty-macros/';
+        var disqus_url = 'http://koolistov.net/blog/2012/02/26/nil-null-empty-macros/';
+        var disqus_script = 'embed.js';
       
     (function () {
       var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
