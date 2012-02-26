@@ -129,11 +129,86 @@
 
 <p>My biggest objection though arises as he next attempts to explain that under ARC it is not possible to have proper memory management simultaneously with letting the modal view controller dismiss itself. This is just false.</p>
 
-<p>In his non-ARC examples in both cases he retains the modal view controller before presenting it. This may be useful on occasion, but there is no need for it. The modal view controller is namely already retained when the <code>-[presentModalViewController:animated:]</code> method gets called. It is perfectly valid to pass an autoreleased view controller to that method. That would also avoid the ugly memory management that he uses in his second method. (There is BTW also a memory leak when he assigns the modal view controller to its property.) On <code>[-dismissModalViewControllerAnimated:]</code> the modal view controller gets released again.</p>
+<p>In his non-ARC examples in both cases he retains the modal view controller before presenting it. This may be useful on occasion, but there is no need for it. The modal view controller is namely already retained when the <code>-[presentModalViewController:animated:]</code> method gets called. It is perfectly valid to pass an autoreleased view controller to that method. That would also avoid the ugly memory management that he uses in his second method. (There is BTW also a memory leak when he assigns the modal view controller to its property.) On <code>-[dismissModalViewControllerAnimated:]</code> the modal view controller gets released again.</p>
 
 <p>There is nothing in this that changes under ARC vs. non-ARC. In both cases this works fine, wether you let the presenting or the modal view controller dismiss doesn&#8217;t matter. So this only leaves the &#8216;purity&#8217; of which way is cleaner. That is a debatable issue.</p>
 
 <p>So, I&#8217;d conclude, feel free to do it in the way that makes sense to you. Keep an eye on your memory management, also with ARC, but either way can work.</p>
+
+<p><strong>Update:</strong> <a href="http://twitter.com/mugunthkumar/">Mugunth Kumar</a>:</p>
+
+<blockquote><p>&#8220;@johankool Good, but you still haven&#8217;t shown a ARC example.&#8221;</p></blockquote>
+
+
+<p>Okay, fair enough. The below is a sample of how I would do this with ARC. As I said, there doesn&#8217;t really change anything in ARC vs. non-ARC.</p>
+
+<figure class='code'><figcaption><span>Presenting View Controller  </span></figcaption>
+ <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+</pre></td><td class='code'><pre><code class='objc'><span class='line'><span class="o">-</span> <span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="n">showModalViewController</span> <span class="p">{</span>
+</span><span class='line'>    <span class="n">SomeViewController</span> <span class="o">*</span><span class="n">someViewController</span> <span class="o">=</span> <span class="p">[[</span><span class="n">SomeViewController</span><span class="p">]</span> <span class="n">alloc</span><span class="p">]</span> <span class="nl">initWithNibName:</span><span class="s">@&quot;SomeViewController&quot;</span> <span class="nl">bundle:</span><span class="nb">nil</span><span class="p">];</span>
+</span><span class='line'><span class="cp">    // Note: under non-ARC I would call autorelease on someViewController</span>
+</span><span class='line'><span class="cp">#if DELEGATE</span>
+</span><span class='line'>    <span class="n">someViewController</span><span class="p">.</span><span class="n">delegate</span> <span class="o">=</span> <span class="n">self</span><span class="p">;</span>
+</span><span class='line'><span class="cp">#elif COMPLETION_BLOCK</span>
+</span><span class='line'>    <span class="n">someViewController</span><span class="p">.</span><span class="n">completionBlock</span> <span class="o">=</span> <span class="o">^</span><span class="p">(</span><span class="n">NSUInteger</span> <span class="n">result</span><span class="p">)</span> <span class="p">{</span>
+</span><span class='line'>        <span class="n">self</span><span class="p">.</span><span class="n">result</span> <span class="o">=</span> <span class="n">result</span><span class="p">;</span>
+</span><span class='line'>        <span class="c1">// Note: there isn&#39;t really any need to reference someViewController in this block</span>
+</span><span class='line'>    <span class="p">};</span>
+</span><span class='line'><span class="cp">#endif</span>
+</span><span class='line'>    <span class="p">[</span><span class="n">self</span> <span class="nl">presentModalViewController:</span><span class="n">someViewController</span> <span class="nl">animated:</span><span class="n">YES</span><span class="p">];</span>
+</span><span class='line'><span class="p">}</span>
+</span><span class='line'>
+</span><span class='line'><span class="cp">#if DELEGATE</span>
+</span><span class='line'><span class="o">-</span> <span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="nl">someViewController:</span><span class="p">(</span><span class="n">SomeViewController</span> <span class="o">*</span><span class="p">)</span><span class="n">controller</span> <span class="nl">pickedResult:</span><span class="p">(</span><span class="n">NSUInteger</span><span class="p">)</span><span class="n">result</span> <span class="p">{</span>
+</span><span class='line'>    <span class="n">self</span><span class="p">.</span><span class="n">result</span> <span class="o">=</span> <span class="n">result</span><span class="p">;</span>
+</span><span class='line'><span class="p">}</span>
+</span><span class='line'><span class="cp">#endif</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+
+
+<figure class='code'><figcaption><span>Modal View Controller  </span></figcaption>
+ <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+</pre></td><td class='code'><pre><code class='objc'><span class='line'><span class="o">-</span> <span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="nl">pickedResult:</span><span class="p">(</span><span class="n">NSUInteger</span><span class="p">)</span><span class="n">result</span> <span class="p">{</span>
+</span><span class='line'><span class="cp">#if DELEGATE</span>
+</span><span class='line'>    <span class="p">[</span><span class="n">self</span><span class="p">.</span><span class="n">delegate</span> <span class="nl">someViewController:</span><span class="n">self</span> <span class="nl">pickedResult:</span><span class="n">result</span><span class="p">];</span>
+</span><span class='line'><span class="cp">#elif COMPLETION_BLOCK</span>
+</span><span class='line'>    <span class="k">if</span> <span class="p">(</span><span class="n">self</span><span class="p">.</span><span class="n">completionBlock</span><span class="p">)</span> <span class="p">{</span>
+</span><span class='line'>        <span class="n">self</span><span class="p">.</span><span class="n">completionBlock</span><span class="p">(</span><span class="n">result</span><span class="p">);</span>
+</span><span class='line'>    <span class="p">}</span>
+</span><span class='line'><span class="cp">#endif</span>
+</span><span class='line'>    <span class="p">[</span><span class="n">self</span> <span class="nl">dismissModalViewControllerAnimated:</span><span class="n">YES</span><span class="p">];</span>
+</span><span class='line'><span class="p">}</span>
+</span></code></pre></td></tr></table></div></figure>
+
 </div>
 
 
