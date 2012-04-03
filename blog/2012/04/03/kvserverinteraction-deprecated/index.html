@@ -1,0 +1,355 @@
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>KVServerInteraction deprecated - Koolistov</title>
+  <meta name="author" content="Johan Kool">
+
+  
+  <meta name="description" content="As of today I am deprecating KVServerInteraction. It has served its purpose as a generic network solution for a number of apps that I have worked on &hellip;">
+  
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://koolistov.net/blog/2012/04/03/kvserverinteraction-deprecated">
+  <link href="/favicon.png" rel="icon">
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <script src="/javascripts/modernizr-2.0.js"></script>
+  <script src="/javascripts/ender.js"></script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  <link href="/atom.xml" rel="alternate" title="Koolistov" type="application/atom+xml">
+  <link href="/apple-touch-icon.png" rel="apple-touch-icon" />
+<!--Fonts from Google's Web font directory at http://google.com/webfonts -->
+<link href='http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic' rel='stylesheet' type='text/css'>
+<link href='http://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic' rel='stylesheet' type='text/css'>
+<link href='http://fonts.googleapis.com/css?family=Cabin+Sketch:700' rel='stylesheet' type='text/css'>
+<link href='http://fonts.googleapis.com/css?family=Coming+Soon' rel='stylesheet' type='text/css'>
+<!-- Google Webmasters tool -->
+<meta name="google-site-verification" content="aQXE9vCD3QjNp7xGnUKCTLwPJBJ1cdr6bPVO2pOro6I" />
+<meta name="google-site-verification" content="aN8hIjVAB2gp1sImatDmi7gZkHBTSUAH9Hd6whpackk" />
+<meta name="google-site-verification" content="Fdgqd5dr_QcBpDw7KhTvPaqhwnVfSyGiQcSB4uYyod8" />
+
+  
+  <script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-285308-4']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+  </script>
+
+
+</head>
+
+<body   >
+  <header role="banner"><hgroup>
+  <h1><a href="/">Koolistov</a></h1>
+  
+    <h2>-- where apps are made</h2>
+  
+</hgroup>
+
+</header>
+  <nav role="navigation"><ul class="subscription" data-subscription="rss">
+  <li><a href="/atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
+  
+</ul>
+<form action="http://google.com/search" method="get">
+  <fieldset role="search">
+    <input type="hidden" name="q" value="site:koolistov.net" />
+    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
+  </fieldset>
+</form>
+<ul role=main-navigation>
+  <li><a href="/products/">Products</a></li>
+  <li><a href="/services/">Services</a></li>
+  <li><a href="/blog/">Blog</a></li>
+  <li><a href="/contact/">Contact</a></li>
+  <!-- <li><a href="/blog/archives/">Archives</a></li> -->
+</ul>
+
+</nav>
+  <div id="main">
+    <div id="content">
+      <div>
+<article class="hentry" role="article">
+  
+  <header>
+    
+      <h1 class="entry-title">KVServerInteraction Deprecated</h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2012-04-03T23:04:00+08:00" pubdate data-updated="true">Apr 3<span>rd</span>, 2012</time>
+        
+      </p>
+    
+  </header>
+
+
+<div class="entry-content"><p>As of today I am deprecating <a href="https://github.com/Koolistov/Server-Interaction">KVServerInteraction</a>. It has served its purpose as a generic network solution for a number of apps that I have worked on. However, it was a bit too simplistic in its approach.</p>
+
+<p>My recommendation is to switch to <a href="https://github.com/MugunthKumar/MKNetworkKit">MKNetworkKit</a> by <a href="http://blog.mugunthkumar.com/">Mugunth Kumar</a>. It follows a very similar approach. It too has a central service controller (a.k.a. network engine) that performs the service requests (a.k.a. network operations).</p>
+
+<!-- more -->
+
+
+<p>Where MKNetworkKit shines is that is much further fleshed out. For example, it adjusts the number of active connections to match the current network condition. It comes with support for caching, as well as freezing active requests. The cURL-able debug lines are nice touch too. From what I have seen so far everything that KVServerInteraction could do, can be done with MKNetworkKit as well.</p>
+
+<p>It is quite straightforward to convert your code from KVServerInteraction to MKNetworkKit. Below are two snippets that shows how a service request (a.k.a. network operation) is done. Both methods would live on your custom subclass of your service controller (a.k.a. network engine).</p>
+
+<figure class='code'><figcaption><span>KVServerInteractiom  </span></figcaption>
+ <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+</pre></td><td class='code'><pre><code class='objc'><span class='line'><span class="o">-</span> <span class="p">(</span><span class="n">KVServiceRequest</span> <span class="o">*</span><span class="p">)</span><span class="nl">fetchGuestbookEntriesOnPage:</span><span class="p">(</span><span class="n">NSUInteger</span><span class="p">)</span><span class="n">pageIndex</span> <span class="nl">completionHandler:</span><span class="p">(</span><span class="n">KVRequestCompletionBlock</span><span class="p">)</span><span class="n">completionHandler</span> <span class="p">{</span>
+</span><span class='line'>    <span class="n">NSURL</span> <span class="o">*</span><span class="n">URL</span> <span class="o">=</span> <span class="p">[</span><span class="n">self</span><span class="p">.</span><span class="n">baseURL</span> <span class="nl">URLByAppendingPathWithRelativePath:</span><span class="s">@&quot;entries&quot;</span><span class="p">];</span>
+</span><span class='line'>    <span class="n">URL</span> <span class="o">=</span> <span class="p">[</span><span class="n">URL</span> <span class="nl">URLByAppendingParameterName:</span><span class="s">@&quot;page&quot;</span> <span class="nl">value:</span><span class="p">[</span><span class="n">NSNumber</span> <span class="nl">numberWithUnsignedInteger:</span><span class="n">pageIndex</span><span class="p">]];</span>
+</span><span class='line'>    <span class="k">return</span> <span class="p">[</span><span class="n">self</span> <span class="nl">performRequestWithURL:</span><span class="n">URL</span> <span class="nl">HTTPMethod:</span><span class="s">@&quot;GET&quot;</span> <span class="nl">bodyData:</span><span class="nb">nil</span> <span class="nl">requiresToken:</span><span class="n">YES</span> <span class="nl">allowCaching:</span><span class="n">YES</span> <span class="nl">forceRefresh:</span><span class="n">NO</span> <span class="nl">completionHandler:</span><span class="n">completionHandler</span><span class="p">];</span>
+</span><span class='line'><span class="p">}</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+
+
+<figure class='code'><figcaption><span>MKNetworkKit  </span></figcaption>
+ <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+</pre></td><td class='code'><pre><code class='objc'><span class='line'><span class="o">-</span> <span class="p">(</span><span class="n">MKNetworkOperation</span> <span class="o">*</span><span class="p">)</span><span class="nl">fetchGuestbookEntriesOnPage:</span><span class="p">(</span><span class="n">NSUInteger</span><span class="p">)</span><span class="n">pageIndex</span> <span class="nl">completionHandler:</span><span class="p">(</span><span class="kt">void</span> <span class="p">(</span><span class="o">^</span><span class="p">)(</span><span class="kt">id</span> <span class="n">result</span><span class="p">))</span><span class="n">completionHandler</span> <span class="p">{</span>
+</span><span class='line'>    <span class="n">NSMutableDictionary</span> <span class="o">*</span><span class="n">params</span> <span class="o">=</span> <span class="p">[</span><span class="n">NSMutableDictionary</span> <span class="nl">dictionaryWithObject:</span><span class="p">[</span><span class="n">NSNumber</span> <span class="nl">numberWithUnsignedInteger:</span><span class="n">pageIndex</span><span class="p">]</span> <span class="nl">forKey:</span><span class="s">@&quot;page&quot;</span><span class="p">];</span>
+</span><span class='line'>    <span class="n">MKNetworkOperation</span> <span class="o">*</span><span class="n">operation</span> <span class="o">=</span> <span class="p">[</span><span class="n">self</span> <span class="nl">operationWithPath:</span><span class="s">@&quot;entries&quot;</span> <span class="nl">params:</span><span class="n">params</span> <span class="nl">httpMethod:</span><span class="s">@&quot;GET&quot;</span><span class="p">];</span>
+</span><span class='line'>    <span class="p">[</span><span class="n">operation</span> <span class="nl">onCompletion:</span><span class="o">^</span><span class="p">(</span><span class="n">MKNetworkOperation</span> <span class="o">*</span><span class="n">completedOperation</span><span class="p">)</span> <span class="p">{</span>
+</span><span class='line'>        <span class="n">completionHandler</span><span class="p">(</span><span class="n">completedOperation</span><span class="p">.</span><span class="n">responseJSON</span><span class="p">);</span>
+</span><span class='line'>    <span class="p">}</span> <span class="nl">onError:</span><span class="o">^</span><span class="p">(</span><span class="n">NSError</span> <span class="o">*</span><span class="n">error</span><span class="p">)</span> <span class="p">{</span>
+</span><span class='line'>        <span class="n">completionHandler</span><span class="p">(</span><span class="nb">nil</span><span class="p">);</span>
+</span><span class='line'>    <span class="p">}];</span>
+</span><span class='line'>    <span class="p">[</span><span class="n">self</span> <span class="nl">enqueueOperation:</span><span class="n">operation</span><span class="p">];</span>
+</span><span class='line'>    <span class="k">return</span> <span class="n">operation</span><span class="p">;</span>
+</span><span class='line'><span class="p">}</span>
+</span></code></pre></td></tr></table></div></figure>
+
+</div>
+
+
+  <footer>
+    <p class="meta">
+      
+  
+
+<span class="byline author vcard">Posted by <span class="fn">Johan Kool</span></span>
+
+      
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2012-04-03T23:04:00+08:00" pubdate data-updated="true">Apr 3<span>rd</span>, 2012</time>
+      
+
+<span class="categories">
+  
+    <a class='category' href='/blog/categories/cocoa/'>Cocoa</a>, <a class='category' href='/blog/categories/objective-c/'>Objective-C</a>
+  
+</span>
+
+
+    </p>
+    
+      <div class="sharing">
+  
+  
+  
+</div>
+
+    
+    <p class="meta">
+      
+        <a class="basic-alignment left" href="/blog/2012/03/08/managing-user-satisfaction/" title="Previous Post: Managing user satisfaction">&laquo; Managing user satisfaction</a>
+      
+      
+    </p>
+  </footer>
+</article>
+
+  <section>
+    <h1>Comments</h1>
+    <div id="disqus_thread" aria-live="polite"><noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+  </section>
+
+</div>
+
+<aside class="sidebar">
+  
+    <section>
+  <h1>Recent Posts</h1>
+  <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/2012/04/03/kvserverinteraction-deprecated/">KVServerInteraction deprecated</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2012/03/08/managing-user-satisfaction/">Managing user satisfaction</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2012/02/26/hex-representation-of-nsdata/">Hex Representation of NSData</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2012/02/26/nil-null-empty-macros/">Nil, Null, Empty Macros</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2012/02/26/setting-compiler-flags-on-multiple-files/">Setting Compiler Flags on Multiple Files</a>
+      </li>
+    
+  </ul>
+</section>
+
+<section>
+  <h1>Github Repos</h1>
+  <ul id="gh_repos">
+    <li class="loading">Status updating...</li>
+  </ul>
+  
+  <a href="https://github.com/Koolistov">@Koolistov</a> on Github
+  
+  <script type="text/javascript">
+    $.domReady(function(){
+        if (!window.jXHR){
+            var jxhr = document.createElement('script');
+            jxhr.type = 'text/javascript';
+            jxhr.src = '/javascripts/libs/jXHR.js';
+            var s = document.getElementsByTagName('script')[0];
+            s.parentNode.insertBefore(jxhr, s);
+        }
+
+        github.showRepos({
+            user: 'Koolistov',
+            count: 5,
+            skip_forks: true,
+            target: '#gh_repos'
+        });
+    });
+  </script>
+  <script src="/javascripts/github.js" type="text/javascript"> </script>
+</section>
+
+<section>
+  <h1>Stack Overflow</h1>
+  <br />
+  <a href="http://stackoverflow.com/users/60488/johan-kool"><img src="http://stackoverflow.com/users/flair/60488.png?theme=clean" width="208" height="58" alt="profile for Johan Kool at Stack Overflow, Q&amp;A for professional and enthusiast programmers" title="profile for Johan Kool at Stack Overflow, Q&amp;A for professional and enthusiast programmers"></a>
+</section>
+
+<section>
+  <h1>Latest Tweets</h1>
+  <ul id="tweets">
+    <li class="loading">Status updating...</li>
+  </ul>
+  <script type="text/javascript">
+    $.domReady(function(){
+      getTwitterFeed("johankool", 5, false);
+    });
+  </script>
+  <script src="/javascripts/twitter.js" type="text/javascript"> </script>
+  
+    <a href="http://twitter.com/johankool" class="twitter-follow-button" data-width="208px" data-show-count="false">Follow @johankool</a>
+  
+</section>
+
+
+  
+</aside>
+
+
+    </div>
+  </div>
+  <footer role="contentinfo"><p>
+  Copyright &copy; 2012 - Koolistov Pte. Ltd. - <a href="/generalconditions/">Terms &amp; Conditions</a> -
+  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
+</p>
+
+</footer>
+  
+
+<script type="text/javascript">
+      var disqus_shortname = 'koolistov';
+      
+        
+        // var disqus_developer = 1;
+        var disqus_identifier = 'http://koolistov.net/blog/2012/04/03/kvserverinteraction-deprecated/';
+        var disqus_url = 'http://koolistov.net/blog/2012/04/03/kvserverinteraction-deprecated/';
+        var disqus_script = 'embed.js';
+      
+    (function () {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = 'http://' + disqus_shortname + '.disqus.com/' + disqus_script;
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    }());
+</script>
+
+
+
+
+
+
+
+  <script type="text/javascript">
+    (function(){
+      var twitterWidgets = document.createElement('script');
+      twitterWidgets.type = 'text/javascript';
+      twitterWidgets.async = true;
+      twitterWidgets.src = 'http://platform.twitter.com/widgets.js';
+      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
+    })();
+  </script>
+
+
+
+
+
+</body>
+</html>

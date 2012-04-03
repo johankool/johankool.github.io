@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Objective-C | Koolistov]]></title>
   <link href="http://koolistov.net/blog/categories/objective-c/atom.xml" rel="self"/>
   <link href="http://koolistov.net/"/>
-  <updated>2012-03-08T12:11:57+08:00</updated>
+  <updated>2012-04-03T23:46:47+08:00</updated>
   <id>http://koolistov.net/</id>
   <author>
     <name><![CDATA[Johan Kool]]></name>
@@ -12,6 +12,102 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[KVServerInteraction deprecated]]></title>
+    <link href="http://koolistov.net/blog/2012/04/03/kvserverinteraction-deprecated/"/>
+    <updated>2012-04-03T23:04:00+08:00</updated>
+    <id>http://koolistov.net/blog/2012/04/03/kvserverinteraction-deprecated</id>
+    <content type="html"><![CDATA[<p>As of today I am deprecating <a href="https://github.com/Koolistov/Server-Interaction">KVServerInteraction</a>. It has served its purpose as a generic network solution for a number of apps that I have worked on. However, it was a bit too simplistic in its approach.</p>
+
+<p>My recommendation is to switch to <a href="https://github.com/MugunthKumar/MKNetworkKit">MKNetworkKit</a> by <a href="http://blog.mugunthkumar.com/">Mugunth Kumar</a>. It follows a very similar approach. It too has a central service controller (a.k.a. network engine) that performs the service requests (a.k.a. network operations).</p>
+
+<!-- more -->
+
+
+<p>Where MKNetworkKit shines is that is much further fleshed out. For example, it adjusts the number of active connections to match the current network condition. It comes with support for caching, as well as freezing active requests. The cURL-able debug lines are nice touch too. From what I have seen so far everything that KVServerInteraction could do, can be done with MKNetworkKit as well.</p>
+
+<p>It is quite straightforward to convert your code from KVServerInteraction to MKNetworkKit. Below are two snippets that shows how a service request (a.k.a. network operation) is done. Both methods would live on your custom subclass of your service controller (a.k.a. network engine).</p>
+
+<p><div class='bogus-wrapper'><notextile><figure class='code'><figcaption><span>KVServerInteractiom  </span></figcaption>
+ <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+</pre></td><td class='code'><pre><code class='objc'><span class='line'><span class="o">&lt;/</span><span class="n">p</span><span class="o">&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="o">&lt;</span><span class="n">ul</span><span class="o">&gt;</span>
+</span><span class='line'><span class="o">&lt;</span><span class="n">li</span><span class="o">&gt;</span><span class="p">(</span><span class="n">KVServiceRequest</span> <span class="o">&lt;</span><span class="n">em</span><span class="o">&gt;</span><span class="p">)</span><span class="nl">fetchGuestbookEntriesOnPage:</span><span class="p">(</span><span class="n">NSUInteger</span><span class="p">)</span><span class="n">pageIndex</span> <span class="nl">completionHandler:</span><span class="p">(</span><span class="n">KVRequestCompletionBlock</span><span class="p">)</span><span class="n">completionHandler</span> <span class="p">{</span>
+</span><span class='line'>  <span class="n">NSURL</span> <span class="o">&lt;/</span><span class="n">em</span><span class="o">&gt;</span><span class="n">URL</span> <span class="o">=</span> <span class="p">[</span><span class="n">self</span><span class="p">.</span><span class="n">baseURL</span> <span class="nl">URLByAppendingPathWithRelativePath:</span><span class="s">@&quot;entries&quot;</span><span class="p">];</span>
+</span><span class='line'>  <span class="n">URL</span> <span class="o">=</span> <span class="p">[</span><span class="n">URL</span> <span class="nl">URLByAppendingParameterName:</span><span class="s">@&quot;page&quot;</span> <span class="nl">value:</span><span class="p">[</span><span class="n">NSNumber</span> <span class="nl">numberWithUnsignedInteger:</span><span class="n">pageIndex</span><span class="p">]];</span>
+</span><span class='line'>  <span class="k">return</span> <span class="p">[</span><span class="n">self</span> <span class="nl">performRequestWithURL:</span><span class="n">URL</span> <span class="nl">HTTPMethod:</span><span class="s">@&quot;GET&quot;</span> <span class="nl">bodyData:</span><span class="nb">nil</span> <span class="nl">requiresToken:</span><span class="n">YES</span> <span class="nl">allowCaching:</span><span class="n">YES</span> <span class="nl">forceRefresh:</span><span class="n">NO</span> <span class="nl">completionHandler:</span><span class="n">completionHandler</span><span class="p">];</span>
+</span><span class='line'><span class="p">}</span><span class="o">&lt;/</span><span class="n">li</span><span class="o">&gt;</span>
+</span><span class='line'><span class="o">&lt;/</span><span class="n">ul</span><span class="o">&gt;</span>
+</span><span class='line'>
+</span><span class='line'>
+</span><span class='line'><span class="o">&lt;</span><span class="n">p</span><span class="o">&gt;</span>
+</span></code></pre></td></tr></table></div></figure></notextile></div></p>
+
+<p><div class='bogus-wrapper'><notextile><figure class='code'><figcaption><span>MKNetworkKit  </span></figcaption>
+ <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+<span class='line-number'>21</span>
+<span class='line-number'>22</span>
+<span class='line-number'>23</span>
+<span class='line-number'>24</span>
+</pre></td><td class='code'><pre><code class='objc'><span class='line'><span class="o">&lt;/</span><span class="n">p</span><span class="o">&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="o">&lt;</span><span class="n">ul</span><span class="o">&gt;</span>
+</span><span class='line'><span class="o">&lt;</span><span class="n">li</span><span class="o">&gt;</span><span class="p">(</span><span class="n">MKNetworkOperation</span> <span class="o">&lt;</span><span class="n">em</span><span class="o">&gt;</span><span class="p">)</span><span class="nl">fetchGuestbookEntriesOnPage:</span><span class="p">(</span><span class="n">NSUInteger</span><span class="p">)</span><span class="n">pageIndex</span> <span class="nl">completionHandler:</span><span class="p">(</span><span class="kt">void</span> <span class="p">(</span><span class="o">&lt;</span><span class="n">sup</span><span class="o">&gt;</span><span class="p">)(</span><span class="kt">id</span><span class="o">&lt;/</span><span class="n">sup</span><span class="o">&gt;</span> <span class="n">result</span><span class="p">))</span><span class="n">completionHandler</span> <span class="p">{</span>
+</span><span class='line'>  <span class="n">NSMutableDictionary</span> <span class="o">&lt;/</span><span class="n">em</span><span class="o">&gt;</span><span class="n">params</span> <span class="o">=</span> <span class="p">[</span><span class="n">NSMutableDictionary</span> <span class="nl">dictionaryWithObject:</span><span class="p">[</span><span class="n">NSNumber</span> <span class="nl">numberWithUnsignedInteger:</span><span class="n">pageIndex</span><span class="p">]</span> <span class="nl">forKey:</span><span class="s">@&quot;page&quot;</span><span class="p">];</span>
+</span><span class='line'>  <span class="n">MKNetworkOperation</span> <span class="o">&lt;</span><span class="n">em</span><span class="o">&gt;</span><span class="n">operation</span> <span class="o">=</span> <span class="p">[</span><span class="n">self</span> <span class="nl">operationWithPath:</span><span class="s">@&quot;entries&quot;</span> <span class="nl">params:</span><span class="n">params</span> <span class="nl">httpMethod:</span><span class="s">@&quot;GET&quot;</span><span class="p">];</span>
+</span><span class='line'>  <span class="p">[</span><span class="n">operation</span> <span class="nl">onCompletion:</span><span class="o">&lt;</span><span class="n">sup</span><span class="o">&gt;</span><span class="p">(</span><span class="n">MKNetworkOperation</span><span class="o">&lt;/</span><span class="n">sup</span><span class="o">&gt;</span> <span class="o">&lt;/</span><span class="n">em</span><span class="o">&gt;</span><span class="n">completedOperation</span><span class="p">)</span> <span class="p">{</span>
+</span><span class='line'>
+</span><span class='line'><span class="o">&lt;</span><span class="n">pre</span><span class="o">&gt;&lt;</span><span class="n">code</span><span class="o">&gt;</span>  <span class="n">completionHandler</span><span class="p">(</span><span class="n">completedOperation</span><span class="p">.</span><span class="n">responseJSON</span><span class="p">);</span>
+</span><span class='line'><span class="o">&lt;/</span><span class="n">code</span><span class="o">&gt;&lt;/</span><span class="n">pre</span><span class="o">&gt;</span>
+</span><span class='line'>
+</span><span class='line'>  <span class="p">}</span> <span class="nl">onError:</span><span class="o">&lt;</span><span class="n">sup</span><span class="o">&gt;</span><span class="p">(</span><span class="n">NSError</span><span class="o">&lt;/</span><span class="n">sup</span><span class="o">&gt;</span> <span class="o">*</span><span class="n">error</span><span class="p">)</span> <span class="p">{</span>
+</span><span class='line'>
+</span><span class='line'><span class="o">&lt;</span><span class="n">pre</span><span class="o">&gt;&lt;</span><span class="n">code</span><span class="o">&gt;</span>  <span class="n">completionHandler</span><span class="p">(</span><span class="nb">nil</span><span class="p">);</span>
+</span><span class='line'><span class="o">&lt;/</span><span class="n">code</span><span class="o">&gt;&lt;/</span><span class="n">pre</span><span class="o">&gt;</span>
+</span><span class='line'>
+</span><span class='line'><span class="o">&lt;</span><span class="n">p</span><span class="o">&gt;</span>  <span class="p">}];</span>
+</span><span class='line'>  <span class="p">[</span><span class="n">self</span> <span class="nl">enqueueOperation:</span><span class="n">operation</span><span class="p">];</span>
+</span><span class='line'>  <span class="k">return</span> <span class="n">operation</span><span class="p">;</span>
+</span><span class='line'><span class="p">}</span><span class="o">&lt;/</span><span class="n">p</span><span class="o">&gt;&lt;/</span><span class="n">li</span><span class="o">&gt;</span>
+</span><span class='line'><span class="o">&lt;/</span><span class="n">ul</span><span class="o">&gt;</span>
+</span><span class='line'>
+</span><span class='line'>
+</span><span class='line'><span class="o">&lt;</span><span class="n">p</span><span class="o">&gt;</span>
+</span></code></pre></td></tr></table></div></figure></notextile></div></p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Hex Representation of NSData]]></title>
@@ -241,84 +337,6 @@
 </span><span class='line'>
 </span><span class='line'><span class="o">&lt;</span><span class="n">p</span><span class="o">&gt;</span><span class="p">}</span>
 </span></code></pre></td></tr></table></div></figure></notextile></div></p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Right Path to URL Parameters]]></title>
-    <link href="http://koolistov.net/blog/2011/10/02/right-path-to-url-parameters/"/>
-    <updated>2011-10-02T00:40:00+08:00</updated>
-    <id>http://koolistov.net/blog/2011/10/02/right-path-to-url-parameters</id>
-    <content type="html"><![CDATA[<p>It is very common to have to construct URLs in iOS apps. Unfortunately there is no such things as <code>NSMutableURL</code>, so we need to come up with our own solution. Most developers seem to take a very pragmatic approach to this. Basically, you take a base URL, append a path and/or parameters to it, and go about your business. Almost, if not all, code I have seen do this make assumptions about the base URL: for example, no query or fragment present in the URL. Sometimes even relying on the other parts of the app always providing text that is safe to use in an URL. It can be quite a safe assumption that this is safe within your app, but I wanted a solution that is safe to use no matter what the base URL looked like, or what text was provided for the parameters.</p>
-
-<!--more-->
-
-
-<h3>URL Building Blocks</h3>
-
-<p>Let's have a quick look at how a URL is constructed. The various parts of an URL are:</p>
-
-<pre><code>scheme://username:password@domain:port/path?query#fragment
-</code></pre>
-
-<p>The pragmatic approach works well if the base URL does not contain a path, query and fragment. The presence of a path is usually not a problem, it gets trickier when a query is already present, and most solutions definitely fail when a fragment is present.</p>
-
-<p>The code provided below takes the presence of path, query and/or fragment into account. Don't just take my word for it, you can run the provided unit test to ensure it does it right.</p>
-
-<h3>Path</h3>
-
-<p>To replace a path complete, use <code>- (NSURL *)URLByReplacingPathWithPath:(NSString *)path</code>. Alternatively, use <code>- (NSURL *)URLByAppendingPathWithRelativePath:(NSString *)path</code> if you want to append a relative path. This also allows to you walk up the path using for example <code>../foo</code>. The path will get simplified if possible.</p>
-
-<h3>Parameter</h3>
-
-<p>The most effective way to add parameters is to use <code>- (NSURL *)URLByAppendingParameters:(NSDictionary *)parameters</code>. The dictionary is expected to contain <code>NSString</code>s as keys. The corresponding values may be either <code>NSString</code>s or should respond to the method <code>- (NSString *)stringValue</code>, otherwise the value will default to  <code>- (NSString *)description</code>. Both keys and values will get URL escaped.</p>
-
-<p>It is valid in an URL to have a parameter name appear multiple times, unlike it is for keys in <code>NSDictionary</code>. You can work around this by calling the method <code>- (NSURL *)URLByAppendingParameterName:(NSString *)parameter value:(id)value</code> multiple times with the same parameter name.</p>
-
-<h3>Code</h3>
-
-<p>The code is available as a <a href="https://gist.github.com/1256354">gist on GitHub</a>. The license for the code is a simple BSD license. You don't need to attribute me or Koolistov in your app (although appreciated if you do), but you need to leave the copyright notice intact on the source files.</p>
-
-<p><div><script src='https://gist.github.com/1256354.js?file='></script>
-<noscript><pre><code>//
-//  NSURL+PathParameters.h
-//
-//  Created by Johan Kool on 27/9/2011.
-//  Copyright 2011 Koolistov Pte. Ltd. All rights reserved.
-//
-//  Redistribution and use in source and binary forms, with or without modification, are 
-//  permitted provided that the following conditions are met:
-//
-//  * Redistributions of source code must retain the above copyright notice, this list of 
-//    conditions and the following disclaimer.
-//  * Neither the name of KOOLISTOV PTE. LTD. nor the names of its contributors may be used to 
-//    endorse or promote products derived from this software without specific prior written 
-//    permission.
-//
-//  THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS &quot;AS IS&quot; AND ANY 
-//  EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF 
-//  MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL 
-//  THE COPYRIGHT OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, 
-//  SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT 
-//  OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) 
-//  HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, 
-//  OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS 
-//  SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
-//
-
-
-#import &lt;Foundation/Foundation.h&gt;
-
-@interface NSURL (PathParameters)
-
-- (NSURL *)URLByReplacingPathWithPath:(NSString *)path;
-- (NSURL *)URLByAppendingPathWithRelativePath:(NSString *)path;
-- (NSURL *)URLByAppendingParameters:(NSDictionary *)parameters;
-- (NSURL *)URLByAppendingParameterName:(NSString *)parameter value:(id)value;
-
-@end
-</code></pre></noscript></div>
-</p>
 ]]></content>
   </entry>
   
