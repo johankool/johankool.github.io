@@ -3,10 +3,10 @@ layout: page
 comments: false
 sharing: false
 footer: true
-description: "Koolistov provides development and consultation services for iOS and Mac OS X. Seller of iPhone apps: BabyPhone and Walkie Talkie."
-keywords: babyphone walkietalkie walkie talkie iphone ipad ipod touch ios developer development consulting Xcode Cocoa Obj-C Objective C Mac OS X 
+description: "Koolistov provides development and consultation services for iOS and Mac OS X."
+keywords: iphone ipad ipod touch ios developer development consulting Xcode Cocoa Obj-C Objective C Mac OS X 
 ---
 
 # 404 - Page Not Found
 
-Sorry, the page you were looking for could not be found.
+Sorry, that page does not exist.

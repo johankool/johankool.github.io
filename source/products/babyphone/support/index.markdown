@@ -8,6 +8,8 @@ footer: true
 
 <a class="button" href="/products/babyphone/">General Info about BabyPhone</a>
 
+**NOTE:** This product will be discontinued by the end of this year.
+
 ### Why do I have to restart BabyPhone after placing a call?
 When BabyPhone places the phone call to warn you, the iPhone quits the app. The iPhone does not relaunch it automatically after the call ends. This is a known current limitation of the iPhone. Unfortunately this means that after each call you will need to restart BabyPhone manually.
 

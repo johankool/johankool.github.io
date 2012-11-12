@@ -4,6 +4,8 @@ title: "Services"
 comments: false
 sharing: false
 footer: true
+description: "Koolistov provides development and consultation services for iOS and Mac OS X."
+keywords: iphone ipad ipod touch ios developer development consulting Xcode Cocoa Obj-C Objective C Mac OS X 
 ---
 
 ## Custom iPhone, iPad and iPod touch Software

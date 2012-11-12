@@ -9,6 +9,8 @@ sharing: true
 footer: true
 ---
 
+**NOTE:** This product has been discontinued.
+
 ## Unlimited talking
 Use your iPhone as a walkietalkie! Connect and talk to others in your vicinity over bluetooth or wi-fi. Static white noise not included! Instead, clear and crisp sound only! And you can talk as long as you want...
 

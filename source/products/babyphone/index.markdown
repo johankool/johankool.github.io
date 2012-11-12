@@ -11,6 +11,8 @@ description: Use the iPhone to watch over your baby whilst he or she sleeps!
 keywords: baby babyphone babymonitor monitor phone call iphone ipad ipod touch cry lullaby babysit sleep wifi airport bluetooth p2p peer-to-peer bonjour 
 ---
 
+**NOTE:** This product will be discontinued by the end of this year.
+
 ## Hear your baby sleeping…
 By connecting two iPhones (or iPod touches) over wifi or bluetooth (it's all automatic!) you can hear exactly what is going on in the baby room. Don't have two iPhones? No problem! You can also let BabyPhone call you automatically on any phone number when your baby cries.
 

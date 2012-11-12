@@ -89,11 +89,11 @@ delicious_user:
 delicious_count: 3
 
 # Disqus Comments
-disqus_short_name: koolistov
-disqus_show_comment_count: false
+# disqus_short_name: koolistov
+# disqus_show_comment_count: false
 
 # Google Analytics
-google_analytics_tracking_id: UA-285308-4
+# google_analytics_tracking_id: UA-285308-4
 
 # Facebook Like
 facebook_like: false

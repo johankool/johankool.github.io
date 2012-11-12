@@ -8,6 +8,8 @@ footer: true
 
 <a class="button" href="/products/walkietalkie/">General Info about Walkie Talkie</a>
 
+**NOTE:** This product has been discontinued.
+
 ### How to connect a microphone?
 Some older iPod touches don't have a microphone build in. You can still use Walkie Talkie by connecting a microphone to it. One possibility is to use the headphones that come with the iPhone, alternatively you could use a headset such as [this one](http://www.SeaDogBoatingSolutions.com/Avail_Prod_dir/Sea_Dog_Headset.html).
 
