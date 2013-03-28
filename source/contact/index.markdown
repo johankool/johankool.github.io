@@ -8,7 +8,7 @@ footer: true
 
 If you have any kind of question or want to be in contact with Koolistov, please use this form.
 
-<form action="http://octopress.koolistov.appspot.com/sendcontact" method="post">
+<form action="https://secret-everglades-6390.herokuapp.com/mail" method="post">
         
 <label for="id_name">Your name: </label><br />
 <input name="name" id="id_name" type="text" required autofocus placeholder="Enter your name (required)"><br />
@@ -17,7 +17,7 @@ If you have any kind of question or want to be in contact with Koolistov, please
 <input name="email" id="id_email" type="email" required  placeholder="Enter your e-mail address (required)"><br />
 
 <label for="id_content">Your feedback: </label><br />
-<textarea name="content" id="id_content" required placeholder="Please describe your request or issue in detail (at least 20 characters required)" rows="6"></textarea><br />
+<textarea name="message" id="id_content" required placeholder="Please describe your request or issue in detail (at least 20 characters required)" rows="6"></textarea><br />
 
 <input class="submit" type="submit" value="Send" />
 
