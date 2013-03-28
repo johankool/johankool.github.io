@@ -4,7 +4,7 @@
   <title><![CDATA[Koolistov]]></title>
   <link href="http://koolistov.net/atom.xml" rel="self"/>
   <link href="http://koolistov.net/"/>
-  <updated>2012-11-13T00:42:58+08:00</updated>
+  <updated>2013-03-29T00:31:04+08:00</updated>
   <id>http://koolistov.net/</id>
   <author>
     <name><![CDATA[Johan Kool]]></name>
@@ -109,7 +109,7 @@ There is something important overlooked though: the satisfaction of existing iPa
 
 
 
-<div><script src='https://gist.github.com/1443455.js?file='></script>
+<div><script src='https://gist.github.com/1443455.js'></script>
 <noscript><pre><code>//
 //  NSData+Hex.h
 //
@@ -138,7 +138,7 @@ There is something important overlooked though: the satisfaction of existing iPa
 
 <p>The first two are very handy when dealing with JSON dictionaries. The last one if you need to replace strings and want to avoid having <code>(null)</code> all over the place.</p>
 
-<div><script src='https://gist.github.com/1874995.js?file='></script>
+<div><script src='https://gist.github.com/1874995.js'></script>
 <noscript><pre><code>#define NILIFNULL(foo) ((foo == [NSNull null]) ? nil : foo)
 #define NULLIFNIL(foo) ((foo == nil) ? [NSNull null] : (NSNull *)foo)
 #define EMPTYIFNIL(foo) ((foo == nil) ? @&quot;&quot; : (NSString *)foo)</code></pre></noscript></div>
@@ -567,7 +567,7 @@ RTL Nieuws is a well known Dutch news television bulletin by the Netherlands&#82
 
 <p>The code is available as a <a href="https://gist.github.com/1256354">gist on GitHub</a>. The license for the code is a simple BSD license. You don&#8217;t need to attribute me or Koolistov in your app (although appreciated if you do), but you need to leave the copyright notice intact on the source files.</p>
 
-<div><script src='https://gist.github.com/1256354.js?file='></script>
+<div><script src='https://gist.github.com/1256354.js'></script>
 <noscript><pre><code>//
 //  NSURL+PathParameters.h
 //
