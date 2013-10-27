@@ -63,6 +63,7 @@
   
 <ul role=main-navigation>
   <li><a href="/services/">Services</a></li>
+  <!-- <li><a href="/products/">Products</a></li> -->
   <li><a href="/blog/">Blog</a></li>
   <li><a href="/contact/">Contact</a></li>
 </ul>
@@ -100,7 +101,7 @@
 
 <div class="entry-content"><p>Today <a href="http://www.forbes.com/sites/tomiogeron/2012/02/02/does-ios-crash-more-than-android-a-data-dive/">a Forbes article</a> by Tomio Geron did the rounds that compared the number of crashes in various versions of iOS with those happening in various versions of Android based on data from <a href="http://www.crittercism.com/">Crittercism</a>. That crashes are bad is undeniably true. However, not all crashes are the same.</p>
 
-<p>The implied link between OS version and the occurrence of crashes surprised me. I am not quite so sure if such a link in fact exists. I&#8217;d also argue that a higher crash rate says little about the quality of the OS version, or even of the app.</p>
+<p>The implied link between OS version and the occurrence of crashes surprised me. I am not quite so sure if such a link in fact exists. I&rsquo;d also argue that a higher crash rate says little about the quality of the OS version, or even of the app.</p>
 
 <!--more-->
 
@@ -109,7 +110,7 @@
 
 <h3>Memory Kill</h3>
 
-<p>On iOS the system is quite unforgiving to apps using too much memory or CPU resources. The app does receive warnings if memory usage gets too high, but it the app fails to properly respond timely by freeing up memory is will unceremoniously get the boot. As a developer I don&#8217;t call this a crash, but poor memory management. It is nevertheless a serious issue and developers should make sure to stress test their apps.</p>
+<p>On iOS the system is quite unforgiving to apps using too much memory or CPU resources. The app does receive warnings if memory usage gets too high, but it the app fails to properly respond timely by freeing up memory is will unceremoniously get the boot. As a developer I don&rsquo;t call this a crash, but poor memory management. It is nevertheless a serious issue and developers should make sure to stress test their apps.</p>
 
 <h3>Crashes</h3>
 
@@ -142,19 +143,19 @@ Because Objective-C is a weakly typed system, it is possible to call methods on 
 <blockquote><p>&#8220;Anecdotally, I know that certain apps I use on my iPhone crash and they crash often.&#8221;</p></blockquote>
 
 
-<p>That an app keeps crashing if you keep on trying to use it in the same way can hardly be called surprising. Surely the developers of those apps have some work to do here, but it&#8217;s hard to make sensible conclusions from this.</p>
+<p>That an app keeps crashing if you keep on trying to use it in the same way can hardly be called surprising. Surely the developers of those apps have some work to do here, but it&rsquo;s hard to make sensible conclusions from this.</p>
 
-<p>As for the number of crashes occurring in a particular OS version it basically says nothing about the quality of the OS version. The vast majority of crashes are caused by bugs in the app code, not by bugs in the system. It is more likely that crashes in a new OS version such as iOS 5 are caused by apps that have not yet been updated by their developers. If an app needed changes it was however often due to false assumptions being made in the code while it was developed for iOS 4. If apps are designed according to Apple&#8217;s documentation for Cocoa it is unlikely to encounter issues on a new iOS version.</p>
+<p>As for the number of crashes occurring in a particular OS version it basically says nothing about the quality of the OS version. The vast majority of crashes are caused by bugs in the app code, not by bugs in the system. It is more likely that crashes in a new OS version such as iOS 5 are caused by apps that have not yet been updated by their developers. If an app needed changes it was however often due to false assumptions being made in the code while it was developed for iOS 4. If apps are designed according to Apple&rsquo;s documentation for Cocoa it is unlikely to encounter issues on a new iOS version.</p>
 
 <p>Developers have little excuse anyway, as test versions of new iOS versions are made available to them for testing.</p>
 
 <h3>Hardware</h3>
 
-<p>The Forbes article quotes Crittercism CEO Andrew Levy as saying that crashes can be caused by hardware issues (GPS or camera), or the availability of a network connection. If that is the case, it is mostly, if not completely, due to poor developer skills. It is the duty of the developer to anticipate all expected situations. Expected situations include the unavailability of the users location, a camera or a network connection. It also shows that the app has not been tested rigorously enough. There certainly is API in iOS to deal with all of these situations and developers don&#8217;t really have an excuse not to do so.</p>
+<p>The Forbes article quotes Crittercism CEO Andrew Levy as saying that crashes can be caused by hardware issues (GPS or camera), or the availability of a network connection. If that is the case, it is mostly, if not completely, due to poor developer skills. It is the duty of the developer to anticipate all expected situations. Expected situations include the unavailability of the users location, a camera or a network connection. It also shows that the app has not been tested rigorously enough. There certainly is API in iOS to deal with all of these situations and developers don&rsquo;t really have an excuse not to do so.</p>
 
 <h3>Third Party Code</h3>
 
-<p>The point raised in the article about third-party services is certainly valid. It is vitally important to realize the risk of using a third-party library in your app. It only takes one shoddy library to turn your app into a crash prone piece of crap. Evaluation and testing of third-party code is for this reason very important. If you are developing for a client, you need to be able to communicate to them that willy-nilly adding of outside code can be a risky affair. Anyway, the desire to include multiple analytics packages into one app has always puzzled me. But then, my ideal app doesn&#8217;t include any.</p>
+<p>The point raised in the article about third-party services is certainly valid. It is vitally important to realize the risk of using a third-party library in your app. It only takes one shoddy library to turn your app into a crash prone piece of crap. Evaluation and testing of third-party code is for this reason very important. If you are developing for a client, you need to be able to communicate to them that willy-nilly adding of outside code can be a risky affair. Anyway, the desire to include multiple analytics packages into one app has always puzzled me. But then, my ideal app doesn&rsquo;t include any.</p>
 
 <p>In this way the data collected by Crittercism is also skewed. It is based on crashes reported by apps that include its library. So these are apps by developers who are likelier to not be squeamish about third-party code.</p>
 
@@ -164,7 +165,7 @@ Because Objective-C is a weakly typed system, it is possible to call methods on 
 
 <h3>Conclusion</h3>
 
-<p>The number of crashes reported for an app does not necessarily directly reflect the number of bugs in its source code, nor does it necessarily reflect the overall quality of the source code. The number of crashes of apps on a particular OS version is even less indicative of the quality of the OS version. There are two many other factors at play, but mostly, app crashes are 99 out of 100 times a bug in the app&#8217;s code as opposed to the OS code.</p>
+<p>The number of crashes reported for an app does not necessarily directly reflect the number of bugs in its source code, nor does it necessarily reflect the overall quality of the source code. The number of crashes of apps on a particular OS version is even less indicative of the quality of the OS version. There are two many other factors at play, but mostly, app crashes are 99 out of 100 times a bug in the app&rsquo;s code as opposed to the OS code.</p>
 
 <p>The App Store is a frustrating obstacle for a quick response to deliver fixes, but one that iOS developers just have to learn to live with.</p>
 </div>

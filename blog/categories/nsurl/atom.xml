@@ -4,7 +4,7 @@
   <title><![CDATA[Category: NSURL | Koolistov]]></title>
   <link href="http://koolistov.net/blog/categories/nsurl/atom.xml" rel="self"/>
   <link href="http://koolistov.net/"/>
-  <updated>2013-03-29T00:31:04+08:00</updated>
+  <updated>2013-10-28T01:35:42+08:00</updated>
   <id>http://koolistov.net/</id>
   <author>
     <name><![CDATA[Johan Kool]]></name>
@@ -25,14 +25,14 @@
 
 <h3>URL Building Blocks</h3>
 
-<p>Let's have a quick look at how a URL is constructed. The various parts of an URL are:</p>
+<p>Let&rsquo;s have a quick look at how a URL is constructed. The various parts of an URL are:</p>
 
 <pre><code>scheme://username:password@domain:port/path?query#fragment
 </code></pre>
 
 <p>The pragmatic approach works well if the base URL does not contain a path, query and fragment. The presence of a path is usually not a problem, it gets trickier when a query is already present, and most solutions definitely fail when a fragment is present.</p>
 
-<p>The code provided below takes the presence of path, query and/or fragment into account. Don't just take my word for it, you can run the provided unit test to ensure it does it right.</p>
+<p>The code provided below takes the presence of path, query and/or fragment into account. Don&rsquo;t just take my word for it, you can run the provided unit test to ensure it does it right.</p>
 
 <h3>Path</h3>
 
@@ -46,7 +46,7 @@
 
 <h3>Code</h3>
 
-<p>The code is available as a <a href="https://gist.github.com/1256354">gist on GitHub</a>. The license for the code is a simple BSD license. You don't need to attribute me or Koolistov in your app (although appreciated if you do), but you need to leave the copyright notice intact on the source files.</p>
+<p>The code is available as a <a href="https://gist.github.com/1256354">gist on GitHub</a>. The license for the code is a simple BSD license. You don&rsquo;t need to attribute me or Koolistov in your app (although appreciated if you do), but you need to leave the copyright notice intact on the source files.</p>
 
 <p><div><script src='https://gist.github.com/1256354.js'></script>
 <noscript><pre><code>//

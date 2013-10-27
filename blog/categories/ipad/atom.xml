@@ -4,7 +4,7 @@
   <title><![CDATA[Category: iPad | Koolistov]]></title>
   <link href="http://koolistov.net/blog/categories/ipad/atom.xml" rel="self"/>
   <link href="http://koolistov.net/"/>
-  <updated>2013-03-29T00:31:04+08:00</updated>
+  <updated>2013-10-28T01:35:42+08:00</updated>
   <id>http://koolistov.net/</id>
   <author>
     <name><![CDATA[Johan Kool]]></name>
@@ -25,15 +25,13 @@
 
 <p>Some rumors were correct: Retina Display. Some rumors were off: touch feedback. Nevertheless, afterwards (and this time, heck why not, already before) many articles appeared all over the internet claiming disappointment with what the new iPad offers.</p>
 
-<p><span class='pullquote-right' data-pullquote='A satisfied customer is one that comes back to buy again.'>
-There is something important overlooked though: the satisfaction of existing iPad users. Apple wants to woo in new customers, but it also wants to keep existing customers satisfied. A satisfied customer is one that comes back to buy again. And one of the surest way to piss off a customer? Coming out with a new much improved model shortly after they bought theirs. Sure, this still happens, but Apple makes sure that the improvement is such that an existing user can justify either way to buy or not buy the new model. Users of models that are two generations older have a much harder timer resisting the new model. But theirs is by then almost 2 years old, a ripe old age for any tech gadget.
-</span></p>
+<p>Surround your pullquote like this {" text to be quoted "}</p>
 
-<p>So the reason for the disappointment amongst the tech journalists covering the new iPad comes from the fact that Apple doses the improvements well. Unlike regular iPad users, they have to upgrade, because it is their job to cover the latest and greatest. The regular users however can chose either way and still feel satisfied with their choice. They'll keep liking their current iPad, or they'll fall in love with their new iPad.</p>
+<p>So the reason for the disappointment amongst the tech journalists covering the new iPad comes from the fact that Apple doses the improvements well. Unlike regular iPad users, they have to upgrade, because it is their job to cover the latest and greatest. The regular users however can chose either way and still feel satisfied with their choice. They&rsquo;ll keep liking their current iPad, or they&rsquo;ll fall in love with their new iPad.</p>
 
 <p>This pattern is also clearly playing out for the iPhone. For iPhone 4 users the iPhone 4S looks like a nice upgrade, for owners of the iPhone 3GS and older models it is pretty much irresistible.</p>
 
-<p>That's all there is to it.</p>
+<p>That&rsquo;s all there is to it.</p>
 ]]></content>
   </entry>
   
@@ -44,7 +42,7 @@ There is something important overlooked though: the satisfaction of existing iPa
     <id>http://koolistov.net/blog/2012/02/04/why-ios-apps-crash</id>
     <content type="html"><![CDATA[<p>Today <a href="http://www.forbes.com/sites/tomiogeron/2012/02/02/does-ios-crash-more-than-android-a-data-dive/">a Forbes article</a> by Tomio Geron did the rounds that compared the number of crashes in various versions of iOS with those happening in various versions of Android based on data from <a href="http://www.crittercism.com/">Crittercism</a>. That crashes are bad is undeniably true. However, not all crashes are the same.</p>
 
-<p>The implied link between OS version and the occurrence of crashes surprised me. I am not quite so sure if such a link in fact exists. I'd also argue that a higher crash rate says little about the quality of the OS version, or even of the app.</p>
+<p>The implied link between OS version and the occurrence of crashes surprised me. I am not quite so sure if such a link in fact exists. I&rsquo;d also argue that a higher crash rate says little about the quality of the OS version, or even of the app.</p>
 
 <!--more-->
 
@@ -53,7 +51,7 @@ There is something important overlooked though: the satisfaction of existing iPa
 
 <h3>Memory Kill</h3>
 
-<p>On iOS the system is quite unforgiving to apps using too much memory or CPU resources. The app does receive warnings if memory usage gets too high, but it the app fails to properly respond timely by freeing up memory is will unceremoniously get the boot. As a developer I don't call this a crash, but poor memory management. It is nevertheless a serious issue and developers should make sure to stress test their apps.</p>
+<p>On iOS the system is quite unforgiving to apps using too much memory or CPU resources. The app does receive warnings if memory usage gets too high, but it the app fails to properly respond timely by freeing up memory is will unceremoniously get the boot. As a developer I don&rsquo;t call this a crash, but poor memory management. It is nevertheless a serious issue and developers should make sure to stress test their apps.</p>
 
 <h3>Crashes</h3>
 
@@ -71,9 +69,7 @@ There is something important overlooked though: the satisfaction of existing iPa
 
 <h4>Unknown Selector</h4>
 
-<p><span class='pullquote-right' data-pullquote='with great power comes great responsibility'>
-Because Objective-C is a weakly typed system, it is possible to call methods on an instance that the instance does not expect. This can be avoided with strongly typed system, but at the cost of foregoing the sophisticated solutions that are possible with a weakly typed system. Basically, with great power comes great responsibility. As a Cocoa developer you need to be willing to take this responsibility.
-</span></p>
+<p>Surround your pullquote like this {" text to be quoted "}</p>
 
 <h4>Reproducibility</h4>
 
@@ -83,21 +79,21 @@ Because Objective-C is a weakly typed system, it is possible to call methods on 
 
 <p>Back to the article, Tomio Geron, its author, further says:</p>
 
-<p><blockquote><p>"Anecdotally, I know that certain apps I use on my iPhone crash and they crash often."</p></blockquote></p>
+<p><blockquote><p>&ldquo;Anecdotally, I know that certain apps I use on my iPhone crash and they crash often.&rdquo;</p></blockquote></p>
 
-<p>That an app keeps crashing if you keep on trying to use it in the same way can hardly be called surprising. Surely the developers of those apps have some work to do here, but it's hard to make sensible conclusions from this.</p>
+<p>That an app keeps crashing if you keep on trying to use it in the same way can hardly be called surprising. Surely the developers of those apps have some work to do here, but it&rsquo;s hard to make sensible conclusions from this.</p>
 
-<p>As for the number of crashes occurring in a particular OS version it basically says nothing about the quality of the OS version. The vast majority of crashes are caused by bugs in the app code, not by bugs in the system. It is more likely that crashes in a new OS version such as iOS 5 are caused by apps that have not yet been updated by their developers. If an app needed changes it was however often due to false assumptions being made in the code while it was developed for iOS 4. If apps are designed according to Apple's documentation for Cocoa it is unlikely to encounter issues on a new iOS version.</p>
+<p>As for the number of crashes occurring in a particular OS version it basically says nothing about the quality of the OS version. The vast majority of crashes are caused by bugs in the app code, not by bugs in the system. It is more likely that crashes in a new OS version such as iOS 5 are caused by apps that have not yet been updated by their developers. If an app needed changes it was however often due to false assumptions being made in the code while it was developed for iOS 4. If apps are designed according to Apple&rsquo;s documentation for Cocoa it is unlikely to encounter issues on a new iOS version.</p>
 
 <p>Developers have little excuse anyway, as test versions of new iOS versions are made available to them for testing.</p>
 
 <h3>Hardware</h3>
 
-<p>The Forbes article quotes Crittercism CEO Andrew Levy as saying that crashes can be caused by hardware issues (GPS or camera), or the availability of a network connection. If that is the case, it is mostly, if not completely, due to poor developer skills. It is the duty of the developer to anticipate all expected situations. Expected situations include the unavailability of the users location, a camera or a network connection. It also shows that the app has not been tested rigorously enough. There certainly is API in iOS to deal with all of these situations and developers don't really have an excuse not to do so.</p>
+<p>The Forbes article quotes Crittercism CEO Andrew Levy as saying that crashes can be caused by hardware issues (GPS or camera), or the availability of a network connection. If that is the case, it is mostly, if not completely, due to poor developer skills. It is the duty of the developer to anticipate all expected situations. Expected situations include the unavailability of the users location, a camera or a network connection. It also shows that the app has not been tested rigorously enough. There certainly is API in iOS to deal with all of these situations and developers don&rsquo;t really have an excuse not to do so.</p>
 
 <h3>Third Party Code</h3>
 
-<p>The point raised in the article about third-party services is certainly valid. It is vitally important to realize the risk of using a third-party library in your app. It only takes one shoddy library to turn your app into a crash prone piece of crap. Evaluation and testing of third-party code is for this reason very important. If you are developing for a client, you need to be able to communicate to them that willy-nilly adding of outside code can be a risky affair. Anyway, the desire to include multiple analytics packages into one app has always puzzled me. But then, my ideal app doesn't include any.</p>
+<p>The point raised in the article about third-party services is certainly valid. It is vitally important to realize the risk of using a third-party library in your app. It only takes one shoddy library to turn your app into a crash prone piece of crap. Evaluation and testing of third-party code is for this reason very important. If you are developing for a client, you need to be able to communicate to them that willy-nilly adding of outside code can be a risky affair. Anyway, the desire to include multiple analytics packages into one app has always puzzled me. But then, my ideal app doesn&rsquo;t include any.</p>
 
 <p>In this way the data collected by Crittercism is also skewed. It is based on crashes reported by apps that include its library. So these are apps by developers who are likelier to not be squeamish about third-party code.</p>
 
@@ -107,7 +103,7 @@ Because Objective-C is a weakly typed system, it is possible to call methods on 
 
 <h3>Conclusion</h3>
 
-<p>The number of crashes reported for an app does not necessarily directly reflect the number of bugs in its source code, nor does it necessarily reflect the overall quality of the source code. The number of crashes of apps on a particular OS version is even less indicative of the quality of the OS version. There are two many other factors at play, but mostly, app crashes are 99 out of 100 times a bug in the app's code as opposed to the OS code.</p>
+<p>The number of crashes reported for an app does not necessarily directly reflect the number of bugs in its source code, nor does it necessarily reflect the overall quality of the source code. The number of crashes of apps on a particular OS version is even less indicative of the quality of the OS version. There are two many other factors at play, but mostly, app crashes are 99 out of 100 times a bug in the app&rsquo;s code as opposed to the OS code.</p>
 
 <p>The App Store is a frustrating obstacle for a quick response to deliver fixes, but one that iOS developers just have to learn to live with.</p>
 ]]></content>
@@ -118,16 +114,16 @@ Because Objective-C is a weakly typed system, it is possible to call methods on 
     <link href="http://koolistov.net/blog/2012/02/01/big-promotion/"/>
     <updated>2012-02-01T23:46:00+08:00</updated>
     <id>http://koolistov.net/blog/2012/02/01/big-promotion</id>
-    <content type="html"><![CDATA[<p>For those travelers who stop by Amsterdam's Schiphol Airport, there is a big billboard promoting the <a href="http://itunes.apple.com/nl/app/rtlnieuws-365/id486518266?mt=8">RTLNieuws 365 app</a> which I talked about <a href="/blog/2012/01/19/rtlnieuws-365-is-a-go/">in my previous post</a>.</p>
+    <content type="html"><![CDATA[<p>For those travelers who stop by Amsterdam&rsquo;s Schiphol Airport, there is a big billboard promoting the <a href="http://itunes.apple.com/nl/app/rtlnieuws-365/id486518266?mt=8">RTLNieuws 365 app</a> which I talked about <a href="/blog/2012/01/19/rtlnieuws-365-is-a-go/">in my previous post</a>.</p>
 
 <p>I have to say that it is quite satisfying to see ones work promoted on a 7 by 8 meters large display. Though not quite as satisfying as it topping the free iPad apps list in the Dutch App Store for a full fortnight already!</p>
 
 <!-- more -->
 
 
-<p><img class="left" src="/images/rtlnieuws365_schiphol_1.png" width="512" height="340" title="'RTLNieuws 365 app billboard at Schiphol Airport'" ></p>
+<p><img class="left" src="/images/rtlnieuws365_schiphol_1.png" width="512" height="340" title="&lsquo;RTLNieuws 365 app billboard at Schiphol Airport&rsquo;" ></p>
 
-<p><img class="left" src="/images/rtlnieuws365_schiphol_2.png" width="512" height="340" title="'RTLNieuws 365 app billboard at Schiphol Airport'" ></p>
+<p><img class="left" src="/images/rtlnieuws365_schiphol_2.png" width="512" height="340" title="&lsquo;RTLNieuws 365 app billboard at Schiphol Airport&rsquo;" ></p>
 ]]></content>
   </entry>
   
@@ -138,14 +134,12 @@ Because Objective-C is a weakly typed system, it is possible to call methods on 
     <id>http://koolistov.net/blog/2012/01/19/rtlnieuws-365-is-a-go</id>
     <content type="html"><![CDATA[<p>Excited that the iPad app I, together with the great people from <a href="http://www.egeniq.com/">Egeniq</a> and others, have been working on for the last couple of months is out now! And we call it <a href="http://itunes.apple.com/nl/app/rtlnieuws-365/id486518266?mt=8">RTLNieuws 365</a>.</p>
 
-<p><span class='pullquote-right' data-pullquote='‘the first real digital newspaper of the Netherlands’'>
-RTL Nieuws is a well known Dutch news television bulletin by the Netherlands' largest commercial broadcaster. By introducing this app they are embracing the new possibilities opened by the iPad. They are touting this app as ‘the first real digital newspaper of the Netherlands’.
-</span></p>
+<p>Surround your pullquote like this {" text to be quoted "}</p>
 
 <!-- more -->
 
 
-<p><img class="left" src="/images/rtlnieuws365_screenshot.jpg" width="480" height="360" title="'RTLNieuws 365 screenshot'" ></p>
+<p><img class="left" src="/images/rtlnieuws365_screenshot.jpg" width="480" height="360" title="&lsquo;RTLNieuws 365 screenshot&rsquo;" ></p>
 
 <p>The app has a wide range of news content, from general to entertainment and sports, and has a strong focus on photography. (It actually uses a slightly adjusted version of <a href="https://github.com/Koolistov/Image-Cache">KVImageCache</a> under the hood.)</p>
 

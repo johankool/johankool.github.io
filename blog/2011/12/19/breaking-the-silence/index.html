@@ -63,6 +63,7 @@
   
 <ul role=main-navigation>
   <li><a href="/services/">Services</a></li>
+  <!-- <li><a href="/products/">Products</a></li> -->
   <li><a href="/blog/">Blog</a></li>
   <li><a href="/contact/">Contact</a></li>
 </ul>
@@ -105,17 +106,17 @@
 <!--more-->
 
 
-<p>The opening of the curtains is planned for January of next year and shouldn&#8217;t go unnoticed for the Dutch, the target market. There are plans for TV commercials announcing the app, as well as outdoor advertising. Wicked!</p>
+<p>The opening of the curtains is planned for January of next year and shouldn&rsquo;t go unnoticed for the Dutch, the target market. There are plans for TV commercials announcing the app, as well as outdoor advertising. Wicked!</p>
 
 <h3>Git, GitHub and code reviews</h3>
 
 <p>For me this was the first big project using git. Git combined with GitHub really is a winner. The amount of time I spent on fighting with SCM was significantly lower than when using Subversion. There were some disagreements between me and git, but we worked it out.</p>
 
-<p>Something that was actually very neat was the strict rule that code was to be reviewed before it got merged into the main repository. If you know it&#8217;s not just you reading the code it makes that you&#8217;d doubly want to commit great code. That only works if the code reviewers have a great competency level too, which luckily was the case.</p>
+<p>Something that was actually very neat was the strict rule that code was to be reviewed before it got merged into the main repository. If you know it&rsquo;s not just you reading the code it makes that you&rsquo;d doubly want to commit great code. That only works if the code reviewers have a great competency level too, which luckily was the case.</p>
 
-<p>We worked from our own forks, then did pull requests via GitHub. Their interface is great and it is generally quite easy to spot issues. Some things did slip through code review though, mainly bugs where the diff snippets in GitHub didn&#8217;t provide enough context for the reviewer to spot the problem. GitHub lets you click through to the full file, but as this lacks highlighting of the changes, it does little in helping to spot problems. Some Ajax-y way to load more context would be a great enhancement.</p>
+<p>We worked from our own forks, then did pull requests via GitHub. Their interface is great and it is generally quite easy to spot issues. Some things did slip through code review though, mainly bugs where the diff snippets in GitHub didn&rsquo;t provide enough context for the reviewer to spot the problem. GitHub lets you click through to the full file, but as this lacks highlighting of the changes, it does little in helping to spot problems. Some Ajax-y way to load more context would be a great enhancement.</p>
 
-<p>One rule that we had for code review was that commented out code was not allowed unless a comment was present explaining the reason. The explanation better be a good one too. This was useful in keeping the code base clean. I have noticed that in earlier projects I have let such commented out code blocks accumulate. Usually it would end up being deleted in the end, or if reinstated not work quite as expected anymore due to changes made elsewhere. This commented out stuff just doesn&#8217;t belong in your code base. And remember, you are using SCM so you can always get back to it if needed anyway.</p>
+<p>One rule that we had for code review was that commented out code was not allowed unless a comment was present explaining the reason. The explanation better be a good one too. This was useful in keeping the code base clean. I have noticed that in earlier projects I have let such commented out code blocks accumulate. Usually it would end up being deleted in the end, or if reinstated not work quite as expected anymore due to changes made elsewhere. This commented out stuff just doesn&rsquo;t belong in your code base. And remember, you are using SCM so you can always get back to it if needed anyway.</p>
 
 <h3>Pivotal Tracker</h3>
 
@@ -123,11 +124,11 @@
 
 <h3>Fireworks</h3>
 
-<p>One thing that didn&#8217;t quite go so smoothly was the delivery of artwork. The designers used Adobe Fireworks. Quite the misnomer, as there is not much that really works in it. Not that I have been able to find any software that could sensibly be used as its replacement, but still. The designs were sliced to extract the needed artwork, but with every change to the design the slices came out with different names, so yeah that was fun. Also, it must not be straightforward enough in FireWorks to name slices something sensible, as we ended up with a bunch of very similarly named image files. Luckily there is QuickLook, but this still sucked.</p>
+<p>One thing that didn&rsquo;t quite go so smoothly was the delivery of artwork. The designers used Adobe Fireworks. Quite the misnomer, as there is not much that really works in it. Not that I have been able to find any software that could sensibly be used as its replacement, but still. The designs were sliced to extract the needed artwork, but with every change to the design the slices came out with different names, so yeah that was fun. Also, it must not be straightforward enough in FireWorks to name slices something sensible, as we ended up with a bunch of very similarly named image files. Luckily there is QuickLook, but this still sucked.</p>
 
 <h3>Third party frameworks</h3>
 
-<p>The client wanted integration with some 3rd party services which provided services such as social media, analytics and mobile advertisements. This meant we had to integrate frameworks developed by these parties into the app. Clearly not all frameworks are created equal. We had some excellent ones that were easy to use, and didn&#8217;t cause any issues. There were some that gave some build warnings, but worked okay otherwise. And then there was the framework that ignored a number of Cocoa conventions and gave us many instability issues.</p>
+<p>The client wanted integration with some 3rd party services which provided services such as social media, analytics and mobile advertisements. This meant we had to integrate frameworks developed by these parties into the app. Clearly not all frameworks are created equal. We had some excellent ones that were easy to use, and didn&rsquo;t cause any issues. There were some that gave some build warnings, but worked okay otherwise. And then there was the framework that ignored a number of Cocoa conventions and gave us many instability issues.</p>
 
 <p>In my opinion this underlines the importance of not only choosing a service on promised features and pricing, but also needs technical vetting of the provided framework. It only takes one buggy framework to make the whole app prone to crashes. Luckily the respective third party framework developer was responsive and managed to get us an updated framework just in time for our deadline.</p>
 

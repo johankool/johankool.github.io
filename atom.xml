@@ -4,7 +4,7 @@
   <title><![CDATA[Koolistov]]></title>
   <link href="http://koolistov.net/atom.xml" rel="self"/>
   <link href="http://koolistov.net/"/>
-  <updated>2013-03-29T00:31:04+08:00</updated>
+  <updated>2013-10-28T01:35:42+08:00</updated>
   <id>http://koolistov.net/</id>
   <author>
     <name><![CDATA[Johan Kool]]></name>
@@ -29,8 +29,8 @@
 
 <p>It is quite straightforward to convert your code from KVServerInteraction to MKNetworkKit. Below are two snippets that shows how a service request (a.k.a. network operation) is done. Both methods would live on your custom subclass of your service controller (a.k.a. network engine).</p>
 
-<figure class='code'><figcaption><span>KVServerInteractiom  </span></figcaption>
- <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<figure class='code'><figcaption><span>KVServerInteractiom </span></figcaption>
+<div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
 <span class='line-number'>3</span>
 <span class='line-number'>4</span>
@@ -45,8 +45,8 @@
 
 
 
-<figure class='code'><figcaption><span>MKNetworkKit  </span></figcaption>
- <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<figure class='code'><figcaption><span>MKNetworkKit </span></figcaption>
+<div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
 <span class='line-number'>3</span>
 <span class='line-number'>4</span>
@@ -89,11 +89,11 @@
 There is something important overlooked though: the satisfaction of existing iPad users. Apple wants to woo in new customers, but it also wants to keep existing customers satisfied. A satisfied customer is one that comes back to buy again. And one of the surest way to piss off a customer? Coming out with a new much improved model shortly after they bought theirs. Sure, this still happens, but Apple makes sure that the improvement is such that an existing user can justify either way to buy or not buy the new model. Users of models that are two generations older have a much harder timer resisting the new model. But theirs is by then almost 2 years old, a ripe old age for any tech gadget.
 </span></p>
 
-<p>So the reason for the disappointment amongst the tech journalists covering the new iPad comes from the fact that Apple doses the improvements well. Unlike regular iPad users, they have to upgrade, because it is their job to cover the latest and greatest. The regular users however can chose either way and still feel satisfied with their choice. They&#8217;ll keep liking their current iPad, or they&#8217;ll fall in love with their new iPad.</p>
+<p>So the reason for the disappointment amongst the tech journalists covering the new iPad comes from the fact that Apple doses the improvements well. Unlike regular iPad users, they have to upgrade, because it is their job to cover the latest and greatest. The regular users however can chose either way and still feel satisfied with their choice. They&rsquo;ll keep liking their current iPad, or they&rsquo;ll fall in love with their new iPad.</p>
 
 <p>This pattern is also clearly playing out for the iPhone. For iPhone 4 users the iPhone 4S looks like a nice upgrade, for owners of the iPhone 3GS and older models it is pretty much irresistible.</p>
 
-<p>That&#8217;s all there is to it.</p>
+<p>That&rsquo;s all there is to it.</p>
 ]]></content>
   </entry>
   
@@ -134,7 +134,7 @@ There is something important overlooked though: the satisfaction of existing iPa
     <link href="http://koolistov.net/blog/2012/02/26/nil-null-empty-macros/"/>
     <updated>2012-02-26T23:48:00+08:00</updated>
     <id>http://koolistov.net/blog/2012/02/26/nil-null-empty-macros</id>
-    <content type="html"><![CDATA[<p>Just a quick note to point out a gist I&#8217;ve made available a couple of days ago with three handy macros to deal with <code>nil</code>, <code>NSNull</code>, and empty strings (<code>@""</code>).</p>
+    <content type="html"><![CDATA[<p>Just a quick note to point out a gist I&rsquo;ve made available a couple of days ago with three handy macros to deal with <code>nil</code>, <code>NSNull</code>, and empty strings (<code>@""</code>).</p>
 
 <p>The first two are very handy when dealing with JSON dictionaries. The last one if you need to replace strings and want to avoid having <code>(null)</code> all over the place.</p>
 
@@ -156,7 +156,7 @@ There is something important overlooked though: the satisfaction of existing iPa
 <blockquote><p>&#8220;Selecting multiple files under &#8216;Build Phases&#8217; and pressing enter sets multiple compiler flags at once. Timesaver! #ios&#8221;</p></blockquote>
 
 
-<p>Xcode lets you set compiler flags per file in the &#8216;Compile Sources&#8217; build phase. A very common need these days it so have to set <code>-fno-objc-arc</code> when code is not yet readied for ARC. More often than not this involves a bunch of files. Repeating the process of setting this flag for a bunch of files gets old really quick.</p>
+<p>Xcode lets you set compiler flags per file in the &lsquo;Compile Sources&rsquo; build phase. A very common need these days it so have to set <code>-fno-objc-arc</code> when code is not yet readied for ARC. More often than not this involves a bunch of files. Repeating the process of setting this flag for a bunch of files gets old really quick.</p>
 
 <!-- more -->
 
@@ -164,7 +164,7 @@ There is something important overlooked though: the satisfaction of existing iPa
 <p>So here is what you do:</p>
 
 <ol>
-<li>Select the files in the &#8216;Compile Sources&#8217; build phase</li>
+<li>Select the files in the &lsquo;Compile Sources&rsquo; build phase</li>
 <li>Press enter</li>
 <li>Enter the compiler flags in the popup</li>
 <li>Press done</li>
@@ -195,25 +195,25 @@ There is something important overlooked though: the satisfaction of existing iPa
 <!--more-->
 
 
-<p>I am uncertain wether we can deduct from Apple&#8217;s sample code and/or API which approach they recommend. Even if all sample code lets the presenting view controller decide (I haven&#8217;t checked this), the API clearly allows the modal view controller to dismiss itself.</p>
+<p>I am uncertain wether we can deduct from Apple&rsquo;s sample code and/or API which approach they recommend. Even if all sample code lets the presenting view controller decide (I haven&rsquo;t checked this), the API clearly allows the modal view controller to dismiss itself.</p>
 
 <p>My biggest objection though arises as he next attempts to explain that under ARC it is not possible to have proper memory management simultaneously with letting the modal view controller dismiss itself. This is just false.</p>
 
 <p>In his non-ARC examples in both cases he retains the modal view controller before presenting it. This may be useful on occasion, but there is no need for it. The modal view controller is namely already retained when the <code>-[presentModalViewController:animated:]</code> method gets called. It is perfectly valid to pass an autoreleased view controller to that method. That would also avoid the ugly memory management that he uses in his second method. (There is BTW also a memory leak when he assigns the modal view controller to its property.) On <code>-[dismissModalViewControllerAnimated:]</code> the modal view controller gets released again.</p>
 
-<p>There is nothing in this that changes under ARC vs. non-ARC. In both cases this works fine, wether you let the presenting or the modal view controller dismiss doesn&#8217;t matter. So this only leaves the &#8216;purity&#8217; of which way is cleaner. That is a debatable issue.</p>
+<p>There is nothing in this that changes under ARC vs. non-ARC. In both cases this works fine, wether you let the presenting or the modal view controller dismiss doesn&rsquo;t matter. So this only leaves the &lsquo;purity&rsquo; of which way is cleaner. That is a debatable issue.</p>
 
-<p>So, I&#8217;d conclude, feel free to do it in the way that makes sense to you. Keep an eye on your memory management, also with ARC, but either way can work.</p>
+<p>So, I&rsquo;d conclude, feel free to do it in the way that makes sense to you. Keep an eye on your memory management, also with ARC, but either way can work.</p>
 
 <p><strong>Update:</strong> <a href="http://twitter.com/mugunthkumar/">Mugunth Kumar</a>:</p>
 
 <blockquote><p>&#8220;@johankool Good, but you still haven&#8217;t shown a ARC example.&#8221;</p></blockquote>
 
 
-<p>Okay, fair enough. The below is a sample of how I would do this with ARC. As I said, there doesn&#8217;t really change anything in ARC vs. non-ARC.</p>
+<p>Okay, fair enough. The below is a sample of how I would do this with ARC. As I said, there doesn&rsquo;t really change anything in ARC vs. non-ARC.</p>
 
-<figure class='code'><figcaption><span>Presenting View Controller  </span></figcaption>
- <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<figure class='code'><figcaption><span>Presenting View Controller </span></figcaption>
+<div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
 <span class='line-number'>3</span>
 <span class='line-number'>4</span>
@@ -256,8 +256,8 @@ There is something important overlooked though: the satisfaction of existing iPa
 
 
 
-<figure class='code'><figcaption><span>Modal View Controller  </span></figcaption>
- <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<figure class='code'><figcaption><span>Modal View Controller </span></figcaption>
+<div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
 <span class='line-number'>3</span>
 <span class='line-number'>4</span>
@@ -289,7 +289,7 @@ There is something important overlooked though: the satisfaction of existing iPa
     <id>http://koolistov.net/blog/2012/02/04/why-ios-apps-crash</id>
     <content type="html"><![CDATA[<p>Today <a href="http://www.forbes.com/sites/tomiogeron/2012/02/02/does-ios-crash-more-than-android-a-data-dive/">a Forbes article</a> by Tomio Geron did the rounds that compared the number of crashes in various versions of iOS with those happening in various versions of Android based on data from <a href="http://www.crittercism.com/">Crittercism</a>. That crashes are bad is undeniably true. However, not all crashes are the same.</p>
 
-<p>The implied link between OS version and the occurrence of crashes surprised me. I am not quite so sure if such a link in fact exists. I&#8217;d also argue that a higher crash rate says little about the quality of the OS version, or even of the app.</p>
+<p>The implied link between OS version and the occurrence of crashes surprised me. I am not quite so sure if such a link in fact exists. I&rsquo;d also argue that a higher crash rate says little about the quality of the OS version, or even of the app.</p>
 
 <!--more-->
 
@@ -298,7 +298,7 @@ There is something important overlooked though: the satisfaction of existing iPa
 
 <h3>Memory Kill</h3>
 
-<p>On iOS the system is quite unforgiving to apps using too much memory or CPU resources. The app does receive warnings if memory usage gets too high, but it the app fails to properly respond timely by freeing up memory is will unceremoniously get the boot. As a developer I don&#8217;t call this a crash, but poor memory management. It is nevertheless a serious issue and developers should make sure to stress test their apps.</p>
+<p>On iOS the system is quite unforgiving to apps using too much memory or CPU resources. The app does receive warnings if memory usage gets too high, but it the app fails to properly respond timely by freeing up memory is will unceremoniously get the boot. As a developer I don&rsquo;t call this a crash, but poor memory management. It is nevertheless a serious issue and developers should make sure to stress test their apps.</p>
 
 <h3>Crashes</h3>
 
@@ -331,19 +331,19 @@ Because Objective-C is a weakly typed system, it is possible to call methods on 
 <blockquote><p>&#8220;Anecdotally, I know that certain apps I use on my iPhone crash and they crash often.&#8221;</p></blockquote>
 
 
-<p>That an app keeps crashing if you keep on trying to use it in the same way can hardly be called surprising. Surely the developers of those apps have some work to do here, but it&#8217;s hard to make sensible conclusions from this.</p>
+<p>That an app keeps crashing if you keep on trying to use it in the same way can hardly be called surprising. Surely the developers of those apps have some work to do here, but it&rsquo;s hard to make sensible conclusions from this.</p>
 
-<p>As for the number of crashes occurring in a particular OS version it basically says nothing about the quality of the OS version. The vast majority of crashes are caused by bugs in the app code, not by bugs in the system. It is more likely that crashes in a new OS version such as iOS 5 are caused by apps that have not yet been updated by their developers. If an app needed changes it was however often due to false assumptions being made in the code while it was developed for iOS 4. If apps are designed according to Apple&#8217;s documentation for Cocoa it is unlikely to encounter issues on a new iOS version.</p>
+<p>As for the number of crashes occurring in a particular OS version it basically says nothing about the quality of the OS version. The vast majority of crashes are caused by bugs in the app code, not by bugs in the system. It is more likely that crashes in a new OS version such as iOS 5 are caused by apps that have not yet been updated by their developers. If an app needed changes it was however often due to false assumptions being made in the code while it was developed for iOS 4. If apps are designed according to Apple&rsquo;s documentation for Cocoa it is unlikely to encounter issues on a new iOS version.</p>
 
 <p>Developers have little excuse anyway, as test versions of new iOS versions are made available to them for testing.</p>
 
 <h3>Hardware</h3>
 
-<p>The Forbes article quotes Crittercism CEO Andrew Levy as saying that crashes can be caused by hardware issues (GPS or camera), or the availability of a network connection. If that is the case, it is mostly, if not completely, due to poor developer skills. It is the duty of the developer to anticipate all expected situations. Expected situations include the unavailability of the users location, a camera or a network connection. It also shows that the app has not been tested rigorously enough. There certainly is API in iOS to deal with all of these situations and developers don&#8217;t really have an excuse not to do so.</p>
+<p>The Forbes article quotes Crittercism CEO Andrew Levy as saying that crashes can be caused by hardware issues (GPS or camera), or the availability of a network connection. If that is the case, it is mostly, if not completely, due to poor developer skills. It is the duty of the developer to anticipate all expected situations. Expected situations include the unavailability of the users location, a camera or a network connection. It also shows that the app has not been tested rigorously enough. There certainly is API in iOS to deal with all of these situations and developers don&rsquo;t really have an excuse not to do so.</p>
 
 <h3>Third Party Code</h3>
 
-<p>The point raised in the article about third-party services is certainly valid. It is vitally important to realize the risk of using a third-party library in your app. It only takes one shoddy library to turn your app into a crash prone piece of crap. Evaluation and testing of third-party code is for this reason very important. If you are developing for a client, you need to be able to communicate to them that willy-nilly adding of outside code can be a risky affair. Anyway, the desire to include multiple analytics packages into one app has always puzzled me. But then, my ideal app doesn&#8217;t include any.</p>
+<p>The point raised in the article about third-party services is certainly valid. It is vitally important to realize the risk of using a third-party library in your app. It only takes one shoddy library to turn your app into a crash prone piece of crap. Evaluation and testing of third-party code is for this reason very important. If you are developing for a client, you need to be able to communicate to them that willy-nilly adding of outside code can be a risky affair. Anyway, the desire to include multiple analytics packages into one app has always puzzled me. But then, my ideal app doesn&rsquo;t include any.</p>
 
 <p>In this way the data collected by Crittercism is also skewed. It is based on crashes reported by apps that include its library. So these are apps by developers who are likelier to not be squeamish about third-party code.</p>
 
@@ -353,7 +353,7 @@ Because Objective-C is a weakly typed system, it is possible to call methods on 
 
 <h3>Conclusion</h3>
 
-<p>The number of crashes reported for an app does not necessarily directly reflect the number of bugs in its source code, nor does it necessarily reflect the overall quality of the source code. The number of crashes of apps on a particular OS version is even less indicative of the quality of the OS version. There are two many other factors at play, but mostly, app crashes are 99 out of 100 times a bug in the app&#8217;s code as opposed to the OS code.</p>
+<p>The number of crashes reported for an app does not necessarily directly reflect the number of bugs in its source code, nor does it necessarily reflect the overall quality of the source code. The number of crashes of apps on a particular OS version is even less indicative of the quality of the OS version. There are two many other factors at play, but mostly, app crashes are 99 out of 100 times a bug in the app&rsquo;s code as opposed to the OS code.</p>
 
 <p>The App Store is a frustrating obstacle for a quick response to deliver fixes, but one that iOS developers just have to learn to live with.</p>
 ]]></content>
@@ -364,7 +364,7 @@ Because Objective-C is a weakly typed system, it is possible to call methods on 
     <link href="http://koolistov.net/blog/2012/02/01/big-promotion/"/>
     <updated>2012-02-01T23:46:00+08:00</updated>
     <id>http://koolistov.net/blog/2012/02/01/big-promotion</id>
-    <content type="html"><![CDATA[<p>For those travelers who stop by Amsterdam&#8217;s Schiphol Airport, there is a big billboard promoting the <a href="http://itunes.apple.com/nl/app/rtlnieuws-365/id486518266?mt=8">RTLNieuws 365 app</a> which I talked about <a href="http://koolistov.net/blog/2012/01/19/rtlnieuws-365-is-a-go/">in my previous post</a>.</p>
+    <content type="html"><![CDATA[<p>For those travelers who stop by Amsterdam&rsquo;s Schiphol Airport, there is a big billboard promoting the <a href="http://itunes.apple.com/nl/app/rtlnieuws-365/id486518266?mt=8">RTLNieuws 365 app</a> which I talked about <a href="http://koolistov.net/blog/2012/01/19/rtlnieuws-365-is-a-go/">in my previous post</a>.</p>
 
 <p>I have to say that it is quite satisfying to see ones work promoted on a 7 by 8 meters large display. Though not quite as satisfying as it topping the free iPad apps list in the Dutch App Store for a full fortnight already!</p>
 
@@ -410,13 +410,13 @@ RTL Nieuws is a well known Dutch news television bulletin by the Netherlands&#82
     <id>http://koolistov.net/blog/2012/01/10/walk-of-shame-naked</id>
     <content type="html"><![CDATA[<p>Lately there has been some controversy regarding GoDaddy, and their support for SOPA. December 29th was set as a protest day to show our discontent with GoDaddy by moving away our domains on that day.</p>
 
-<p>It felt a little too risky to do this while I was traveling, so I only got around to it last week. Anyway, I am glad that I finally got around to moving away my 3 domains, as I had been wanting to do this ever since I heard about GoDaddy&#8217;s CEO&#8217;s elephant hunting hobby. (Seriously, what&#8217;s wrong with this guy?!)</p>
+<p>It felt a little too risky to do this while I was traveling, so I only got around to it last week. Anyway, I am glad that I finally got around to moving away my 3 domains, as I had been wanting to do this ever since I heard about GoDaddy&rsquo;s CEO&rsquo;s elephant hunting hobby. (Seriously, what&rsquo;s wrong with this guy?!)</p>
 
 <p>I am ashamed it took me this long to walk way from GoDaddy, so I do this as my public walk of shame.</p>
 
 <h3>Naked domain</h3>
 
-<p>Another thing I finally got around to was to have this website&#8217;s URL drop the &#8216;www&#8217;. From now one is it just the naked domain: &#8216;koolistov.net&#8217;. This website is now hosted via GitHub and no longer via Google App Engine. The combination GitHub and Octopress is certainly a more pleasant one.</p>
+<p>Another thing I finally got around to was to have this website&rsquo;s URL drop the &lsquo;www&rsquo;. From now one is it just the naked domain: &lsquo;koolistov.net&rsquo;. This website is now hosted via GitHub and no longer via Google App Engine. The combination GitHub and Octopress is certainly a more pleasant one.</p>
 ]]></content>
   </entry>
   
@@ -425,12 +425,12 @@ RTL Nieuws is a well known Dutch news television bulletin by the Netherlands&#82
     <link href="http://koolistov.net/blog/2012/01/10/two-developer-tool-tips/"/>
     <updated>2012-01-10T20:54:00+08:00</updated>
     <id>http://koolistov.net/blog/2012/01/10/two-developer-tool-tips</id>
-    <content type="html"><![CDATA[<p>Two quick tips for fixing some troubles with developer tools. I ran into both today, though they are likely unrelated. I couldn&#8217;t find much about it online, so here goes.</p>
+    <content type="html"><![CDATA[<p>Two quick tips for fixing some troubles with developer tools. I ran into both today, though they are likely unrelated. I couldn&rsquo;t find much about it online, so here goes.</p>
 
 <!--more-->
 
 
-<h2>FileMerge won&#8217;t open for third party app</h2>
+<h2>FileMerge won&rsquo;t open for third party app</h2>
 
 <p>When trying to view differences using GitBox, nothing would happen. This symptom started after I had installed a beta version of Xcode. Once I realized that GitBox opens FileMerge via the command line utlity <code>opendiff</code> the fix was easy: selecting the proper Xcode installation.</p>
 
@@ -475,17 +475,17 @@ RTL Nieuws is a well known Dutch news television bulletin by the Netherlands&#82
 <!--more-->
 
 
-<p>The opening of the curtains is planned for January of next year and shouldn&#8217;t go unnoticed for the Dutch, the target market. There are plans for TV commercials announcing the app, as well as outdoor advertising. Wicked!</p>
+<p>The opening of the curtains is planned for January of next year and shouldn&rsquo;t go unnoticed for the Dutch, the target market. There are plans for TV commercials announcing the app, as well as outdoor advertising. Wicked!</p>
 
 <h3>Git, GitHub and code reviews</h3>
 
 <p>For me this was the first big project using git. Git combined with GitHub really is a winner. The amount of time I spent on fighting with SCM was significantly lower than when using Subversion. There were some disagreements between me and git, but we worked it out.</p>
 
-<p>Something that was actually very neat was the strict rule that code was to be reviewed before it got merged into the main repository. If you know it&#8217;s not just you reading the code it makes that you&#8217;d doubly want to commit great code. That only works if the code reviewers have a great competency level too, which luckily was the case.</p>
+<p>Something that was actually very neat was the strict rule that code was to be reviewed before it got merged into the main repository. If you know it&rsquo;s not just you reading the code it makes that you&rsquo;d doubly want to commit great code. That only works if the code reviewers have a great competency level too, which luckily was the case.</p>
 
-<p>We worked from our own forks, then did pull requests via GitHub. Their interface is great and it is generally quite easy to spot issues. Some things did slip through code review though, mainly bugs where the diff snippets in GitHub didn&#8217;t provide enough context for the reviewer to spot the problem. GitHub lets you click through to the full file, but as this lacks highlighting of the changes, it does little in helping to spot problems. Some Ajax-y way to load more context would be a great enhancement.</p>
+<p>We worked from our own forks, then did pull requests via GitHub. Their interface is great and it is generally quite easy to spot issues. Some things did slip through code review though, mainly bugs where the diff snippets in GitHub didn&rsquo;t provide enough context for the reviewer to spot the problem. GitHub lets you click through to the full file, but as this lacks highlighting of the changes, it does little in helping to spot problems. Some Ajax-y way to load more context would be a great enhancement.</p>
 
-<p>One rule that we had for code review was that commented out code was not allowed unless a comment was present explaining the reason. The explanation better be a good one too. This was useful in keeping the code base clean. I have noticed that in earlier projects I have let such commented out code blocks accumulate. Usually it would end up being deleted in the end, or if reinstated not work quite as expected anymore due to changes made elsewhere. This commented out stuff just doesn&#8217;t belong in your code base. And remember, you are using SCM so you can always get back to it if needed anyway.</p>
+<p>One rule that we had for code review was that commented out code was not allowed unless a comment was present explaining the reason. The explanation better be a good one too. This was useful in keeping the code base clean. I have noticed that in earlier projects I have let such commented out code blocks accumulate. Usually it would end up being deleted in the end, or if reinstated not work quite as expected anymore due to changes made elsewhere. This commented out stuff just doesn&rsquo;t belong in your code base. And remember, you are using SCM so you can always get back to it if needed anyway.</p>
 
 <h3>Pivotal Tracker</h3>
 
@@ -493,11 +493,11 @@ RTL Nieuws is a well known Dutch news television bulletin by the Netherlands&#82
 
 <h3>Fireworks</h3>
 
-<p>One thing that didn&#8217;t quite go so smoothly was the delivery of artwork. The designers used Adobe Fireworks. Quite the misnomer, as there is not much that really works in it. Not that I have been able to find any software that could sensibly be used as its replacement, but still. The designs were sliced to extract the needed artwork, but with every change to the design the slices came out with different names, so yeah that was fun. Also, it must not be straightforward enough in FireWorks to name slices something sensible, as we ended up with a bunch of very similarly named image files. Luckily there is QuickLook, but this still sucked.</p>
+<p>One thing that didn&rsquo;t quite go so smoothly was the delivery of artwork. The designers used Adobe Fireworks. Quite the misnomer, as there is not much that really works in it. Not that I have been able to find any software that could sensibly be used as its replacement, but still. The designs were sliced to extract the needed artwork, but with every change to the design the slices came out with different names, so yeah that was fun. Also, it must not be straightforward enough in FireWorks to name slices something sensible, as we ended up with a bunch of very similarly named image files. Luckily there is QuickLook, but this still sucked.</p>
 
 <h3>Third party frameworks</h3>
 
-<p>The client wanted integration with some 3rd party services which provided services such as social media, analytics and mobile advertisements. This meant we had to integrate frameworks developed by these parties into the app. Clearly not all frameworks are created equal. We had some excellent ones that were easy to use, and didn&#8217;t cause any issues. There were some that gave some build warnings, but worked okay otherwise. And then there was the framework that ignored a number of Cocoa conventions and gave us many instability issues.</p>
+<p>The client wanted integration with some 3rd party services which provided services such as social media, analytics and mobile advertisements. This meant we had to integrate frameworks developed by these parties into the app. Clearly not all frameworks are created equal. We had some excellent ones that were easy to use, and didn&rsquo;t cause any issues. There were some that gave some build warnings, but worked okay otherwise. And then there was the framework that ignored a number of Cocoa conventions and gave us many instability issues.</p>
 
 <p>In my opinion this underlines the importance of not only choosing a service on promised features and pricing, but also needs technical vetting of the provided framework. It only takes one buggy framework to make the whole app prone to crashes. Luckily the respective third party framework developer was responsive and managed to get us an updated framework just in time for our deadline.</p>
 
@@ -516,7 +516,7 @@ RTL Nieuws is a well known Dutch news television bulletin by the Netherlands&#82
 
 <p>It is a sad sad day today. We all knew it was coming. We all knew it was coming sooner than we were praying for. Steve Jobs&#8217; passing away is still a painful stab in the heart. He was crazy enough to think he could change the world, and damn it, did he ever!</p>
 
-<p>It must have been somewhere around 1991 that I for the first time got to play with a Macintosh. What got me right away was the passion that so obviously had been put into building it, into making it a joy to use, easy to use. It was not about typing &#8216;magic&#8217; commands at a blinking cursor, it was about getting things done, and having a good time doing so too!</p>
+<p>It must have been somewhere around 1991 that I for the first time got to play with a Macintosh. What got me right away was the passion that so obviously had been put into building it, into making it a joy to use, easy to use. It was not about typing &lsquo;magic&rsquo; commands at a blinking cursor, it was about getting things done, and having a good time doing so too!</p>
 
 <p>Today I am typing this on an iMac with possibilities I could not dream of in 1991. Yet it dwarfs the potential of the iPhone and iPad on my desk. Today is the future. And he is the one who made it all possible!</p>
 
@@ -524,7 +524,7 @@ RTL Nieuws is a well known Dutch news television bulletin by the Netherlands&#82
 
 <p>I have not met him or worked with him. I have only seen his work from the sideline. But yet, it feels like he was my motivator too. To tell me good is not good enough, to always aim higher. I like to think some of his passion rubbed off on me.</p>
 
-<p>It is a sad sad day today. Coping with the mourning is though. Humor is one of the few mechanism we have to deal with it, so I&#8217;ll end this with a lighter note:</p>
+<p>It is a sad sad day today. Coping with the mourning is though. Humor is one of the few mechanism we have to deal with it, so I&rsquo;ll end this with a lighter note:</p>
 
 <blockquote><p>Blessed are those who die after Steve Jobs for them awaits the perfect heaven. He is rethinking the whole concept with God at this moment.</p></blockquote>
 
@@ -544,14 +544,14 @@ RTL Nieuws is a well known Dutch news television bulletin by the Netherlands&#82
 
 <h3>URL Building Blocks</h3>
 
-<p>Let&#8217;s have a quick look at how a URL is constructed. The various parts of an URL are:</p>
+<p>Let&rsquo;s have a quick look at how a URL is constructed. The various parts of an URL are:</p>
 
 <pre><code>scheme://username:password@domain:port/path?query#fragment
 </code></pre>
 
 <p>The pragmatic approach works well if the base URL does not contain a path, query and fragment. The presence of a path is usually not a problem, it gets trickier when a query is already present, and most solutions definitely fail when a fragment is present.</p>
 
-<p>The code provided below takes the presence of path, query and/or fragment into account. Don&#8217;t just take my word for it, you can run the provided unit test to ensure it does it right.</p>
+<p>The code provided below takes the presence of path, query and/or fragment into account. Don&rsquo;t just take my word for it, you can run the provided unit test to ensure it does it right.</p>
 
 <h3>Path</h3>
 
@@ -565,7 +565,7 @@ RTL Nieuws is a well known Dutch news television bulletin by the Netherlands&#82
 
 <h3>Code</h3>
 
-<p>The code is available as a <a href="https://gist.github.com/1256354">gist on GitHub</a>. The license for the code is a simple BSD license. You don&#8217;t need to attribute me or Koolistov in your app (although appreciated if you do), but you need to leave the copyright notice intact on the source files.</p>
+<p>The code is available as a <a href="https://gist.github.com/1256354">gist on GitHub</a>. The license for the code is a simple BSD license. You don&rsquo;t need to attribute me or Koolistov in your app (although appreciated if you do), but you need to leave the copyright notice intact on the source files.</p>
 
 <div><script src='https://gist.github.com/1256354.js'></script>
 <noscript><pre><code>//
@@ -617,9 +617,9 @@ RTL Nieuws is a well known Dutch news television bulletin by the Netherlands&#82
     <link href="http://koolistov.net/blog/2011/09/24/antiquated-icons-and-junk-drawers/"/>
     <updated>2011-09-24T21:16:00+08:00</updated>
     <id>http://koolistov.net/blog/2011/09/24/antiquated-icons-and-junk-drawers</id>
-    <content type="html"><![CDATA[<p>One of the perks of having a newborn in the house, besides dirty diapers and frequent feedings, is that you only get up-to-date on some news later than normal. During the last weeks I had been hearing about Windows 8 and the new Metro style apps Microsoft introduced, but it wasn&#8217;t until this morning that I found some time to look at one of the introduction videos.</p>
+    <content type="html"><![CDATA[<p>One of the perks of having a newborn in the house, besides dirty diapers and frequent feedings, is that you only get up-to-date on some news later than normal. During the last weeks I had been hearing about Windows 8 and the new Metro style apps Microsoft introduced, but it wasn&rsquo;t until this morning that I found some time to look at one of the introduction videos.</p>
 
-<p>Actually, I have to congratulate Microsoft on this one. Like mine (yes, not a subjective opinion, but who cares) theirs is a pretty baby too! A fresh and unique approach is something we don&#8217;t often see coming out of Redmond. The tiles, the side-by-side mode, sharing between apps are all great features to have. Also smaller things like being able to swipe between pages whilst dragging is a fun new gesture.</p>
+<p>Actually, I have to congratulate Microsoft on this one. Like mine (yes, not a subjective opinion, but who cares) theirs is a pretty baby too! A fresh and unique approach is something we don&rsquo;t often see coming out of Redmond. The tiles, the side-by-side mode, sharing between apps are all great features to have. Also smaller things like being able to swipe between pages whilst dragging is a fun new gesture.</p>
 
 <!--more-->
 
@@ -627,26 +627,26 @@ RTL Nieuws is a well known Dutch news television bulletin by the Netherlands&#82
 <h3>My Desktop is Not a Phone</h3>
 
 <p><span class='pullquote-right' data-pullquote='Microsoft would have done better to introduce Metro for just touch devices.'>
-But it wouldn&#8217;t be Microsoft if there weren&#8217;t a number of rather baffling decisions. I can see Metro style apps work beautifully on touch devices like phones and, in Microsofts parlance, slates. On desktop and laptop computers without touch these apps are woofully out of place. As a iOS developer I have some experience here, as I often debug apps running in the iOS Simulator. For debugging that works great, but I&#8217;d never want to use an app that way on my desktop all day long. Some gestures are nearly impossible, or even completely impossible. Think pinching, rotating, or anything involving more than one finger. Yet, Metro apps are expected to be able to be driven by mouse and keyboard too. If developers have to take that usage method into account, they are targeting the lowest common denominator. You don&#8217;t want that.</p>
+But it wouldn&rsquo;t be Microsoft if there weren&rsquo;t a number of rather baffling decisions. I can see Metro style apps work beautifully on touch devices like phones and, in Microsofts parlance, slates. On desktop and laptop computers without touch these apps are woofully out of place. As a iOS developer I have some experience here, as I often debug apps running in the iOS Simulator. For debugging that works great, but I&rsquo;d never want to use an app that way on my desktop all day long. Some gestures are nearly impossible, or even completely impossible. Think pinching, rotating, or anything involving more than one finger. Yet, Metro apps are expected to be able to be driven by mouse and keyboard too. If developers have to take that usage method into account, they are targeting the lowest common denominator. You don&rsquo;t want that.</p>
 
-<p>When Apple announced that with Lion the new features and ideas learned from iOS would make it &#8216;back to the Mac&#8217;, they were actually quite conservative in what they brought along. The current desktop metaphor is still a strong one, and it works wonderfully well with a keyboard and mouse (or trackpad, or both). Apple didn&#8217;t put a touchscreen in their desktops and laptops, nor do the let you run iOS apps on the Mac. For a good reason: it doesn&#8217;t fit that usage type. Microsoft would have done better to introduce Metro for just touch devices. It would have been a great time also to drop the &#8220;Windows&#8221; name, which in a chromeless UI as Metro is now just a plain silly name. I think Microsoft also underestimates the negative association many people make when they hear the name &#8220;Windows&#8221;.</p>
+<p>When Apple announced that with Lion the new features and ideas learned from iOS would make it &lsquo;back to the Mac&rsquo;, they were actually quite conservative in what they brought along. The current desktop metaphor is still a strong one, and it works wonderfully well with a keyboard and mouse (or trackpad, or both). Apple didn&rsquo;t put a touchscreen in their desktops and laptops, nor do the let you run iOS apps on the Mac. For a good reason: it doesn&rsquo;t fit that usage type. Microsoft would have done better to introduce Metro for just touch devices. It would have been a great time also to drop the &ldquo;Windows&rdquo; name, which in a chromeless UI as Metro is now just a plain silly name. I think Microsoft also underestimates the negative association many people make when they hear the name &ldquo;Windows&rdquo;.</p>
 
-<p>Today&#8217;s trend is towards touch. Microsoft correctly saw that. The desktop computer as we know it is here to stay though, that is, with keyboard and mouse. I see desktops and touch devices getting more and more acquainted with each other, but I doubt they&#8217;ll ever become one and the same. Just as you don&#8217;t connect a mouse to your touch device, bringing touch to your desktop computer won&#8217;t do the trick either.
+<p>Today&rsquo;s trend is towards touch. Microsoft correctly saw that. The desktop computer as we know it is here to stay though, that is, with keyboard and mouse. I see desktops and touch devices getting more and more acquainted with each other, but I doubt they&rsquo;ll ever become one and the same. Just as you don&rsquo;t connect a mouse to your touch device, bringing touch to your desktop computer won&rsquo;t do the trick either.
 </span></p>
 
-<h3>Apple, er&#8230; Window Push Notifications</h3>
+<h3>Apple, er&hellip; Window Push Notifications</h3>
 
-<p>But back to Metro, because on touch devices it looks rather promising. I had a good chuckle when they started talking about push notifications. They call this service &#8220;Windows Push Notifications Service&#8221;, abbreviated as &#8220;WNS&#8221;, I guess abbreviating it as &#8220;WPNS&#8221; was to close to &#8220;APNS&#8221; as Apple&#8217;s push notification service is known. These days having push notifications in your OS is definitely a must. It took Apple until iOS 5 before it finally introduced a notification center. I don&#8217;t think I break any NDA rules if I say that I really love having this feature on my iPhone. Microsoft has decided otherwise: &#8220;That,&#8221; they say, &#8220;is not a notification center, but a junk drawer. All those notifications pile up there, and you have to go clean them up or eventually your drawer will overflow with junk.&#8221; I wonder how long it will take them to make a full 180 and eat their words on this.</p>
+<p>But back to Metro, because on touch devices it looks rather promising. I had a good chuckle when they started talking about push notifications. They call this service &ldquo;Windows Push Notifications Service&rdquo;, abbreviated as &ldquo;WNS&rdquo;, I guess abbreviating it as &ldquo;WPNS&rdquo; was to close to &ldquo;APNS&rdquo; as Apple&rsquo;s push notification service is known. These days having push notifications in your OS is definitely a must. It took Apple until iOS 5 before it finally introduced a notification center. I don&rsquo;t think I break any NDA rules if I say that I really love having this feature on my iPhone. Microsoft has decided otherwise: &ldquo;That,&rdquo; they say, &ldquo;is not a notification center, but a junk drawer. All those notifications pile up there, and you have to go clean them up or eventually your drawer will overflow with junk.&rdquo; I wonder how long it will take them to make a full 180 and eat their words on this.</p>
 
 <h3>App Branding</h3>
 
 <p><span class='pullquote-right' data-pullquote='Using an icon is now considered &#8220;antiquated&#8221; by Microsoft.'>
-Using an icon is now considered &#8220;antiquated&#8221; by Microsoft. Funny language to hear from the masters of backward compatibility to the extreme. Although I like the general idea of the live tiles over icons, there is one major concern that I have here. It waters down for the user what is your app and what is the OS. This is further emphasized by the use of templates for the live tiles. The icon, before the most important branding an app had, is now a generic tile. Also within the apps Microsoft wants developers to use Microsofts templates and Microsofts typography and Microsofts layout. If the non-geek user already has trouble naming their web browser, in Metro they will have an even harder time identifying which app they are using if they even recognize it as such. I think that as Metro app developer it will be a big challenge to gain name recognition for your Metro app.
+Using an icon is now considered &ldquo;antiquated&rdquo; by Microsoft. Funny language to hear from the masters of backward compatibility to the extreme. Although I like the general idea of the live tiles over icons, there is one major concern that I have here. It waters down for the user what is your app and what is the OS. This is further emphasized by the use of templates for the live tiles. The icon, before the most important branding an app had, is now a generic tile. Also within the apps Microsoft wants developers to use Microsofts templates and Microsofts typography and Microsofts layout. If the non-geek user already has trouble naming their web browser, in Metro they will have an even harder time identifying which app they are using if they even recognize it as such. I think that as Metro app developer it will be a big challenge to gain name recognition for your Metro app.
 </span></p>
 
 <h3>Competition Welcome</h3>
 
-<p>Although there is a lot of new stuff, it is evident Microsoft took a good look at Apple&#8217;s iOS. I don&#8217;t doubt the reverse will happen too, and would welcome side-by-side apps in iOS 6. Also the sharing services are great additions and a good feature to have in a mobile OS. It is good that Apple is facing some more competition here now. Until now competition was not too impressive: Android is still playing catchup, WebOS is being kicked around by CEOs and Blackberry&#8230; not sure why I even mention them.</p>
+<p>Although there is a lot of new stuff, it is evident Microsoft took a good look at Apple&rsquo;s iOS. I don&rsquo;t doubt the reverse will happen too, and would welcome side-by-side apps in iOS 6. Also the sharing services are great additions and a good feature to have in a mobile OS. It is good that Apple is facing some more competition here now. Until now competition was not too impressive: Android is still playing catchup, WebOS is being kicked around by CEOs and Blackberry&hellip; not sure why I even mention them.</p>
 ]]></content>
   </entry>
   
@@ -655,18 +655,18 @@ Using an icon is now considered &#8220;antiquated&#8221; by Microsoft. Funny lan
     <link href="http://koolistov.net/blog/2011/09/17/a-fresh-new-website/"/>
     <updated>2011-09-17T13:00:00+08:00</updated>
     <id>http://koolistov.net/blog/2011/09/17/a-fresh-new-website</id>
-    <content type="html"><![CDATA[<p>A fresh new website for Koolistov is finally here. As Koolistov recently incorporated in Singapore as a private limited company, an update to its website was more than overdue. The old started to show its age, and although I applied a somewhat fresher CSS style to it, it still didn&#8217;t feel quite right.</p>
+    <content type="html"><![CDATA[<p>A fresh new website for Koolistov is finally here. As Koolistov recently incorporated in Singapore as a private limited company, an update to its website was more than overdue. The old started to show its age, and although I applied a somewhat fresher CSS style to it, it still didn&rsquo;t feel quite right.</p>
 
-<p>The legendary <a href="http://mattgemmell.com/2011/09/12/blogging-with-octopress/">Matt Gemmell</a> had been feeling the need to freshen up his personal blog recently too, and this is how I got to learn about <a href="http://octopress.org/">Octopress</a>. Octopress is framework based on <a href="https://github.com/mojombo/jekyll">Jekyll</a> created by <a href="http://twitter.com/imathis">Brandon Mathis</a>. It provides you with a great looking, HTML5 based blog. You run it locally on your own computer where it creates a static website which can be hosted anywhere. Despite being static, it actually offers quite a nice number of features by wisely letting established third parties take care of those, such as comments and searching. It&#8217;s quite configurable, and by creating static html you are not getting locked in to one hosting provider. Great stuff!</p>
+<p>The legendary <a href="http://mattgemmell.com/2011/09/12/blogging-with-octopress/">Matt Gemmell</a> had been feeling the need to freshen up his personal blog recently too, and this is how I got to learn about <a href="http://octopress.org/">Octopress</a>. Octopress is framework based on <a href="https://github.com/mojombo/jekyll">Jekyll</a> created by <a href="http://twitter.com/imathis">Brandon Mathis</a>. It provides you with a great looking, HTML5 based blog. You run it locally on your own computer where it creates a static website which can be hosted anywhere. Despite being static, it actually offers quite a nice number of features by wisely letting established third parties take care of those, such as comments and searching. It&rsquo;s quite configurable, and by creating static html you are not getting locked in to one hosting provider. Great stuff!</p>
 
 <!--more-->
 
 
 <p>Octopress has support for deploying directly to GitHub Pages, or <code>rsync</code>-ing to a plain webserver. However, the previous website of Koolistov was running on <a href="http://code.google.com/appengine/">Google App Engine</a>. There are a few features that I implemented there that are in use by some of my apps, and/or that I would not really want to part with. As it turns out, I can have the best of both worlds: keep my website on Google App Engine, and use Octopress.</p>
 
-<p>The first hurdle though was to get Octopress to run locally. The installation isn&#8217;t particularly difficult but there was one gotcha worth mentioning. The installation instructions assume that you are using the <code>bash</code> shell on Mac OS X. If, like me, you have been using a Mac OS X for longer than you can remember, yours may still be the <code>tcsh</code> shell. Once I did the installation via a temporary <code>bash</code> shell, and also use such a <code>bash</code> shell when working with Octopress, all is fine. Maybe someday I&#8217;ll catch up with the times and change my default shell to <code>bash</code>, but that&#8217;s not for today.</p>
+<p>The first hurdle though was to get Octopress to run locally. The installation isn&rsquo;t particularly difficult but there was one gotcha worth mentioning. The installation instructions assume that you are using the <code>bash</code> shell on Mac OS X. If, like me, you have been using a Mac OS X for longer than you can remember, yours may still be the <code>tcsh</code> shell. Once I did the installation via a temporary <code>bash</code> shell, and also use such a <code>bash</code> shell when working with Octopress, all is fine. Maybe someday I&rsquo;ll catch up with the times and change my default shell to <code>bash</code>, but that&rsquo;s not for today.</p>
 
-<p>A number of solutions showed up when searching for ways of hosting a static website via Google App Engine. By far the best solution I found made it as easy as putting everything in a folder named <code>static</code> and adding a bunch of handlers to <code>app.yaml</code>. This solution beats others in that it doesn&#8217;t require any processing, and that it can serve up the <code>index.html</code> of a folder when such folder is accessed without resorting to performing redirect to the <code>index.html</code>.</p>
+<p>A number of solutions showed up when searching for ways of hosting a static website via Google App Engine. By far the best solution I found made it as easy as putting everything in a folder named <code>static</code> and adding a bunch of handlers to <code>app.yaml</code>. This solution beats others in that it doesn&rsquo;t require any processing, and that it can serve up the <code>index.html</code> of a folder when such folder is accessed without resorting to performing redirect to the <code>index.html</code>.</p>
 
 <div><script src='https://gist.github.com/873098.js?file=app.yaml'></script>
 <noscript><pre><code>application: you-app-name-here
@@ -858,7 +858,7 @@ handlers:
 </code></pre></noscript></div>
 
 
-<p>Now if only Google App Engine would support naked domain names&#8230; I guess we need to keep something to dream about.</p>
+<p>Now if only Google App Engine would support naked domain names&hellip; I guess we need to keep something to dream about.</p>
 ]]></content>
   </entry>
   
