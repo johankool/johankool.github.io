@@ -22,6 +22,9 @@ url: "https://johankool.nl" # the base hostname & protocol for your site, e.g. h
 twitter_username: johankool
 github_username:  johankool
 linkedin_username: johankool
+mastodon:
+  - username: johankool
+    instance: mastodon.social
 
 # Build settings
 markdown: kramdown
