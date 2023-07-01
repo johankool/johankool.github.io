@@ -19,7 +19,6 @@ description: >- # this means to ignore newlines until "baseurl:"
   I write apps for iOS and macOS. I am based in Rotterdam, the Netherlands.
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "https://johankool.nl" # the base hostname & protocol for your site, e.g. http://example.com
-twitter_username: johankool
 github_username:  johankool
 linkedin_username: johankool
 mastodon:
