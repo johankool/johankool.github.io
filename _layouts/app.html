@@ -43,7 +43,11 @@ apps_page: true
       {%- if page.whats_new -%}
         {%- include app-features.html title="New in <b>2.0</b>" items=site.data.app_features.whats_new -%}
       {%- endif -%}
-      {%- include app-features.html title="And <b>much more</b>" items=site.data.app_features.features -%}
+      {%- assign features = site.data.app_features.features -%}
+      {%- if page.whats_new -%}
+        {%- assign features = features | where_exp: "item", "item.new_in_badminton != true" | concat: site.data.app_features.features_after_whats_new -%}
+      {%- endif -%}
+      {%- include app-features.html title="And <b>much more</b>" items=features -%}
 
       <section class="band siblings" data-reveal>
         <div class="wrap">
@@ -54,6 +58,7 @@ apps_page: true
                 <a href="{{ other.url | relative_url }}" style="--accent: {{ other.color }}"><img src="{{ "/assets/apps/" | append: other.slug | append: "/icon.svg" | relative_url }}" alt="" width="56" height="56">{{ other.name }}</a>
               {%- endunless -%}
             {%- endfor -%}
+            <a class="sibling-all" href="{{ "/apps/" | relative_url }}">All sports →</a>
           </div>
         </div>
       </section>

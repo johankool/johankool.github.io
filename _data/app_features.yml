@@ -13,6 +13,7 @@ features:
     text: Scores and match points are announced out loud, so everyone on court stays up to date.
   - title: Tournaments
     text: Group your matches, follow the standings, and share a tournament so others can add their matches.
+    new_in_badminton: true
   - title: Rankings and history
     text: See who's on top and look back at every match you played.
   - title: Apple Health, if you like
@@ -20,16 +21,21 @@ features:
   - title: On all your devices
     text: iPhone, iPad and Apple Watch stay in step through iCloud, and a watch widget shows your game.
 
+# Takes the place of the features already listed as new in Badminton.
+features_after_whats_new:
+  - title: Undo and redo
+    text: Tapped the wrong side? Take the point back, or bring it back again.
+
 whats_new:
   - title: Now in five sports
     text: Badminton has company. Tennis, Padel, Squash and Table Tennis each have an app of their own.
   - title: Tournaments
     text: Run a tournament with its own roster and rankings, and share it so friends can add their matches.
-  - title: Your own rules
-    text: Change the points, the games and the scoring, separately for singles, doubles and one against two.
   - title: Sync with iCloud
     text: Your players and matches now follow you to all your devices, and your watch stays in step with your iPhone directly.
   - title: Follow live
     text: Watch the score of a match someone else is keeping, swiping between all games going on.
   - title: Start from your iPhone
-    text: Set up a match on your iPhone and send it to your watch. A widget shows the game on your watch face.
+    text: Set up a match on your iPhone and send it to your watch, ready to play.
+  - title: On your watch face
+    text: A widget shows your current or last game, right on your watch face.
