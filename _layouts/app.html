@@ -1,0 +1,65 @@
+---
+apps_page: true
+---
+{%- assign app = site.data.apps | where: "slug", page.sport | first -%}
+{%- assign base = "/assets/apps/" | append: app.slug -%}
+<!DOCTYPE html>
+<html lang="en">
+  {%- include head.html -%}
+  <body class="apps" style="--accent: {{ app.color }}">
+    {%- include header.html -%}
+    <main aria-label="Content">
+      <section class="hero">
+        {%- assign ball = base | append: "/ball.svg" -%}
+        {%- include rally.html ball=ball shuttle=app.shuttle -%}
+        <div class="wrap hero-text">
+          <img class="hero-icon" src="{{ base | append: "/icon.svg" | relative_url }}" alt="" width="88" height="88">
+          <h1>Smash and <b>Score!</b></h1>
+          <p>Your scoreboard for {{ app.name }} on iPhone and Apple Watch. {{ app.blurb }}</p>
+          <a class="store" href="{{ app.store }}">Download on the App Store</a>
+        </div>
+      </section>
+
+      {%- assign note = "Scored the " | append: app.name | append: " way." -%}
+      {%- include app-demo.html scoring=app.demo.scoring to=app.demo.to cap=app.demo.cap note=note -%}
+
+      <section class="band shots-band" data-reveal>
+        <div class="wrap shots-head">
+          <h2>Every point, in <b>your pocket</b></h2>
+          <div class="shots-nav" data-shots-nav hidden>
+            <button type="button" data-shots-step="-1" aria-label="Previous screenshots">←</button>
+            <button type="button" data-shots-step="1" aria-label="Next screenshots">→</button>
+          </div>
+        </div>
+        <div class="shots" data-shots tabindex="0" role="group" aria-label="Screenshots">
+          {%- for shot in site.data.app_features.shots -%}
+            <img src="{{ base | append: "/" | append: shot.file | append: ".webp" | relative_url }}" alt="{{ shot.alt | escape }}" width="640" height="1391" loading="lazy">
+          {%- endfor -%}
+        </div>
+      </section>
+
+      {%- assign rules_title = "Made for <b>" | append: app.name | append: "</b>" -%}
+      {%- include app-features.html title=rules_title items=app.rules -%}
+      {%- if page.whats_new -%}
+        {%- include app-features.html title="New in <b>2.0</b>" items=site.data.app_features.whats_new -%}
+      {%- endif -%}
+      {%- include app-features.html title="And <b>much more</b>" items=site.data.app_features.features -%}
+
+      <section class="band siblings" data-reveal>
+        <div class="wrap">
+          <h2>Other <b>sports</b></h2>
+          <div class="sibling-list">
+            {%- for other in site.data.apps -%}
+              {%- unless other.slug == app.slug -%}
+                <a href="{{ other.url | relative_url }}" style="--accent: {{ other.color }}"><img src="{{ "/assets/apps/" | append: other.slug | append: "/icon.svg" | relative_url }}" alt="" width="56" height="56">{{ other.name }}</a>
+              {%- endunless -%}
+            {%- endfor -%}
+          </div>
+        </div>
+      </section>
+
+      {%- include app-closing.html -%}
+    </main>
+    {%- include footer.html -%}
+  </body>
+</html>

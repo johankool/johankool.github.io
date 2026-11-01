@@ -1,0 +1,155 @@
+.apps {
+  --ink: #1d1d1f;
+  --muted: #5b5b60;
+  --surface: #f5f5f7;
+  --radius: 24px;
+  overflow-x: clip;
+}
+
+.apps main { display: block; }
+.apps main h1, .apps main h2, .apps main h3 { font-family: ui-rounded, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; color: var(--ink); letter-spacing: 0; }
+.apps main h2 { font-size: clamp(28px, 5vw, 44px); font-weight: 500; line-height: 1.1; margin: 0 0 28px; }
+.apps main h2 b, .apps main h1 b { font-weight: 800; }
+.apps main h3 { font-size: 19px; font-weight: 700; margin: 0 0 6px; }
+.apps main p { color: var(--muted); }
+
+.wrap { max-width: 1040px; margin: 0 auto; padding: 0 24px; box-sizing: border-box; }
+.band { padding: 64px 0; }
+.band + .band { padding-top: 0; }
+
+/* Hero */
+.hero {
+  position: relative;
+  overflow: hidden;
+  background: var(--accent);
+  transition: background-color .8s ease;
+  padding: 104px 0 96px;
+  text-align: center;
+}
+.hero-text { position: relative; }
+.hero-icon { border-radius: 22%; box-shadow: 0 8px 24px rgb(0 0 0 / .18); margin-bottom: 20px; }
+.apps main .hero h1 { font-size: clamp(44px, 10vw, 88px); font-weight: 500; line-height: 1.05; margin: 0 0 14px; }
+.apps main .hero p { color: var(--ink); font-size: clamp(17px, 2.6vw, 21px); max-width: 34em; margin: 0 auto 26px; }
+.store {
+  display: inline-block;
+  background: var(--ink);
+  color: #fff;
+  font-weight: 600;
+  padding: 14px 26px;
+  border-radius: 999px;
+  transition: transform .2s ease;
+}
+.store:visited { color: #fff; }
+.store:hover { color: #fff; text-decoration: none; transform: scale(1.04); }
+
+.court { position: absolute; inset: 0; width: 100%; height: 100%; }
+.court path { fill: none; stroke: var(--ink); stroke-opacity: .09; stroke-width: 4; }
+
+/* The script flies the ball over the headline. Trail copies follow it, fainter the further behind. */
+.rally { position: absolute; inset: 24px 6%; pointer-events: none; }
+.rally-x { position: absolute; left: 0; top: 0; opacity: calc((5 - var(--trail)) * .04); z-index: calc(5 - var(--trail)); }
+.rally-x:first-child { opacity: 1; }
+.rally-ball { display: block; width: clamp(36px, 6vw, 60px); height: auto; max-width: none; animation: rally-spin 1.6s linear infinite; }
+@keyframes rally-spin { to { transform: rotate(360deg); } }
+[data-shuttle] .rally-ball { animation: none; }
+
+/* Tap to score */
+.demo-layout { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; align-items: center; }
+.demo-note { font-weight: 600; }
+.demo { background: #000; border-radius: 32px; padding: 12px; color: #fff; max-width: 380px; width: 100%; justify-self: center; box-sizing: border-box; }
+.demo-side {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  min-height: 150px;
+  background: #1c1c1e;
+  color: #fff;
+  border: 0;
+  border-radius: 20px;
+  font-family: ui-rounded, -apple-system, BlinkMacSystemFont, sans-serif;
+  cursor: pointer;
+  touch-action: manipulation;
+  transition: background-color .2s ease;
+}
+.demo-side:hover { background: #2c2c2e; }
+.demo-side:focus-visible, .demo-undo:focus-visible, .shots:focus-visible, .shots-nav button:focus-visible { outline: 3px solid var(--accent); outline-offset: 2px; }
+.demo-side small { color: #a1a1a6; font-size: 14px; }
+.demo-side span { font-size: 64px; font-weight: 800; line-height: 1.1; font-variant-numeric: tabular-nums; }
+.demo-side.is-scored span { animation: pop .3s ease; color: var(--accent); }
+.demo-side:disabled { cursor: default; }
+.demo-net { height: 4px; margin: 10px 4px; background: var(--accent); border-radius: 2px; }
+@keyframes pop { 40% { transform: scale(1.25); } }
+.demo-bar { display: flex; align-items: center; justify-content: space-between; gap: 12px; padding: 12px 8px 4px; }
+.apps main .demo-bar p { color: #fff; margin: 0; font-size: 15px; }
+.demo-undo { background: #2c2c2e; color: #fff; border: 0; border-radius: 999px; padding: 8px 16px; font-size: 15px; cursor: pointer; }
+.demo-undo:disabled { opacity: .4; cursor: default; }
+
+/* Screenshots */
+.shots-head { display: flex; justify-content: space-between; align-items: flex-start; gap: 16px; }
+.shots-nav { display: flex; gap: 8px; flex: none; }
+.shots-nav[hidden] { display: none; }
+.shots-nav button { width: 44px; height: 44px; border: 0; border-radius: 50%; background: var(--surface); color: var(--ink); font-size: 18px; cursor: pointer; }
+.shots-nav button:hover { background: var(--accent); }
+.shots {
+  display: flex;
+  gap: 18px;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scrollbar-width: none;
+  padding: 4px max(24px, calc((100vw - 992px) / 2)) 16px;
+  scroll-padding: 0 max(24px, calc((100vw - 992px) / 2));
+}
+.shots::-webkit-scrollbar { display: none; }
+.shots img { flex: 0 0 min(68vw, 280px); width: min(68vw, 280px); height: auto; border-radius: 22px; scroll-snap-align: start; margin: 0; }
+
+/* Cards */
+.cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+.card { background: var(--surface); border-radius: var(--radius); padding: 24px; transition: transform .25s ease; }
+.card:hover { transform: translateY(-3px); }
+.card p { margin: 0; font-size: 16px; }
+
+/* All apps */
+.app-list { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; }
+.app-card {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 18px;
+  border-radius: var(--radius);
+  background: var(--surface);
+  color: var(--muted);
+  transition: transform .25s ease, box-shadow .25s ease;
+}
+.app-card:visited { color: var(--muted); }
+.app-card:hover { color: var(--muted); text-decoration: none; transform: translateY(-3px); box-shadow: 0 0 0 3px var(--accent); }
+.app-card img { border-radius: 22%; flex: none; }
+.app-card strong { display: block; color: var(--ink); font-size: 20px; }
+.sibling-list { display: flex; flex-wrap: wrap; gap: 12px; }
+.sibling-list a { display: flex; align-items: center; gap: 10px; padding: 8px 18px 8px 8px; border-radius: 999px; background: var(--surface); color: var(--ink); font-weight: 600; transition: box-shadow .25s ease; }
+.sibling-list a:hover { text-decoration: none; box-shadow: 0 0 0 3px var(--accent); }
+.sibling-list img { width: 40px; height: 40px; border-radius: 22%; }
+
+.closing-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 32px; border-top: 1px solid #e5e5ea; padding-top: 32px; }
+.closing p { margin: 0; }
+
+/* Sections slide in, only when the script can bring them back. */
+.js [data-reveal] { opacity: 0; transform: translateY(24px); transition: opacity .6s ease, transform .6s ease; }
+.js [data-reveal].is-visible { opacity: 1; transform: none; }
+
+@media (max-width: 720px) {
+  .band { padding: 48px 0; }
+  .hero { padding: 88px 0 72px; }
+  .demo-layout, .closing-grid { grid-template-columns: 1fr; gap: 24px; }
+  .cards, .app-list { grid-template-columns: 1fr; }
+  .wrap { padding: 0 16px; }
+  .shots { padding-inline: 16px; scroll-padding: 0 16px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .rally-ball, .demo-side.is-scored span { animation: none; }
+  .rally-x:not(:first-child) { display: none; }
+  .js [data-reveal] { opacity: 1; transform: none; transition: none; }
+  .hero, .card, .app-card, .store { transition: none; }
+}
