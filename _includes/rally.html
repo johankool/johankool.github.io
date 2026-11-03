@@ -1,0 +1,8 @@
+<svg class="court" viewBox="0 0 1200 600" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+  <path d="M60 60H1140V540H60ZM60 120H1140M60 480H1140M330 120V480M870 120V480M330 300H870M600 60V540" />
+</svg>
+<div class="rally" aria-hidden="true"{% if include.shuttle %} data-shuttle{% endif %}>
+  {%- for i in (0..4) -%}
+    <div class="rally-x" style="--trail: {{ i }}"><div class="rally-face"><img class="rally-ball" data-ball src="{{ include.ball | relative_url }}" alt=""></div></div>
+  {%- endfor -%}
+</div>

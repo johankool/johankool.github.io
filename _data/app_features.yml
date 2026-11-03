@@ -1,0 +1,41 @@
+shots:
+  - { file: score, alt: "One tap per point: the score on iPhone, with every player on the court" }
+  - { file: watch, alt: "Score from your wrist: new match, score and summary on Apple Watch" }
+  - { file: rankings, alt: "See who's on top: the rankings of your players" }
+  - { file: summary, alt: "Every match, every workout: the summary of a finished match" }
+  - { file: setup, alt: "Singles or doubles, ready in seconds: setting up a new match" }
+  - { file: rules, alt: "Official rules, or your own: the rules editor" }
+
+features:
+  - title: From your wrist
+    text: Keep score on Apple Watch with one tap per point, without stopping to look for your phone.
+  - title: Hear the score
+    text: Scores and match points are announced out loud, so everyone on court stays up to date.
+  - title: Tournaments
+    text: Group your matches, follow the standings, and share a tournament so others can add their matches.
+    new_in_badminton: true
+  - title: Rankings and history
+    text: See who's on top and look back at every match you played.
+  - title: Apple Health, if you like
+    text: Save matches as workouts and get your statistics afterwards. It's entirely optional.
+  - title: On all your devices
+    text: iPhone, iPad and Apple Watch stay in step through iCloud, and a watch widget shows your game.
+
+# Takes the place of the features already listed as new in Badminton.
+features_after_whats_new:
+  - title: Undo and redo
+    text: Tapped the wrong side? Take the point back, or bring it back again.
+
+whats_new:
+  - title: Now in five sports
+    text: Badminton has company. Tennis, Padel, Squash and Table Tennis each have an app of their own.
+  - title: Tournaments
+    text: Run a tournament with its own roster and rankings, and share it so friends can add their matches.
+  - title: Sync with iCloud
+    text: Your players and matches now follow you to all your devices, and your watch stays in step with your iPhone directly.
+  - title: Follow live
+    text: Watch the score of a match someone else is keeping, swiping between all games going on.
+  - title: Start from your iPhone
+    text: Set up a match on your iPhone and send it to your watch, ready to play.
+  - title: On your watch face
+    text: A widget shows your current or last game, right on your watch face.

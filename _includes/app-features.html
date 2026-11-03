@@ -1,0 +1,10 @@
+<section class="band" data-reveal>
+  <div class="wrap">
+    <h2>{{ include.title }}</h2>
+    <div class="cards">
+      {%- for item in include.items -%}
+        <article class="card"><h3>{{ item.title }}</h3><p>{{ item.text }}</p></article>
+      {%- endfor -%}
+    </div>
+  </div>
+</section>

@@ -1,0 +1,40 @@
+---
+apps_page: true
+---
+{%- assign first = site.data.apps | first -%}
+<!DOCTYPE html>
+<html lang="en">
+  {%- include head.html -%}
+  <body class="apps" style="--accent: {{ first.color }}">
+    {%- include header.html -%}
+    <main aria-label="Content">
+      <section class="hero" data-cycle>
+        {%- assign ball = "/assets/apps/" | append: first.slug | append: "/ball.svg" -%}
+        {%- include rally.html ball=ball shuttle=first.shuttle -%}
+        <div class="wrap hero-text">
+          <h1>Smash and <b>Score!</b></h1>
+          <p>Scoreboards for the sports you play, on iPhone, iPad and Apple Watch. One tap per point, in <span data-cycle-name>{{ first.name }}</span>.</p>
+        </div>
+      </section>
+
+      <section class="band" data-reveal>
+        <div class="wrap">
+          <h2>Pick your <b>sport</b></h2>
+          <div class="app-list">
+            {%- for app in site.data.apps -%}
+              <a class="app-card" href="{{ app.url | relative_url }}" style="--accent: {{ app.color }}" data-cycle-item data-name="{{ app.name }}"{% if app.shuttle %} data-shuttle{% endif %} data-ball="{{ "/assets/apps/" | append: app.slug | append: "/ball.svg" | relative_url }}">
+                <img src="{{ "/assets/apps/" | append: app.slug | append: "/icon.svg" | relative_url }}" alt="" width="72" height="72">
+                <span><strong>{{ app.name }}</strong>{{ app.blurb }}</span>
+              </a>
+            {%- endfor -%}
+          </div>
+        </div>
+      </section>
+
+      {%- include app-demo.html scoring="rally" to=21 cap=30 note="Each app knows the rules of its sport." -%}
+      {%- include app-features.html title="In every <b>app</b>" items=site.data.app_features.features -%}
+      {%- include app-closing.html -%}
+    </main>
+    {%- include footer.html -%}
+  </body>
+</html>

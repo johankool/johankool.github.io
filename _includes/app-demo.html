@@ -1,0 +1,18 @@
+<section class="band demo-band" data-reveal>
+  <div class="wrap demo-layout">
+    <div>
+      <h2>One tap per <b>point</b></h2>
+      <p>This is how it feels. Tap the side that won the rally and the app does the rest. Made a mistake? Undo it.</p>
+      <p class="demo-note">{{ include.note }}</p>
+    </div>
+    <div class="demo" data-demo data-scoring="{{ include.scoring }}" data-to="{{ include.to }}" data-cap="{{ include.cap }}" hidden>
+      <button type="button" class="demo-side" data-side="1" aria-label="Point for them"><small>Them</small><span data-score="1">0</span></button>
+      <div class="demo-net"></div>
+      <button type="button" class="demo-side" data-side="0" aria-label="Point for you"><small>You</small><span data-score="0">0</span></button>
+      <div class="demo-bar">
+        <p data-status role="status">Tap a side to score</p>
+        <button type="button" class="demo-undo" data-undo disabled>Undo</button>
+      </div>
+    </div>
+  </div>
+</section>

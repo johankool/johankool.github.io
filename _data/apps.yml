@@ -1,0 +1,85 @@
+- slug: badminton
+  name: Badminton
+  shuttle: true
+  url: /badminton/
+  app_id: 1592385071
+  store: https://apps.apple.com/us/app/badminton-keep-your-score/id1592385071
+  color: "#A1FB00"
+  ink: "#1d1d1f"
+  blurb: Rally point to 21, with every player in the right position.
+  demo: { scoring: rally, to: 21, cap: 30 }
+  rules:
+    - title: Official or your own
+      text: Best of 3 games to 21, capped at 30. Or play a single game, or set your own rules.
+    - title: Rally or traditional
+      text: Choose rally point scoring, or the traditional scoring where only the server scores.
+    - title: Single, double, or both
+      text: The court shows who stands where for singles, doubles and even one against two.
+
+- slug: tennis
+  name: Tennis
+  url: /tennis/
+  app_id: 6826349444
+  store: https://apps.apple.com/us/app/tennis-smash-score/id6826349444
+  color: "#FFE800"
+  ink: "#1d1d1f"
+  blurb: Points, games and sets, tiebreaks included.
+  demo: { scoring: tennis }
+  rules:
+    - title: 15, 30, 40, deuce
+      text: Best of 3 sets to 6 games, with a tiebreak to 7 at 6–6. The app keeps track of all of it.
+    - title: Your format
+      text: Play best of 5 sets, a single set, or a match tiebreak instead of the third set.
+    - title: Fast4
+      text: Shorter sets to 4 games with golden point at deuce, ready to go.
+
+- slug: padel
+  name: Padel
+  url: /padel/
+  app_id: 6826353626
+  store: https://apps.apple.com/us/app/padel-smash-score/id6826353626
+  color: "#FF2EA6"
+  ink: "#1d1d1f"
+  blurb: Advantage, golden point or star point. You pick.
+  demo: { scoring: tennis }
+  rules:
+    - title: Deuce, your way
+      text: Play with advantage, golden point or star point at deuce.
+    - title: Sets and tiebreaks
+      text: Best of 3 sets, or a single set when the court is only booked for an hour.
+    - title: Saved to Health
+      text: Apple Health has no padel workout, so your matches are saved there as tennis.
+
+- slug: squash
+  name: Squash
+  url: /squash/
+  app_id: 6826354138
+  store: https://apps.apple.com/us/app/squash-smash-score/id6826354138
+  color: "#1FC8FF"
+  ink: "#1d1d1f"
+  blurb: Point-a-rally to 11, or the traditional game to 9.
+  demo: { scoring: rally, to: 11 }
+  rules:
+    - title: Point-a-rally
+      text: Best of 5 games to 11, win by 2, as played in competitions today.
+    - title: Traditional scoring
+      text: Prefer the old game? Only the server scores, in games to 9.
+    - title: Shorter matches
+      text: Short on court time? Play best of 3 games, or just one.
+
+- slug: table-tennis
+  name: Table Tennis
+  url: /table-tennis/
+  app_id: 6826354499
+  store: https://apps.apple.com/us/app/table-tennis-smash-score/id6826354499
+  color: "#FF2B2B"
+  ink: "#1d1d1f"
+  blurb: First to 11, with the serve changing at the right moment.
+  demo: { scoring: rally, to: 11 }
+  rules:
+    - title: Who serves next?
+      text: Serve changes every 2 points, and every point at deuce. The app remembers so you don't have to.
+    - title: Best of 5
+      text: Games to 11, win by 2. Or play best of 7, best of 3, or a single game.
+    - title: Your own rules
+      text: Your club plays it differently? Change the rules and the app follows.
