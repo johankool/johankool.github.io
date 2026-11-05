@@ -6,7 +6,6 @@
   overflow-x: clip;
 }
 
-/* Keeps the mobile menu's dropdown above the hero, which is positioned too and comes later. */
 .apps .site-header { z-index: 10; }
 
 .apps main { display: block; }
