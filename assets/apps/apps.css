@@ -6,6 +6,8 @@
   overflow-x: clip;
 }
 
+.apps .site-header { z-index: 10; }
+
 .apps main { display: block; }
 .apps main h1, .apps main h2, .apps main h3 { font-family: ui-rounded, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; color: var(--ink); letter-spacing: 0; }
 .apps main h2 { font-size: clamp(28px, 5vw, 44px); font-weight: 500; line-height: 1.1; margin: 0 0 28px; }
