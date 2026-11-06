@@ -1,0 +1,32 @@
+---
+apps_page: true
+stylesheet: /assets/tournament/tournament.css
+---
+{%- assign first = site.data.apps | first -%}
+<!DOCTYPE html>
+<html lang="en">
+  {%- include head.html -%}
+  <body class="apps tournament-page" style="--accent: {{ first.color }}">
+    {%- include header.html -%}
+    <main aria-label="Content" data-tournament
+      data-container="{{ site.cloudkit.container }}"
+      data-production-token="{{ site.cloudkit.tokens.production }}"
+      data-development-token="{{ site.cloudkit.tokens.development }}">
+      <section class="hero t-hero">
+        <div class="wrap hero-text">
+          <img class="hero-icon" data-sport-icon src="" alt="" width="64" height="64" hidden>
+          <p class="t-sport" data-sport-name></p>
+          <h1 data-title>{{ page.title }}</h1>
+        </div>
+      </section>
+      <section class="band t-band">
+        <div class="wrap" data-content aria-live="polite">
+          <noscript><p class="t-status">This page needs JavaScript to show the tournament.</p></noscript>
+        </div>
+      </section>
+    </main>
+    {%- include footer.html -%}
+    <script type="application/json" id="tournament-apps">{{ site.data.apps | jsonify }}</script>
+    <script type="module" src="{{ "/assets/tournament/tournament.js" | relative_url }}"></script>
+  </body>
+</html>

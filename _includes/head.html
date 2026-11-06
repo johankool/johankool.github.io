@@ -3,11 +3,17 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   {%- seo -%}
+  {%- if page.noindex -%}
+    <meta name="robots" content="noindex">
+  {%- endif -%}
   <link rel="stylesheet" href="{{ "/assets/main.css" | relative_url }}">
   {%- if layout.apps_page -%}
     <link rel="stylesheet" href="{{ "/assets/apps/apps.css" | relative_url }}">
     <script>document.documentElement.classList.add('js')</script>
     <script src="{{ "/assets/apps/apps.js" | relative_url }}" defer></script>
+  {%- endif -%}
+  {%- if layout.stylesheet -%}
+    <link rel="stylesheet" href="{{ layout.stylesheet | relative_url }}">
   {%- endif -%}
   {%- if page.sport -%}
     {%- assign app = site.data.apps | where: "slug", page.sport | first -%}
