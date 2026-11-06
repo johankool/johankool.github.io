@@ -34,6 +34,15 @@ plugins:
 header_pages:
   - apps/index.md
 
+# The apps' iCloud container, for /tournament/. API tokens come from CloudKit Console → API Access →
+# Tokens, one per environment, with this site as an allowed origin. They only identify the container:
+# reading a tournament still needs the visitor's own Apple ID sign-in.
+cloudkit:
+  container: iCloud.nl.johankool.Badminton
+  tokens:
+    production: "bb95ebdab92c43ae4d18c820d8c36b867376e1cfbc432da7b553581563320eb0"
+    development: "e065425956dd6fdca95926f8ac1401ee3ff1dacf1b26d659025026d511b89a20"
+
 # Exclude from processing.
 # The following items will not be processed, by default. Create a custom list
 # to override the default setting.

@@ -4,15 +4,15 @@ title: Privacy Policy for Badminton, Tennis, Padel, Squash and Table Tennis Apps
 permalink: /badminton/privacypolicy/
 ---
 
-This Privacy Policy (“the policy”) applies to the Badminton, Tennis, Padel, Squash and Table Tennis apps for iPhone, iPad and Apple Watch, including their widgets (“the apps”), published on Apple’s App Store by Johan Kool (“I”, “me”, “mine”), and how it affects the users (“you”, “your”) of the apps.
+This Privacy Policy (“the policy”) applies to the Badminton, Tennis, Padel, Squash and Table Tennis apps for iPhone, iPad and Apple Watch, including their widgets, and the tournament page at johankool.nl/tournament/ (“the apps”), published on Apple’s App Store by Johan Kool (“I”, “me”, “mine”), and how it affects the users (“you”, “your”) of the apps.
 
-The last update to this policy was made by me on 1 November 2026.
+The last update to this policy was made by me on 6 November 2026.
 
 If you object to any of the limitations set forward in this policy you should stop using the apps and uninstall them. I reserve the right to make changes to this policy. Such changes can be recognized by an updated date in the text above.
 
 ## In short
 
-- I run no servers for the apps, and I cannot see your data.
+- I run no servers for the apps, and I cannot see your data. The tournament web page is a static page: your data goes straight from iCloud to your browser, not through my website.
 - Your data stays on your devices and, if you use them, in your iCloud account and in Apple Health.
 - The apps contain no advertising and no third-party analytics, and never sell your data.
 - Other people only see your data if you share a tournament with them.
@@ -50,15 +50,28 @@ Health data is never used for advertising, and is never shared with me or with t
 
 If you share a tournament from your iPhone, the people you invite can see its title, its matches and their scores, and the names, initials and colors of the players on its roster. You decide per person whether they can add matches or only view them. Sharing goes through iCloud, which also shows those in a share who else takes part. Your other players, matches and preferences are not shared.
 
+You can also copy a web link to a shared tournament. Whoever you share that link with can view the tournament in a browser after signing in with their Apple ID, if you invited them or allowed anyone with the link.
+
 Likewise, people who share a tournament with you can see what you add to it.
 
 You are in control of with whom you share the data from your instance of the apps. The data of the players you add is often about other people. It is your responsibility to share it only in a manner that is according to the wishes of the people to which the data pertains.
+
+## The tournament web page
+
+A shared tournament can also be viewed in a web browser, at a link starting with johankool.nl/tournament/. To see it you sign in with your Apple ID through Apple’s own sign-in page; I never see your Apple ID or password. Signing in may add the tournament to your iCloud, as joining it from the app would.
+
+The page then reads the tournament directly from iCloud, using Apple’s CloudKit, and shows it in your browser. It reads only the titles, rosters, players and scores it shows, not the points played. If you shared the tournament yourself, iCloud cannot hand out that one tournament separately, so your browser also receives your other matches, without showing them.
+
+Your browser keeps your sign-in and a copy of what it read, so the page opens faster next time. They stay in your browser only. Choose Sign Out on the page to remove both, for instance on a shared computer.
+
+The page contains no analytics or advertising and loads nothing from third parties. Like any website, it is hosted somewhere: GitHub, which receives your IP address when you visit, as described in GitHub’s [privacy statement](https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement). Apple’s [privacy policy](https://www.apple.com/legal/privacy/) applies to signing in and to iCloud.
 
 ## Deleting your data
 
 - **Games:** you can delete a game on your iPhone or iPad, and iCloud and your paired device will follow. Its workout stays in Apple Health, so the game can return, for instance on a new installation, unless you delete the workout too.
 - **Players:** removing a player hides them from your lists, but their name is kept because past matches refer to it.
 - **Tournaments:** archiving a tournament only hides it for you. Leaving a tournament shared with you removes it from your devices; the person who shared it keeps it.
+- **The tournament web page:** choose Sign Out on the page to remove your sign-in and the copy of the tournament from that browser.
 - **Everything:** remove the apps from your devices to delete the data on them, and delete the data in the iCloud settings of your device to delete it from iCloud. Workouts can be deleted in the Health app.
 
 As I cannot see or access your data, I cannot delete it for you.
